@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/improved_block_division.scala:1788:56: value u is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m  val acc = Seq.fill(tensorSize / blockSize)(RegInit(0.u((m + 1).W)))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

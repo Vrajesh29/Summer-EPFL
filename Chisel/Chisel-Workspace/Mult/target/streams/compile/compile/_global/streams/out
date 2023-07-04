@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/vrajesh/Documents/Chisel/Chisel-Workspace/Mult/src/main/scala/mult.scala:13:6: value y is not a member of chisel3.Bundle{val a: chisel3.SInt; val b: chisel3.SInt}[0m
+[0m[[0m[31merror[0m] [0m[0m  io.y(62,54) := a(30,23) + b(30,23)[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vrajesh/Documents/Chisel/Chisel-Workspace/Mult/src/main/scala/mult.scala:14:6: value y is not a member of chisel3.Bundle{val a: chisel3.SInt; val b: chisel3.SInt}[0m
+[0m[[0m[31merror[0m] [0m[0m  io.y(53,0) := a(22,0)*b(22,0)[0m
+[0m[[0m[31merror[0m] [0m[0m     ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

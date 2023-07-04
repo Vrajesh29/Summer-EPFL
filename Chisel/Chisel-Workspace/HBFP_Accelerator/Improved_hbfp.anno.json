@@ -1,0 +1,18 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"."
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~Improved_hbfp|Improved_hbfp>io_result",
+    "sources":[
+      "~Improved_hbfp|Improved_hbfp>io_in_a_exp",
+      "~Improved_hbfp|Improved_hbfp>io_in_b_exp"
+    ]
+  }
+]

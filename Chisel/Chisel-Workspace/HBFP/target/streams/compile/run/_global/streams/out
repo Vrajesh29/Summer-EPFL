@@ -1,0 +1,68 @@
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassExceptions: [0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module AdderTree] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_6[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._adjustedLeftMantissa_T_24	 @[adder.scala 71:103][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adjustedLeftMantissa_3	 @[adder.scala 71:37][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_6	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_7	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.sum_3	 @[adder.scala 74:11][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_6	 @[adder.scala 75:26][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module AdderTree] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_4[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._adjustedLeftMantissa_T_38	 @[adder.scala 71:103][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adjustedLeftMantissa_5	 @[adder.scala 71:37][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_10	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_11	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.sum_5	 @[adder.scala 74:11][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_4	 @[adder.scala 75:26][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module AdderTree] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_0[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._adjustedLeftMantissa_T_45	 @[adder.scala 71:103][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adjustedLeftMantissa_6	 @[adder.scala 71:37][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_12	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_13	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.sum_6	 @[adder.scala 74:11][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_0	 @[adder.scala 75:26][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module AdderTree] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_2[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._adjustedLeftMantissa_T_10	 @[adder.scala 71:103][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adjustedLeftMantissa_1	 @[adder.scala 71:37][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_2	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_3	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.sum_1	 @[adder.scala 74:11][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_2	 @[adder.scala 75:26][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 4 errors detected![0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) firrtl.passes.PassExceptions: [0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module AdderTree] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_6[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._adjustedLeftMantissa_T_24	 @[adder.scala 71:103][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adjustedLeftMantissa_3	 @[adder.scala 71:37][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_6	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_7	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.sum_3	 @[adder.scala 74:11][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_6	 @[adder.scala 75:26][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module AdderTree] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_4[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._adjustedLeftMantissa_T_38	 @[adder.scala 71:103][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adjustedLeftMantissa_5	 @[adder.scala 71:37][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_10	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_11	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.sum_5	 @[adder.scala 74:11][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_4	 @[adder.scala 75:26][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module AdderTree] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_0[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._adjustedLeftMantissa_T_45	 @[adder.scala 71:103][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adjustedLeftMantissa_6	 @[adder.scala 71:37][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_12	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_13	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.sum_6	 @[adder.scala 74:11][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_0	 @[adder.scala 75:26][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.transforms.CheckCombLoops$CombLoopException: : [module AdderTree] Combinational loop detected:[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_2[0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._adjustedLeftMantissa_T_10	 @[adder.scala 71:103][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adjustedLeftMantissa_1	 @[adder.scala 71:37][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_2	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree._sum_T_3	 @[adder.scala 74:35][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.sum_1	 @[adder.scala 74:11][0m
+[0m[[0m[31merror[0m] [0m[0mAdderTree.adderTree_2	 @[adder.scala 75:26][0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 4 errors detected![0m

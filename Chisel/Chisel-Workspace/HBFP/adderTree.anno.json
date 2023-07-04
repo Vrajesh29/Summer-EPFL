@@ -1,0 +1,20 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"."
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~adderTree|adderTree>io_man_out",
+    "sources":[
+      "~adderTree|adderTree>io_man_0",
+      "~adderTree|adderTree>io_man_1",
+      "~adderTree|adderTree>io_man_2",
+      "~adderTree|adderTree>io_man_3"
+    ]
+  }
+]

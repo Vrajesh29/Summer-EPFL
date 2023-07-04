@@ -1,0 +1,82 @@
+import chisel3._
+import chiseltest._
+import chisel3.util._
+import chisel3.util.Reverse
+import scala.util.Random
+import org.scalatest.flatspec.AnyFlatSpec
+import chiseltest.internal._
+import firrtl.options.TargetDirAnnotation
+import chiseltest.simulator.VerilatorBackendAnnotation
+import java.nio.file.{Paths, Path}
+import org.scalactic._
+
+class HbfpSpec extends AnyFlatSpec with ChiselScalatestTester {
+  "mult" should "pass" in {
+    val m = 4
+    val e = 8
+    val n = 2
+
+    test(new SystolicArray(n, m, e)).withAnnotations(Seq(TargetDirAnnotation("test/HbfpPass"), WriteVcdAnnotation , VerilatorBackendAnnotation )) {
+      dut =>
+
+        dut.io.in(0)(0).hor.sign.poke(0.U)
+        dut.io.in(0)(0).hor.exp.poke(0.U)
+        dut.io.in(0)(0).hor.man.poke(1.U)
+
+        dut.io.in(0)(1).hor.sign.poke(0.U)
+        dut.io.in(0)(1).hor.exp.poke(0.U)
+        dut.io.in(0)(1).hor.man.poke(1.U)
+
+        dut.io.in(1)(0).hor.sign.poke(0.U)
+        dut.io.in(1)(0).hor.exp.poke(0.U)
+        dut.io.in(1)(0).hor.man.poke(0.U)
+
+        dut.io.in(1)(1).hor.sign.poke(0.U)
+        dut.io.in(1)(1).hor.exp.poke(0.U)
+        dut.io.in(1)(1).hor.man.poke(0.U)
+
+        dut.io.in(0)(0).ver.sign.poke(0.U)
+        dut.io.in(0)(0).ver.exp.poke(0.U)
+        dut.io.in(0)(0).ver.man.poke(0.U)
+
+        dut.io.in(0)(1).ver.sign.poke(0.U)
+        dut.io.in(0)(1).ver.exp.poke(0.U)
+        dut.io.in(0)(1).ver.man.poke(1.U)
+
+        dut.io.in(1)(0).ver.sign.poke(0.U)
+        dut.io.in(1)(0).ver.exp.poke(0.U)
+        dut.io.in(1)(0).ver.man.poke(0.U)
+
+        dut.io.in(1)(1).ver.sign.poke(0.U)
+        dut.io.in(1)(1).ver.exp.poke(0.U)
+        dut.io.in(1)(1).ver.man.poke(1.U)
+
+        dut.clock.step(1)
+
+        dut.io.out(0)(0).result.sign.expect(0.U)
+        dut.io.out(0)(0).result.exp.expect(0.U)
+        dut.io.out(0)(0).result.man.expect(0.U)
+
+        dut.clock.step(1)
+
+        dut.io.out(0)(1).result.sign.expect(0.U)
+        dut.io.out(0)(1).result.exp.expect(0.U)
+        dut.io.out(0)(1).result.man.expect(1.U)
+        dut.io.out(0)(0).result.man.expect(1.U)
+
+        dut.clock.step(1)
+
+        dut.io.out(1)(0).result.sign.expect(0.U)
+        dut.io.out(1)(0).result.exp.expect(0.U)
+        dut.io.out(1)(0).result.man.expect(0.U)
+
+        dut.clock.step(1)
+
+        dut.io.out(1)(1).result.sign.expect(0.U)
+        dut.io.out(1)(1).result.exp.expect(0.U)
+        dut.io.out(1)(1).result.man.expect(0.U)
+
+
+    }
+  }
+}

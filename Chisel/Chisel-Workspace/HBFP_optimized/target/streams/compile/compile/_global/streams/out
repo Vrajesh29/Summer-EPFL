@@ -1,0 +1,6 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/vrajesh/Documents/Chisel/Chisel-Workspace/HBFP_optimized/src/main/scala/hbfp.scala:18:32: Passing an Int to .S is usually a mistake: It does *not* set the width but does a bit extract.[0m
+[0m[[0m[33mwarn[0m] [0m[0mDid you mean .S(2.*(Hbfp.this.m).+(Hbfp.this.blockSize).-(1).W)?[0m
+[0m[[0m[33mwarn[0m] [0m[0mIf you do want bit extraction, use .S.extract(2.*(Hbfp.this.m).+(Hbfp.this.blockSize).-(1)) instead.[0m
+[0m[[0m[33mwarn[0m] [0m[0m  val accumulator = RegInit(0.S(2*m+blockSize-1))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

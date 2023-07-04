@@ -1,0 +1,20 @@
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP/target/scala-2.13/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AdderTree.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HbfpMain$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HBFPMain$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HBFP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AdderTreeMain$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hbfp.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HBFPMain.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AdderTree$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AdderTreeMain.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HbfpMain$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HBFPMain$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HbfpMain.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HBFP$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AdderTreeMain$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hbfp$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP/target/scala-2.13/classes.bak[0m

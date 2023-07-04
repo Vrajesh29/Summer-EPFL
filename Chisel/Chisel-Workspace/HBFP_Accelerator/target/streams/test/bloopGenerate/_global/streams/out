@@ -1,0 +1,4 @@
+[debug] [hbfp_accelerator-test] Classpath dependencies List()
+[debug] [hbfp_accelerator-test] Dependencies from configurations List(hbfp_accelerator)
+[debug] Bloop wrote the configuration of project 'hbfp_accelerator-test' to '/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/.bloop/hbfp_accelerator-test.json'
+[success] Generated .bloop/hbfp_accelerator-test.json

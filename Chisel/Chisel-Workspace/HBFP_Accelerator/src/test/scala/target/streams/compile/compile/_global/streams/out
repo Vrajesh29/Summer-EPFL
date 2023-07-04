@@ -1,0 +1,49 @@
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:214:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:215:8: not found: object chiseltest[0m
+[0m[[0m[31merror[0m] [0m[0mimport chiseltest._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:216:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.util._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:217:8: not found: object chisel3[0m
+[0m[[0m[31merror[0m] [0m[0mimport chisel3.util.Reverse[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:219:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.flatspec.AnyFlatSpec[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:220:8: not found: object chiseltest[0m
+[0m[[0m[31merror[0m] [0m[0mimport chiseltest.internal._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:221:8: not found: object firrtl[0m
+[0m[[0m[31merror[0m] [0m[0mimport firrtl.options.TargetDirAnnotation[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:222:8: not found: object chiseltest[0m
+[0m[[0m[31merror[0m] [0m[0mimport chiseltest.simulator.VerilatorBackendAnnotation[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:227:24: not found: type AnyFlatSpec[0m
+[0m[[0m[31merror[0m] [0m[0mclass HbfpSpec extends AnyFlatSpec with ChiselScalatestTester {[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:227:41: not found: type ChiselScalatestTester[0m
+[0m[[0m[31merror[0m] [0m[0mclass HbfpSpec extends AnyFlatSpec with ChiselScalatestTester {[0m
+[0m[[0m[31merror[0m] [0m[0m                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:228:10: value should is not a member of String[0m
+[0m[[0m[31merror[0m] [0m[0m  "mult" should "pass" in {[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:235:5: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m    test(new Improved_hbfp(blockSize, m, e)).withAnnotations(Seq(TargetDirAnnotation("test/HbfpPass"), WriteVcdAnnotation , VerilatorBackendAnnotation)) {[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:235:14: not found: type Improved_hbfp[0m
+[0m[[0m[31merror[0m] [0m[0m    test(new Improved_hbfp(blockSize, m, e)).withAnnotations(Seq(TargetDirAnnotation("test/HbfpPass"), WriteVcdAnnotation , VerilatorBackendAnnotation)) {[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:235:66: not found: value TargetDirAnnotation[0m
+[0m[[0m[31merror[0m] [0m[0m    test(new Improved_hbfp(blockSize, m, e)).withAnnotations(Seq(TargetDirAnnotation("test/HbfpPass"), WriteVcdAnnotation , VerilatorBackendAnnotation)) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:235:104: not found: value WriteVcdAnnotation[0m
+[0m[[0m[31merror[0m] [0m[0m    test(new Improved_hbfp(blockSize, m, e)).withAnnotations(Seq(TargetDirAnnotation("test/HbfpPass"), WriteVcdAnnotation , VerilatorBackendAnnotation)) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/test/scala/multSpec.scala:235:125: not found: value VerilatorBackendAnnotation[0m
+[0m[[0m[31merror[0m] [0m[0m    test(new Improved_hbfp(blockSize, m, e)).withAnnotations(Seq(TargetDirAnnotation("test/HbfpPass"), WriteVcdAnnotation , VerilatorBackendAnnotation)) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m16 errors found[0m

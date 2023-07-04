@@ -1,0 +1,17 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP/src/main/scala/mult.scala:3:7: Generated class HBFP differs only in case from Hbfp (defined in hbfp.scala).[0m
+[0m[[0m[33mwarn[0m] [0m[0m  Such classes will overwrite one another on case-insensitive filesystems.[0m
+[0m[[0m[33mwarn[0m] [0m[0mclass HBFP(blockSize: Int, numberOfBlocks: Int, m: Int, e: Int, a: Int, b:Int, totalWidth: Int) extends Module{[0m
+[0m[[0m[33mwarn[0m] [0m[0m      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP/src/main/scala/mult.scala:107:8: Generated class HBFPMain$ differs only in case from HbfpMain$ (defined in hbfp.scala).[0m
+[0m[[0m[33mwarn[0m] [0m[0m  Such classes will overwrite one another on case-insensitive filesystems.[0m
+[0m[[0m[33mwarn[0m] [0m[0mobject HBFPMain extends App {[0m
+[0m[[0m[33mwarn[0m] [0m[0m       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP/src/main/scala/mult.scala:4:19: Generated class HBFP$$anon$1 differs only in case from Hbfp$$anon$1 (defined in hbfp.scala).[0m
+[0m[[0m[33mwarn[0m] [0m[0m  Such classes will overwrite one another on case-insensitive filesystems.[0m
+[0m[[0m[33mwarn[0m] [0m[0m  val io = IO(new Bundle{[0m
+[0m[[0m[33mwarn[0m] [0m[0m                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP/src/main/scala/mult.scala:107:17: Generated class HBFPMain$delayedInit$body differs only in case from HbfpMain$delayedInit$body (defined in hbfp.scala).[0m
+[0m[[0m[33mwarn[0m] [0m[0m  Such classes will overwrite one another on case-insensitive filesystems.[0m
+[0m[[0m[33mwarn[0m] [0m[0mobject HBFPMain extends App {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m
