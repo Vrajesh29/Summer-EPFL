@@ -19,62 +19,67 @@ class HbfpSpec extends AnyFlatSpec with ChiselScalatestTester {
     test(new SystolicArray(n, m, e)).withAnnotations(Seq(TargetDirAnnotation("test/HbfpPass"), WriteVcdAnnotation , VerilatorBackendAnnotation )) {
       dut =>
 
-        dut.io.in(0)(0).hor.sign.poke(0.U)
-        dut.io.in(0)(0).hor.exp.poke(0.U)
-        dut.io.in(0)(0).hor.man.poke(1.U)
+        dut.io.in.bits(0)(0).hor.sign.poke(0.U)
+        dut.io.in.bits(0)(0).hor.exp.poke(0.U)
+        dut.io.in.bits(0)(0).hor.man.poke(1.U)
 
-        dut.io.in(0)(1).hor.sign.poke(0.U)
-        dut.io.in(0)(1).hor.exp.poke(0.U)
-        dut.io.in(0)(1).hor.man.poke(1.U)
+        dut.io.in.valid.poke(1.B)
 
-        dut.io.in(1)(0).hor.sign.poke(0.U)
-        dut.io.in(1)(0).hor.exp.poke(0.U)
-        dut.io.in(1)(0).hor.man.poke(0.U)
-
-        dut.io.in(1)(1).hor.sign.poke(0.U)
-        dut.io.in(1)(1).hor.exp.poke(0.U)
-        dut.io.in(1)(1).hor.man.poke(0.U)
-
-        dut.io.in(0)(0).ver.sign.poke(0.U)
-        dut.io.in(0)(0).ver.exp.poke(0.U)
-        dut.io.in(0)(0).ver.man.poke(0.U)
-
-        dut.io.in(0)(1).ver.sign.poke(0.U)
-        dut.io.in(0)(1).ver.exp.poke(0.U)
-        dut.io.in(0)(1).ver.man.poke(1.U)
-
-        dut.io.in(1)(0).ver.sign.poke(0.U)
-        dut.io.in(1)(0).ver.exp.poke(0.U)
-        dut.io.in(1)(0).ver.man.poke(0.U)
-
-        dut.io.in(1)(1).ver.sign.poke(0.U)
-        dut.io.in(1)(1).ver.exp.poke(0.U)
-        dut.io.in(1)(1).ver.man.poke(1.U)
+        dut.io.in.bits(0)(0).ver.sign.poke(0.U)
+        dut.io.in.bits(0)(0).ver.exp.poke(0.U)
+        dut.io.in.bits(0)(0).ver.man.poke(1.U)
 
         dut.clock.step(1)
 
+        dut.io.in.bits(0)(1).hor.sign.poke(0.U)
+        dut.io.in.bits(0)(1).hor.exp.poke(0.U)
+        dut.io.in.bits(0)(1).hor.man.poke(2.U)
+
+        dut.io.in.bits(1)(0).hor.sign.poke(0.U)
+        dut.io.in.bits(1)(0).hor.exp.poke(0.U)
+        dut.io.in.bits(1)(0).hor.man.poke(3.U)
+
+        dut.io.in.bits(0)(1).ver.sign.poke(0.U)
+        dut.io.in.bits(0)(1).ver.exp.poke(0.U)
+        dut.io.in.bits(0)(1).ver.man.poke(1.U)
+
+        dut.io.in.bits(1)(0).ver.sign.poke(0.U)
+        dut.io.in.bits(1)(0).ver.exp.poke(0.U)
+        dut.io.in.bits(1)(0).ver.man.poke(0.U)
+
+        dut.clock.step(1)
+
+        dut.io.in.bits(1)(1).hor.sign.poke(0.U)
+        dut.io.in.bits(1)(1).hor.exp.poke(0.U)
+        dut.io.in.bits(1)(1).hor.man.poke(1.U)
+
+        dut.io.in.bits(1)(1).ver.sign.poke(0.U)
+        dut.io.in.bits(1)(1).ver.exp.poke(0.U)
+        dut.io.in.bits(1)(1).ver.man.poke(0.U)
+
+        dut.clock.step(3)
+
         dut.io.out(0)(0).result.sign.expect(0.U)
         dut.io.out(0)(0).result.exp.expect(0.U)
-        dut.io.out(0)(0).result.man.expect(0.U)
+        dut.io.out(0)(0).result.man.expect(1.U)
 
         dut.clock.step(1)
 
         dut.io.out(0)(1).result.sign.expect(0.U)
         dut.io.out(0)(1).result.exp.expect(0.U)
         dut.io.out(0)(1).result.man.expect(1.U)
-        dut.io.out(0)(0).result.man.expect(1.U)
 
         dut.clock.step(1)
 
         dut.io.out(1)(0).result.sign.expect(0.U)
         dut.io.out(1)(0).result.exp.expect(0.U)
-        dut.io.out(1)(0).result.man.expect(0.U)
+        dut.io.out(1)(0).result.man.expect(2.U)
 
-        dut.clock.step(1)
+        dut.clock.step(6)
 
         dut.io.out(1)(1).result.sign.expect(0.U)
         dut.io.out(1)(1).result.exp.expect(0.U)
-        dut.io.out(1)(1).result.man.expect(0.U)
+        dut.io.out(1)(1).result.man.expect(2.U)
 
 
     }

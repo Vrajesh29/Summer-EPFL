@@ -70,66 +70,150 @@ void VSystolicArray::_settle__TOP__2(VSystolicArray__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VSystolicArray::_settle__TOP__2\n"); );
     VSystolicArray* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpmult__DOT___io_out_result_man_T 
-        = (0xffU & ((IData)(vlTOPp->io_in_0_0_hor_man) 
-                    * (IData)(vlTOPp->io_in_0_0_ver_man)));
-    vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpmult_io_out_result_exp 
-        = (0xffU & ((IData)(vlTOPp->io_in_0_0_hor_exp) 
-                    + (IData)(vlTOPp->io_in_0_0_ver_exp)));
     vlTOPp->io_out_0_0_result_sign = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__result_buffer_sign;
     vlTOPp->io_out_0_0_result_man = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__result_buffer_man;
     vlTOPp->io_out_0_0_result_exp = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__result_buffer_exp;
-    vlTOPp->io_out_0_1_hor_sign = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__io_out_hor_REG_sign;
-    vlTOPp->io_out_0_1_hor_man = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__io_out_hor_REG_man;
-    vlTOPp->io_out_0_1_hor_exp = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__io_out_hor_REG_exp;
+    vlTOPp->io_out_0_1_hor_sign = vlTOPp->SystolicArray__DOT__pes_0_1_io_in_hor_r_sign;
+    vlTOPp->io_out_0_1_hor_man = vlTOPp->SystolicArray__DOT__pes_0_1_io_in_hor_r_man;
+    vlTOPp->io_out_0_1_hor_exp = vlTOPp->SystolicArray__DOT__pes_0_1_io_in_hor_r_exp;
     vlTOPp->io_out_0_1_result_sign = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_sign;
     vlTOPp->io_out_0_1_result_man = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_man;
     vlTOPp->io_out_0_1_result_exp = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_exp;
-    vlTOPp->io_out_1_0_ver_sign = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__io_out_ver_REG_sign;
-    vlTOPp->io_out_1_0_ver_man = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__io_out_ver_REG_man;
-    vlTOPp->io_out_1_0_ver_exp = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__io_out_ver_REG_exp;
+    vlTOPp->io_out_1_0_ver_sign = vlTOPp->SystolicArray__DOT__pes_1_0_io_in_ver_r_sign;
+    vlTOPp->io_out_1_0_ver_man = vlTOPp->SystolicArray__DOT__pes_1_0_io_in_ver_r_man;
+    vlTOPp->io_out_1_0_ver_exp = vlTOPp->SystolicArray__DOT__pes_1_0_io_in_ver_r_exp;
     vlTOPp->io_out_1_0_result_sign = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__result_buffer_sign;
     vlTOPp->io_out_1_0_result_man = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__result_buffer_man;
     vlTOPp->io_out_1_0_result_exp = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__result_buffer_exp;
-    vlTOPp->io_out_1_1_hor_sign = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__io_out_hor_REG_sign;
-    vlTOPp->io_out_1_1_hor_man = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__io_out_hor_REG_man;
-    vlTOPp->io_out_1_1_hor_exp = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__io_out_hor_REG_exp;
-    vlTOPp->io_out_1_1_ver_sign = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__io_out_ver_REG_sign;
-    vlTOPp->io_out_1_1_ver_man = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__io_out_ver_REG_man;
-    vlTOPp->io_out_1_1_ver_exp = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__io_out_ver_REG_exp;
+    vlTOPp->io_out_1_1_hor_sign = vlTOPp->SystolicArray__DOT__pes_1_1_io_in_hor_r_sign;
+    vlTOPp->io_out_1_1_hor_man = vlTOPp->SystolicArray__DOT__pes_1_1_io_in_hor_r_man;
+    vlTOPp->io_out_1_1_hor_exp = vlTOPp->SystolicArray__DOT__pes_1_1_io_in_hor_r_exp;
+    vlTOPp->io_out_1_1_ver_sign = vlTOPp->SystolicArray__DOT__pes_1_1_io_in_ver_r_sign;
+    vlTOPp->io_out_1_1_ver_man = vlTOPp->SystolicArray__DOT__pes_1_1_io_in_ver_r_man;
+    vlTOPp->io_out_1_1_ver_exp = vlTOPp->SystolicArray__DOT__pes_1_1_io_in_ver_r_exp;
     vlTOPp->io_out_1_1_result_sign = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_sign;
     vlTOPp->io_out_1_1_result_man = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_man;
     vlTOPp->io_out_1_1_result_exp = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_exp;
-    vlTOPp->io_out_0_0_hor_sign = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_hor_REG_sign;
-    vlTOPp->io_out_0_0_hor_man = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_hor_REG_man;
-    vlTOPp->io_out_0_0_hor_exp = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_hor_REG_exp;
-    vlTOPp->io_out_0_0_ver_sign = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_ver_REG_sign;
-    vlTOPp->io_out_0_0_ver_man = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_ver_REG_man;
-    vlTOPp->io_out_0_0_ver_exp = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_ver_REG_exp;
-    vlTOPp->io_out_0_1_ver_sign = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__io_out_ver_REG_sign;
-    vlTOPp->io_out_0_1_ver_man = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__io_out_ver_REG_man;
-    vlTOPp->io_out_0_1_ver_exp = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__io_out_ver_REG_exp;
-    vlTOPp->io_out_1_0_hor_sign = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__io_out_hor_REG_sign;
-    vlTOPp->io_out_1_0_hor_man = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__io_out_hor_REG_man;
-    vlTOPp->io_out_1_0_hor_exp = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__io_out_hor_REG_exp;
-    vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult__DOT___io_out_result_man_T 
-        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_hor_REG_man) 
-                    * (IData)(vlTOPp->io_in_0_1_ver_man)));
-    vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpmult__DOT___io_out_result_man_T 
-        = (0xffU & ((IData)(vlTOPp->io_in_1_0_hor_man) 
-                    * (IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_ver_REG_man)));
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_sign_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_sign
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_sign_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_sign
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_sign_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_sign
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_sign_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_sign
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
     vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult__DOT___io_out_result_man_T 
-        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_0__DOT__io_out_hor_REG_man) 
-                    * (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__io_out_ver_REG_man)));
-    vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult_io_out_result_exp 
-        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_hor_REG_exp) 
-                    + (IData)(vlTOPp->io_in_0_1_ver_exp)));
-    vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpmult_io_out_result_exp 
-        = (0xffU & ((IData)(vlTOPp->io_in_1_0_hor_exp) 
-                    + (IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_ver_REG_exp)));
+        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1_io_in_hor_r_man) 
+                    * (IData)(vlTOPp->SystolicArray__DOT__pes_1_1_io_in_ver_r_man)));
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ptr_match 
+        = ((IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__enq_ptr_value) 
+           == (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value));
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_man_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_man
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_man_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_man
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_man_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_man
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_man_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_man
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
     vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp 
-        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_0__DOT__io_out_hor_REG_exp) 
-                    + (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__io_out_ver_REG_exp)));
+        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1_io_in_hor_r_exp) 
+                    + (IData)(vlTOPp->SystolicArray__DOT__pes_1_1_io_in_ver_r_exp)));
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_exp_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_exp
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_exp_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_exp
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_exp_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_exp
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_exp_io_deq_bits_MPORT_data 
+        = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_exp
+        [vlTOPp->SystolicArray__DOT__inputQueue__DOT__deq_ptr_value];
+    vlTOPp->io_out_0_0_hor_sign = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_sign_io_deq_bits_MPORT_data;
+    vlTOPp->io_out_0_0_ver_sign = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_sign_io_deq_bits_MPORT_data;
+    vlTOPp->io_out_1_0_hor_sign = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_sign_io_deq_bits_MPORT_data;
+    vlTOPp->io_out_0_1_ver_sign = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_sign_io_deq_bits_MPORT_data;
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__empty 
+        = ((IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ptr_match) 
+           & (~ (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__maybe_full)));
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__full 
+        = ((IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ptr_match) 
+           & (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__maybe_full));
+    vlTOPp->io_out_0_0_hor_man = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_man_io_deq_bits_MPORT_data;
+    vlTOPp->io_out_0_0_ver_man = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_man_io_deq_bits_MPORT_data;
+    vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpmult__DOT___io_out_result_man_T 
+        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_man_io_deq_bits_MPORT_data) 
+                    * (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_man_io_deq_bits_MPORT_data)));
+    vlTOPp->io_out_1_0_hor_man = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_man_io_deq_bits_MPORT_data;
+    vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpmult__DOT___io_out_result_man_T 
+        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_man_io_deq_bits_MPORT_data) 
+                    * (IData)(vlTOPp->SystolicArray__DOT__pes_1_0_io_in_ver_r_man)));
+    vlTOPp->io_out_0_1_ver_man = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_man_io_deq_bits_MPORT_data;
+    vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult__DOT___io_out_result_man_T 
+        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1_io_in_hor_r_man) 
+                    * (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_man_io_deq_bits_MPORT_data)));
+    if (((IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp) 
+         > (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_exp))) {
+        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff 
+            = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp) 
+                        - (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_exp)));
+        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___exp_diff_T = 1U;
+    } else {
+        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff 
+            = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_exp) 
+                        - (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp)));
+        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___exp_diff_T = 0U;
+    }
+    vlTOPp->io_out_0_0_hor_exp = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_exp_io_deq_bits_MPORT_data;
+    vlTOPp->io_out_0_0_ver_exp = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_exp_io_deq_bits_MPORT_data;
+    vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpmult_io_out_result_exp 
+        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_exp_io_deq_bits_MPORT_data) 
+                    + (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_exp_io_deq_bits_MPORT_data)));
+    vlTOPp->io_out_1_0_hor_exp = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_exp_io_deq_bits_MPORT_data;
+    vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpmult_io_out_result_exp 
+        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_exp_io_deq_bits_MPORT_data) 
+                    + (IData)(vlTOPp->SystolicArray__DOT__pes_1_0_io_in_ver_r_exp)));
+    vlTOPp->io_out_0_1_ver_exp = vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_exp_io_deq_bits_MPORT_data;
+    vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult_io_out_result_exp 
+        = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1_io_in_hor_r_exp) 
+                    + (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_exp_io_deq_bits_MPORT_data)));
+    vlTOPp->io_in_ready = (1U & (~ (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__full)));
+    vlTOPp->SystolicArray__DOT__inputQueue__DOT__do_enq 
+        = ((~ (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__full)) 
+           & (IData)(vlTOPp->io_in_valid));
+    vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___io_out_result_man_T_3 
+        = (0xfU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult__DOT___io_out_result_man_T) 
+                   + ((3U >= (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff))
+                       ? ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_man) 
+                          >> (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff))
+                       : 0U)));
+    vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___io_out_result_man_T_6 
+        = (0xfU & (((3U >= (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff))
+                     ? ((0xfU & (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult__DOT___io_out_result_man_T)) 
+                        >> (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff))
+                     : 0U) + (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_man)));
+    if (vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___exp_diff_T) {
+        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_exp 
+            = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp;
+        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_sign 
+            = ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1_io_in_hor_r_sign) 
+               ^ (IData)(vlTOPp->SystolicArray__DOT__pes_1_1_io_in_ver_r_sign));
+    } else {
+        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_exp 
+            = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_exp;
+        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_sign 
+            = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_sign;
+    }
     if (((IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpmult_io_out_result_exp) 
          > (IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__result_buffer_exp))) {
         vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpadder__DOT__exp_diff 
@@ -141,18 +225,6 @@ void VSystolicArray::_settle__TOP__2(VSystolicArray__Syms* __restrict vlSymsp) {
             = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__result_buffer_exp) 
                         - (IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpmult_io_out_result_exp)));
         vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpadder__DOT___exp_diff_T = 0U;
-    }
-    if (((IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult_io_out_result_exp) 
-         > (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_exp))) {
-        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff 
-            = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult_io_out_result_exp) 
-                        - (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_exp)));
-        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___exp_diff_T = 1U;
-    } else {
-        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff 
-            = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_exp) 
-                        - (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult_io_out_result_exp)));
-        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___exp_diff_T = 0U;
     }
     if (((IData)(vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpmult_io_out_result_exp) 
          > (IData)(vlTOPp->SystolicArray__DOT__pes_1_0__DOT__result_buffer_exp))) {
@@ -166,17 +238,17 @@ void VSystolicArray::_settle__TOP__2(VSystolicArray__Syms* __restrict vlSymsp) {
                         - (IData)(vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpmult_io_out_result_exp)));
         vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT___exp_diff_T = 0U;
     }
-    if (((IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp) 
-         > (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_exp))) {
-        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff 
-            = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp) 
-                        - (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_exp)));
-        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___exp_diff_T = 1U;
+    if (((IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult_io_out_result_exp) 
+         > (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_exp))) {
+        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff 
+            = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult_io_out_result_exp) 
+                        - (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_exp)));
+        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___exp_diff_T = 1U;
     } else {
-        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff 
-            = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_exp) 
-                        - (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp)));
-        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___exp_diff_T = 0U;
+        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff 
+            = (0xffU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_exp) 
+                        - (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult_io_out_result_exp)));
+        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___exp_diff_T = 0U;
     }
     vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpadder__DOT___io_out_result_man_T_3 
         = (0xfU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpmult__DOT___io_out_result_man_T) 
@@ -193,36 +265,13 @@ void VSystolicArray::_settle__TOP__2(VSystolicArray__Syms* __restrict vlSymsp) {
         vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpadder_io_out_result_exp 
             = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpmult_io_out_result_exp;
         vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpadder_io_out_result_sign 
-            = ((IData)(vlTOPp->io_in_0_0_hor_sign) 
-               ^ (IData)(vlTOPp->io_in_0_0_ver_sign));
+            = ((IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_sign_io_deq_bits_MPORT_data) 
+               ^ (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_sign_io_deq_bits_MPORT_data));
     } else {
         vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpadder_io_out_result_exp 
             = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__result_buffer_exp;
         vlTOPp->SystolicArray__DOT__pes_0_0__DOT__fpadder_io_out_result_sign 
             = vlTOPp->SystolicArray__DOT__pes_0_0__DOT__result_buffer_sign;
-    }
-    vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___io_out_result_man_T_3 
-        = (0xfU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult__DOT___io_out_result_man_T) 
-                   + ((3U >= (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff))
-                       ? ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_man) 
-                          >> (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff))
-                       : 0U)));
-    vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___io_out_result_man_T_6 
-        = (0xfU & (((3U >= (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff))
-                     ? ((0xfU & (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult__DOT___io_out_result_man_T)) 
-                        >> (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff))
-                     : 0U) + (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_man)));
-    if (vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___exp_diff_T) {
-        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder_io_out_result_exp 
-            = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult_io_out_result_exp;
-        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder_io_out_result_sign 
-            = ((IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_hor_REG_sign) 
-               ^ (IData)(vlTOPp->io_in_0_1_ver_sign));
-    } else {
-        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder_io_out_result_exp 
-            = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_exp;
-        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder_io_out_result_sign 
-            = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_sign;
     }
     vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT___io_out_result_man_T_3 
         = (0xfU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpmult__DOT___io_out_result_man_T) 
@@ -239,36 +288,36 @@ void VSystolicArray::_settle__TOP__2(VSystolicArray__Syms* __restrict vlSymsp) {
         vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpadder_io_out_result_exp 
             = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpmult_io_out_result_exp;
         vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpadder_io_out_result_sign 
-            = ((IData)(vlTOPp->io_in_1_0_hor_sign) 
-               ^ (IData)(vlTOPp->SystolicArray__DOT__pes_0_0__DOT__io_out_ver_REG_sign));
+            = ((IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_sign_io_deq_bits_MPORT_data) 
+               ^ (IData)(vlTOPp->SystolicArray__DOT__pes_1_0_io_in_ver_r_sign));
     } else {
         vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpadder_io_out_result_exp 
             = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__result_buffer_exp;
         vlTOPp->SystolicArray__DOT__pes_1_0__DOT__fpadder_io_out_result_sign 
             = vlTOPp->SystolicArray__DOT__pes_1_0__DOT__result_buffer_sign;
     }
-    vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___io_out_result_man_T_3 
-        = (0xfU & ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult__DOT___io_out_result_man_T) 
-                   + ((3U >= (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff))
-                       ? ((IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_man) 
-                          >> (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff))
+    vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___io_out_result_man_T_3 
+        = (0xfU & ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult__DOT___io_out_result_man_T) 
+                   + ((3U >= (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff))
+                       ? ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_man) 
+                          >> (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff))
                        : 0U)));
-    vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___io_out_result_man_T_6 
-        = (0xfU & (((3U >= (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff))
-                     ? ((0xfU & (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult__DOT___io_out_result_man_T)) 
-                        >> (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff))
-                     : 0U) + (IData)(vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_man)));
-    if (vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___exp_diff_T) {
-        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_exp 
-            = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp;
-        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_sign 
-            = ((IData)(vlTOPp->SystolicArray__DOT__pes_1_0__DOT__io_out_hor_REG_sign) 
-               ^ (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__io_out_ver_REG_sign));
+    vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___io_out_result_man_T_6 
+        = (0xfU & (((3U >= (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff))
+                     ? ((0xfU & (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult__DOT___io_out_result_man_T)) 
+                        >> (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff))
+                     : 0U) + (IData)(vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_man)));
+    if (vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___exp_diff_T) {
+        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder_io_out_result_exp 
+            = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpmult_io_out_result_exp;
+        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder_io_out_result_sign 
+            = ((IData)(vlTOPp->SystolicArray__DOT__pes_0_1_io_in_hor_r_sign) 
+               ^ (IData)(vlTOPp->SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_sign_io_deq_bits_MPORT_data));
     } else {
-        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_exp 
-            = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_exp;
-        vlTOPp->SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_sign 
-            = vlTOPp->SystolicArray__DOT__pes_1_1__DOT__result_buffer_sign;
+        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder_io_out_result_exp 
+            = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_exp;
+        vlTOPp->SystolicArray__DOT__pes_0_1__DOT__fpadder_io_out_result_sign 
+            = vlTOPp->SystolicArray__DOT__pes_0_1__DOT__result_buffer_sign;
     }
 }
 
@@ -291,7 +340,6 @@ void VSystolicArray::_eval_settle(VSystolicArray__Syms* __restrict vlSymsp) {
     VSystolicArray* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     vlTOPp->_settle__TOP__2(vlSymsp);
-    vlTOPp->__Vm_traceActivity[2U] = 1U;
     vlTOPp->__Vm_traceActivity[1U] = 1U;
     vlTOPp->__Vm_traceActivity[0U] = 1U;
 }
@@ -301,30 +349,32 @@ void VSystolicArray::_ctor_var_reset() {
     // Body
     clock = VL_RAND_RESET_I(1);
     reset = VL_RAND_RESET_I(1);
-    io_in_0_0_hor_sign = VL_RAND_RESET_I(1);
-    io_in_0_0_hor_man = VL_RAND_RESET_I(4);
-    io_in_0_0_hor_exp = VL_RAND_RESET_I(8);
-    io_in_0_0_ver_sign = VL_RAND_RESET_I(1);
-    io_in_0_0_ver_man = VL_RAND_RESET_I(4);
-    io_in_0_0_ver_exp = VL_RAND_RESET_I(8);
-    io_in_0_1_hor_sign = VL_RAND_RESET_I(1);
-    io_in_0_1_hor_man = VL_RAND_RESET_I(4);
-    io_in_0_1_hor_exp = VL_RAND_RESET_I(8);
-    io_in_0_1_ver_sign = VL_RAND_RESET_I(1);
-    io_in_0_1_ver_man = VL_RAND_RESET_I(4);
-    io_in_0_1_ver_exp = VL_RAND_RESET_I(8);
-    io_in_1_0_hor_sign = VL_RAND_RESET_I(1);
-    io_in_1_0_hor_man = VL_RAND_RESET_I(4);
-    io_in_1_0_hor_exp = VL_RAND_RESET_I(8);
-    io_in_1_0_ver_sign = VL_RAND_RESET_I(1);
-    io_in_1_0_ver_man = VL_RAND_RESET_I(4);
-    io_in_1_0_ver_exp = VL_RAND_RESET_I(8);
-    io_in_1_1_hor_sign = VL_RAND_RESET_I(1);
-    io_in_1_1_hor_man = VL_RAND_RESET_I(4);
-    io_in_1_1_hor_exp = VL_RAND_RESET_I(8);
-    io_in_1_1_ver_sign = VL_RAND_RESET_I(1);
-    io_in_1_1_ver_man = VL_RAND_RESET_I(4);
-    io_in_1_1_ver_exp = VL_RAND_RESET_I(8);
+    io_in_ready = VL_RAND_RESET_I(1);
+    io_in_valid = VL_RAND_RESET_I(1);
+    io_in_bits_0_0_hor_sign = VL_RAND_RESET_I(1);
+    io_in_bits_0_0_hor_man = VL_RAND_RESET_I(4);
+    io_in_bits_0_0_hor_exp = VL_RAND_RESET_I(8);
+    io_in_bits_0_0_ver_sign = VL_RAND_RESET_I(1);
+    io_in_bits_0_0_ver_man = VL_RAND_RESET_I(4);
+    io_in_bits_0_0_ver_exp = VL_RAND_RESET_I(8);
+    io_in_bits_0_1_hor_sign = VL_RAND_RESET_I(1);
+    io_in_bits_0_1_hor_man = VL_RAND_RESET_I(4);
+    io_in_bits_0_1_hor_exp = VL_RAND_RESET_I(8);
+    io_in_bits_0_1_ver_sign = VL_RAND_RESET_I(1);
+    io_in_bits_0_1_ver_man = VL_RAND_RESET_I(4);
+    io_in_bits_0_1_ver_exp = VL_RAND_RESET_I(8);
+    io_in_bits_1_0_hor_sign = VL_RAND_RESET_I(1);
+    io_in_bits_1_0_hor_man = VL_RAND_RESET_I(4);
+    io_in_bits_1_0_hor_exp = VL_RAND_RESET_I(8);
+    io_in_bits_1_0_ver_sign = VL_RAND_RESET_I(1);
+    io_in_bits_1_0_ver_man = VL_RAND_RESET_I(4);
+    io_in_bits_1_0_ver_exp = VL_RAND_RESET_I(8);
+    io_in_bits_1_1_hor_sign = VL_RAND_RESET_I(1);
+    io_in_bits_1_1_hor_man = VL_RAND_RESET_I(4);
+    io_in_bits_1_1_hor_exp = VL_RAND_RESET_I(8);
+    io_in_bits_1_1_ver_sign = VL_RAND_RESET_I(1);
+    io_in_bits_1_1_ver_man = VL_RAND_RESET_I(4);
+    io_in_bits_1_1_ver_exp = VL_RAND_RESET_I(8);
     io_out_0_0_hor_sign = VL_RAND_RESET_I(1);
     io_out_0_0_hor_man = VL_RAND_RESET_I(4);
     io_out_0_0_hor_exp = VL_RAND_RESET_I(8);
@@ -361,18 +411,24 @@ void VSystolicArray::_ctor_var_reset() {
     io_out_1_1_result_sign = VL_RAND_RESET_I(1);
     io_out_1_1_result_man = VL_RAND_RESET_I(4);
     io_out_1_1_result_exp = VL_RAND_RESET_I(8);
+    SystolicArray__DOT__pes_0_1_io_in_hor_r_sign = VL_RAND_RESET_I(1);
+    SystolicArray__DOT__pes_0_1_io_in_hor_r_man = VL_RAND_RESET_I(4);
+    SystolicArray__DOT__pes_0_1_io_in_hor_r_exp = VL_RAND_RESET_I(8);
+    SystolicArray__DOT__pes_1_1_io_in_hor_r_sign = VL_RAND_RESET_I(1);
+    SystolicArray__DOT__pes_1_1_io_in_hor_r_man = VL_RAND_RESET_I(4);
+    SystolicArray__DOT__pes_1_1_io_in_hor_r_exp = VL_RAND_RESET_I(8);
+    SystolicArray__DOT__pes_1_0_io_in_ver_r_sign = VL_RAND_RESET_I(1);
+    SystolicArray__DOT__pes_1_0_io_in_ver_r_man = VL_RAND_RESET_I(4);
+    SystolicArray__DOT__pes_1_0_io_in_ver_r_exp = VL_RAND_RESET_I(8);
+    SystolicArray__DOT__pes_1_1_io_in_ver_r_sign = VL_RAND_RESET_I(1);
+    SystolicArray__DOT__pes_1_1_io_in_ver_r_man = VL_RAND_RESET_I(4);
+    SystolicArray__DOT__pes_1_1_io_in_ver_r_exp = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_0_0__DOT__fpmult_io_out_result_exp = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_0_0__DOT__fpadder_io_out_result_sign = VL_RAND_RESET_I(1);
     SystolicArray__DOT__pes_0_0__DOT__fpadder_io_out_result_exp = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_0_0__DOT__result_buffer_sign = VL_RAND_RESET_I(1);
     SystolicArray__DOT__pes_0_0__DOT__result_buffer_man = VL_RAND_RESET_I(4);
     SystolicArray__DOT__pes_0_0__DOT__result_buffer_exp = VL_RAND_RESET_I(8);
-    SystolicArray__DOT__pes_0_0__DOT__io_out_hor_REG_sign = VL_RAND_RESET_I(1);
-    SystolicArray__DOT__pes_0_0__DOT__io_out_hor_REG_man = VL_RAND_RESET_I(4);
-    SystolicArray__DOT__pes_0_0__DOT__io_out_hor_REG_exp = VL_RAND_RESET_I(8);
-    SystolicArray__DOT__pes_0_0__DOT__io_out_ver_REG_sign = VL_RAND_RESET_I(1);
-    SystolicArray__DOT__pes_0_0__DOT__io_out_ver_REG_man = VL_RAND_RESET_I(4);
-    SystolicArray__DOT__pes_0_0__DOT__io_out_ver_REG_exp = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_0_0__DOT__fpmult__DOT___io_out_result_man_T = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_0_0__DOT__fpadder__DOT___exp_diff_T = VL_RAND_RESET_I(1);
     SystolicArray__DOT__pes_0_0__DOT__fpadder__DOT__exp_diff = VL_RAND_RESET_I(8);
@@ -384,12 +440,6 @@ void VSystolicArray::_ctor_var_reset() {
     SystolicArray__DOT__pes_0_1__DOT__result_buffer_sign = VL_RAND_RESET_I(1);
     SystolicArray__DOT__pes_0_1__DOT__result_buffer_man = VL_RAND_RESET_I(4);
     SystolicArray__DOT__pes_0_1__DOT__result_buffer_exp = VL_RAND_RESET_I(8);
-    SystolicArray__DOT__pes_0_1__DOT__io_out_hor_REG_sign = VL_RAND_RESET_I(1);
-    SystolicArray__DOT__pes_0_1__DOT__io_out_hor_REG_man = VL_RAND_RESET_I(4);
-    SystolicArray__DOT__pes_0_1__DOT__io_out_hor_REG_exp = VL_RAND_RESET_I(8);
-    SystolicArray__DOT__pes_0_1__DOT__io_out_ver_REG_sign = VL_RAND_RESET_I(1);
-    SystolicArray__DOT__pes_0_1__DOT__io_out_ver_REG_man = VL_RAND_RESET_I(4);
-    SystolicArray__DOT__pes_0_1__DOT__io_out_ver_REG_exp = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_0_1__DOT__fpmult__DOT___io_out_result_man_T = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT___exp_diff_T = VL_RAND_RESET_I(1);
     SystolicArray__DOT__pes_0_1__DOT__fpadder__DOT__exp_diff = VL_RAND_RESET_I(8);
@@ -401,12 +451,6 @@ void VSystolicArray::_ctor_var_reset() {
     SystolicArray__DOT__pes_1_0__DOT__result_buffer_sign = VL_RAND_RESET_I(1);
     SystolicArray__DOT__pes_1_0__DOT__result_buffer_man = VL_RAND_RESET_I(4);
     SystolicArray__DOT__pes_1_0__DOT__result_buffer_exp = VL_RAND_RESET_I(8);
-    SystolicArray__DOT__pes_1_0__DOT__io_out_hor_REG_sign = VL_RAND_RESET_I(1);
-    SystolicArray__DOT__pes_1_0__DOT__io_out_hor_REG_man = VL_RAND_RESET_I(4);
-    SystolicArray__DOT__pes_1_0__DOT__io_out_hor_REG_exp = VL_RAND_RESET_I(8);
-    SystolicArray__DOT__pes_1_0__DOT__io_out_ver_REG_sign = VL_RAND_RESET_I(1);
-    SystolicArray__DOT__pes_1_0__DOT__io_out_ver_REG_man = VL_RAND_RESET_I(4);
-    SystolicArray__DOT__pes_1_0__DOT__io_out_ver_REG_exp = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_1_0__DOT__fpmult__DOT___io_out_result_man_T = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT___exp_diff_T = VL_RAND_RESET_I(1);
     SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT__exp_diff = VL_RAND_RESET_I(8);
@@ -418,18 +462,67 @@ void VSystolicArray::_ctor_var_reset() {
     SystolicArray__DOT__pes_1_1__DOT__result_buffer_sign = VL_RAND_RESET_I(1);
     SystolicArray__DOT__pes_1_1__DOT__result_buffer_man = VL_RAND_RESET_I(4);
     SystolicArray__DOT__pes_1_1__DOT__result_buffer_exp = VL_RAND_RESET_I(8);
-    SystolicArray__DOT__pes_1_1__DOT__io_out_hor_REG_sign = VL_RAND_RESET_I(1);
-    SystolicArray__DOT__pes_1_1__DOT__io_out_hor_REG_man = VL_RAND_RESET_I(4);
-    SystolicArray__DOT__pes_1_1__DOT__io_out_hor_REG_exp = VL_RAND_RESET_I(8);
-    SystolicArray__DOT__pes_1_1__DOT__io_out_ver_REG_sign = VL_RAND_RESET_I(1);
-    SystolicArray__DOT__pes_1_1__DOT__io_out_ver_REG_man = VL_RAND_RESET_I(4);
-    SystolicArray__DOT__pes_1_1__DOT__io_out_ver_REG_exp = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_1_1__DOT__fpmult__DOT___io_out_result_man_T = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___exp_diff_T = VL_RAND_RESET_I(1);
     SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff = VL_RAND_RESET_I(8);
     SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___io_out_result_man_T_3 = VL_RAND_RESET_I(4);
     SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___io_out_result_man_T_6 = VL_RAND_RESET_I(4);
-    { int __Vi0=0; for (; __Vi0<3; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_sign[__Vi0] = VL_RAND_RESET_I(1);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_sign_io_deq_bits_MPORT_data = VL_RAND_RESET_I(1);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_man[__Vi0] = VL_RAND_RESET_I(4);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_man_io_deq_bits_MPORT_data = VL_RAND_RESET_I(4);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_exp[__Vi0] = VL_RAND_RESET_I(8);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_exp_io_deq_bits_MPORT_data = VL_RAND_RESET_I(8);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_sign[__Vi0] = VL_RAND_RESET_I(1);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_sign_io_deq_bits_MPORT_data = VL_RAND_RESET_I(1);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_man[__Vi0] = VL_RAND_RESET_I(4);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_man_io_deq_bits_MPORT_data = VL_RAND_RESET_I(4);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_exp[__Vi0] = VL_RAND_RESET_I(8);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_exp_io_deq_bits_MPORT_data = VL_RAND_RESET_I(8);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_sign[__Vi0] = VL_RAND_RESET_I(1);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_sign_io_deq_bits_MPORT_data = VL_RAND_RESET_I(1);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_man[__Vi0] = VL_RAND_RESET_I(4);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_man_io_deq_bits_MPORT_data = VL_RAND_RESET_I(4);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_exp[__Vi0] = VL_RAND_RESET_I(8);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_exp_io_deq_bits_MPORT_data = VL_RAND_RESET_I(8);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_sign[__Vi0] = VL_RAND_RESET_I(1);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_sign_io_deq_bits_MPORT_data = VL_RAND_RESET_I(1);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_man[__Vi0] = VL_RAND_RESET_I(4);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_man_io_deq_bits_MPORT_data = VL_RAND_RESET_I(4);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
+            SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_exp[__Vi0] = VL_RAND_RESET_I(8);
+    }}
+    SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_exp_io_deq_bits_MPORT_data = VL_RAND_RESET_I(8);
+    SystolicArray__DOT__inputQueue__DOT__enq_ptr_value = VL_RAND_RESET_I(1);
+    SystolicArray__DOT__inputQueue__DOT__deq_ptr_value = VL_RAND_RESET_I(1);
+    SystolicArray__DOT__inputQueue__DOT__maybe_full = VL_RAND_RESET_I(1);
+    SystolicArray__DOT__inputQueue__DOT__ptr_match = VL_RAND_RESET_I(1);
+    SystolicArray__DOT__inputQueue__DOT__empty = VL_RAND_RESET_I(1);
+    SystolicArray__DOT__inputQueue__DOT__full = VL_RAND_RESET_I(1);
+    SystolicArray__DOT__inputQueue__DOT__do_enq = VL_RAND_RESET_I(1);
+    { int __Vi0=0; for (; __Vi0<2; ++__Vi0) {
             __Vm_traceActivity[__Vi0] = VL_RAND_RESET_I(1);
     }}
 }
