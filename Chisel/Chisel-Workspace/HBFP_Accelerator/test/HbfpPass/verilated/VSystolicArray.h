@@ -107,12 +107,13 @@ VL_MODULE(VSystolicArray) {
         CData/*3:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_man;
         CData/*7:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_exp;
         CData/*0:0*/ SystolicArray__DOT__counter;
-        CData/*0:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_r_sign;
-        CData/*3:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_r_man;
-        CData/*7:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_r_exp;
-        CData/*0:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_r_sign;
-        CData/*3:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_r_man;
-        CData/*7:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_r_exp;
+        CData/*0:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_r_1_sign;
+        CData/*3:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_r_1_man;
+        CData/*7:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_r_1_exp;
+        CData/*0:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_r;
+        CData/*0:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_r_1_sign;
+        CData/*3:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_r_1_man;
+        CData/*7:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_r_1_exp;
         CData/*0:0*/ SystolicArray__DOT__pes_0_1_io_in_hor_r_sign;
         CData/*3:0*/ SystolicArray__DOT__pes_0_1_io_in_hor_r_man;
         CData/*7:0*/ SystolicArray__DOT__pes_0_1_io_in_hor_r_exp;
@@ -157,9 +158,9 @@ VL_MODULE(VSystolicArray) {
         CData/*0:0*/ SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT___exp_diff_T;
         CData/*7:0*/ SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT__exp_diff;
         CData/*3:0*/ SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT___io_out_result_man_T_3;
-        CData/*3:0*/ SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT___io_out_result_man_T_6;
     };
     struct {
+        CData/*3:0*/ SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT___io_out_result_man_T_6;
         CData/*7:0*/ SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp;
         CData/*0:0*/ SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_sign;
         CData/*7:0*/ SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_exp;

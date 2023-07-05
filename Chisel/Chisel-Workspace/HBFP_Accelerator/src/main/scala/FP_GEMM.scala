@@ -5,7 +5,6 @@ import chisel3.util.DecoupledIO
 import chisel3.util.EnqIO
 import chisel3.util.QueueIO
 import chisel3.stage.ChiselStage
-import java.io.PrintWriter
 import scala.sys.process._
 
 
@@ -113,14 +112,8 @@ class SystolicArray(n: Int, m: Int, e: Int) extends Module {
 
 
   for (i <- 0 until n) {
-    when (inputQueue.io.deq.valid && inputQueue.io.deq.ready){
-      pes(i)(0).io.in.hor := ShiftRegister(inputQueue.io.deq.bits(i)(counter).hor, i)
-      pes(0)(i).io.in.ver := ShiftRegister(inputQueue.io.deq.bits(counter)(i).ver, i)
-    }
-    .otherwise{
-        pes(i)(0).io.in.hor := 0.U.asTypeOf(new FP(m, e))
-        pes(0)(i).io.in.ver := 0.U.asTypeOf(new FP(m, e))
-    }
+    pes(i)(0).io.in.hor := Mux(ShiftRegister(inputQueue.io.deq.valid, i) ,ShiftRegister(inputQueue.io.deq.bits(i)(counter).hor, i), ShiftRegister(0.U.asTypeOf(new FP(m, e)), i))
+    pes(0)(i).io.in.ver := Mux(ShiftRegister(inputQueue.io.deq.valid, i) ,ShiftRegister(inputQueue.io.deq.bits(counter)(i).ver, i), ShiftRegister(0.U.asTypeOf(new FP(m, e)), i))
  }
 
   when(inputQueue.io.deq.valid && inputQueue.io.deq.ready) {

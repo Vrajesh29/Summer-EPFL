@@ -14336,3 +14336,285 @@ WARNING: Unmatched cancel notification for request id 5839
 2023.07.05 12:01:06 INFO  time: compiled hbfp_accelerator in 1.68s
 2023.07.05 12:01:38 INFO  compiling hbfp_accelerator (1 scala source)
 2023.07.05 12:01:39 INFO  time: compiled hbfp_accelerator in 1.7s
+Jul 05, 2023 12:04:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5950
+Jul 05, 2023 12:05:04 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+2023.07.05 12:05:07 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:05:08 INFO  time: compiled hbfp_accelerator in 1.65s
+Jul 05, 2023 12:05:16 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+2023.07.05 12:05:19 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:05:21 INFO  time: compiled hbfp_accelerator in 1.82s
+2023.07.05 12:05:39 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:05:41 INFO  time: compiled hbfp_accelerator in 1.69s
+2023.07.05 12:06:32 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:06:33 INFO  time: compiled hbfp_accelerator in 1.49s
+2023.07.05 12:06:46 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 12:06:47 INFO  time: compiled hbfp_accelerator-test in 1.11s
+2023.07.05 12:09:02 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:09:04 INFO  time: compiled hbfp_accelerator in 1.79s
+2023.07.05 12:11:13 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:11:13 INFO  time: compiled hbfp_accelerator in 0.29s
+Jul 05, 2023 12:11:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6338
+2023.07.05 12:11:17 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:11:19 INFO  time: compiled hbfp_accelerator in 1.64s
+2023.07.05 12:11:59 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:12:01 INFO  time: compiled hbfp_accelerator in 1.49s
+2023.07.05 12:30:10 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:30:12 INFO  time: compiled hbfp_accelerator in 1.99s
+Jul 05, 2023 12:33:28 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Jul 05, 2023 12:33:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6442
+Jul 05, 2023 12:33:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6444
+Jul 05, 2023 12:33:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6445
+Jul 05, 2023 12:33:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6446
+Jul 05, 2023 12:33:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6447
+Jul 05, 2023 12:41:57 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.07.05 12:43:30 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:43:32 INFO  time: compiled hbfp_accelerator in 1.69s
+2023.07.05 12:50:29 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:50:30 INFO  time: compiled hbfp_accelerator in 1.7s
+2023.07.05 12:50:46 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:50:47 INFO  time: compiled hbfp_accelerator in 1.8s
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6525
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6532
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6535
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6541
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6543
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6547
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6550
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6552
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6558
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6559
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6560
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6561
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6562
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6563
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6564
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6565
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6567
+Jul 05, 2023 12:53:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6557
+2023.07.05 12:53:29 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 12:53:30 INFO  time: compiled hbfp_accelerator-test in 1.06s
+2023.07.05 12:54:06 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:54:08 INFO  time: compiled hbfp_accelerator in 1.71s
+Jul 05, 2023 12:54:21 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+2023.07.05 12:54:26 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:54:28 INFO  time: compiled hbfp_accelerator in 1.67s
+2023.07.05 12:55:31 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:55:31 INFO  time: compiled hbfp_accelerator in 0.25s
+2023.07.05 12:55:34 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:55:36 INFO  time: compiled hbfp_accelerator in 1.91s
+Jul 05, 2023 12:58:43 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Jul 05, 2023 12:58:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7047
+Jul 05, 2023 12:58:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7050
+Jul 05, 2023 12:58:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7059
+Jul 05, 2023 12:58:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7061
+Jul 05, 2023 12:58:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7062
+Jul 05, 2023 12:58:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7063
+Jul 05, 2023 12:58:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7064
+Jul 05, 2023 12:58:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7065
+Jul 05, 2023 12:58:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7066
+2023.07.05 12:58:43 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:58:45 INFO  time: compiled hbfp_accelerator in 1.71s
+2023.07.05 13:02:05 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:02:07 INFO  time: compiled hbfp_accelerator in 1.64s
+2023.07.05 13:02:34 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:02:34 INFO  time: compiled hbfp_accelerator in 0.26s
+2023.07.05 13:02:50 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:02:52 INFO  time: compiled hbfp_accelerator in 1.75s
+2023.07.05 13:03:05 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:03:05 INFO  time: compiled hbfp_accelerator in 0.15s
+2023.07.05 13:03:33 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:03:34 INFO  time: compiled hbfp_accelerator in 1.51s
+Jul 05, 2023 1:06:29 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+2023.07.05 13:06:33 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:06:34 INFO  time: compiled hbfp_accelerator in 1.65s
+Jul 05, 2023 1:07:40 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7347
+2023.07.05 13:07:43 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:07:45 INFO  time: compiled hbfp_accelerator in 1.66s
+Jul 05, 2023 1:08:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7438
+Jul 05, 2023 1:08:58 PM scala.meta.internal.pc.MetalsGlobal inverseSemanticdbSymbols
+SEVERE: invalid SemanticDB symbol: _empty_/SystolicArray#inputQueue.
+-1 is out of bounds (min 0, max 2)
+Jul 05, 2023 1:08:58 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: -1 is out of bounds (min 0, max 2)
+java.lang.IndexOutOfBoundsException: -1 is out of bounds (min 0, max 2)
+	at scala.collection.mutable.ArrayBuffer.apply(ArrayBuffer.scala:98)
+	at scala.reflect.internal.Types$Type.findMemberInternal$1(Types.scala:1030)
+	at scala.reflect.internal.Types$Type.findMember(Types.scala:1035)
+	at scala.reflect.internal.Types$Type.memberBasedOnName(Types.scala:661)
+	at scala.reflect.internal.Types$Type.member(Types.scala:625)
+	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1401)
+	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1283)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedIdent$2(Typers.scala:5470)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedIdentOrWildcard$1(Typers.scala:5522)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5983)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6041)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typed1$41(Typers.scala:5074)
+	at scala.tools.nsc.typechecker.Typers$Typer.silent(Typers.scala:698)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:5076)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:5104)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5985)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6041)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedArg(Typers.scala:3428)
+	at scala.tools.nsc.typechecker.Typers$Typer.handlePolymorphicCall$1(Typers.scala:3827)
+	at scala.tools.nsc.typechecker.Typers$Typer.doTypedApply(Typers.scala:3846)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:5095)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:5104)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5985)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6041)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedArg(Typers.scala:3428)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedArg0$1(Typers.scala:3536)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$doTypedApply$7(Typers.scala:3555)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$doTypedApply$6(Typers.scala:3534)
+	at scala.tools.nsc.typechecker.Contexts$Context.savingUndeterminedTypeParams(Contexts.scala:537)
+	at scala.tools.nsc.typechecker.Typers$Typer.handleOverloaded$1(Typers.scala:3531)
+	at scala.tools.nsc.typechecker.Typers$Typer.doTypedApply(Typers.scala:3583)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typed1$28(Typers.scala:5009)
+	at scala.tools.nsc.typechecker.Typers$Typer.silent(Typers.scala:698)
+	at scala.tools.nsc.typechecker.Typers$Typer.tryTypedApply$1(Typers.scala:5009)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:5093)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:5104)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5985)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6041)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedArg(Typers.scala:3428)
+	at scala.tools.nsc.typechecker.Typers$Typer.handlePolymorphicCall$1(Typers.scala:3827)
+	at scala.tools.nsc.typechecker.Typers$Typer.doTypedApply(Typers.scala:3846)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:5095)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:5104)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5985)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6041)
+	at scala.tools.nsc.typechecker.Typers$Typer.computeType(Typers.scala:6130)
+	at scala.tools.nsc.typechecker.Namers$Namer.assignTypeToTree(Namers.scala:1127)
+	at scala.tools.nsc.typechecker.Namers$Namer.valDefSig(Namers.scala:1745)
+	at scala.tools.nsc.typechecker.Namers$Namer.memberSig(Namers.scala:1930)
+	at scala.tools.nsc.typechecker.Namers$Namer.typeSig(Namers.scala:1880)
+	at scala.tools.nsc.typechecker.Namers$Namer$ValTypeCompleter.completeImpl(Namers.scala:944)
+	at scala.tools.nsc.typechecker.Namers$Namer$AccessorTypeCompleter.completeImpl(Namers.scala:968)
+	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2078)
+	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2076)
+	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2071)
+	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1561)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1533)
+	at scala.reflect.internal.Symbols$Symbol.tpe_$times(Symbols.scala:1516)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedBlock$2(Typers.scala:2543)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedBlock$2$adapted(Typers.scala:2541)
+	at scala.collection.immutable.List.exists(List.scala:395)
+	at scala.tools.nsc.typechecker.Typers$Typer.matchesVisibleMember$1(Typers.scala:2541)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedBlock$3(Typers.scala:2551)
+	at scala.reflect.internal.Scopes$Scope.foreach(Scopes.scala:455)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedBlock(Typers.scala:2547)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedOutsidePatternMode$1(Typers.scala:5960)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5995)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6041)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedArg(Typers.scala:3428)
+	at scala.tools.nsc.typechecker.Typers$Typer.handlePolymorphicCall$1(Typers.scala:3827)
+	at scala.tools.nsc.typechecker.Typers$Typer.doTypedApply(Typers.scala:3846)
+	at scala.tools.nsc.typechecker.Typers$Typer.normalTypedApply$1(Typers.scala:5095)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedApply$1(Typers.scala:5104)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5985)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6041)
+	at scala.tools.nsc.typechecker.Typers$Typer.computeType(Typers.scala:6130)
+	at scala.tools.nsc.typechecker.Namers$Namer.assignTypeToTree(Namers.scala:1127)
+	at scala.tools.nsc.typechecker.Namers$Namer.valDefSig(Namers.scala:1745)
+	at scala.tools.nsc.typechecker.Namers$Namer.memberSig(Namers.scala:1930)
+	at scala.tools.nsc.typechecker.Namers$Namer.typeSig(Namers.scala:1880)
+	at scala.tools.nsc.typechecker.Namers$Namer$ValTypeCompleter.completeImpl(Namers.scala:944)
+	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete(Namers.scala:2078)
+	at scala.tools.nsc.typechecker.Namers$LockingTypeCompleter.complete$(Namers.scala:2076)
+	at scala.tools.nsc.typechecker.Namers$TypeCompleterBase.complete(Namers.scala:2071)
+	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1561)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1533)
+	at scala.reflect.internal.Symbols$Symbol.initialize(Symbols.scala:1722)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5625)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6041)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:6119)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$8(Typers.scala:3410)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3410)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedTemplate(Typers.scala:2064)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedClassDef(Typers.scala:1895)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5951)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6041)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStat$1(Typers.scala:6119)
+	at scala.tools.nsc.typechecker.Typers$Typer.$anonfun$typedStats$8(Typers.scala:3410)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedStats(Typers.scala:3410)
+	at scala.tools.nsc.typechecker.Typers$Typer.typedPackageDef$1(Typers.scala:5634)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed1(Typers.scala:5954)
+	at scala.tools.nsc.typechecker.Typers$Typer.typed(Typers.scala:6041)
+	at scala.tools.nsc.typechecker.Analyzer$typerFactory$TyperPhase.apply(Analyzer.scala:117)
+	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:459)
+	at scala.tools.nsc.interactive.Global$TyperRun.applyPhase(Global.scala:1349)
+	at scala.tools.nsc.interactive.Global$TyperRun.typeCheck(Global.scala:1342)
+	at scala.tools.nsc.interactive.Global.typeCheck(Global.scala:680)
+	at scala.meta.internal.pc.PcCollector.<init>(PcCollector.scala:29)
+	at scala.meta.internal.pc.PcDocumentHighlightProvider.<init>(PcDocumentHighlightProvider.scala:11)
+
+2023.07.05 13:09:12 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:09:14 INFO  time: compiled hbfp_accelerator in 1.68s
+Jul 05, 2023 1:09:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7705
+Jul 05, 2023 1:09:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7712
+2023.07.05 13:10:03 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:10:04 INFO  time: compiled hbfp_accelerator in 1.56s
+2023.07.05 13:10:15 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:10:16 INFO  time: compiled hbfp_accelerator in 1.76s
+2023.07.05 13:10:19 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 13:10:21 INFO  time: compiled hbfp_accelerator in 1.92s
+2023.07.05 13:12:36 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:12:38 INFO  time: compiled hbfp_accelerator-test in 1.13s
+2023.07.05 13:13:01 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:13:02 INFO  time: compiled hbfp_accelerator-test in 1.15s
+2023.07.05 13:13:11 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:13:12 INFO  time: compiled hbfp_accelerator-test in 1.11s
+2023.07.05 13:13:54 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:13:55 INFO  time: compiled hbfp_accelerator-test in 1.15s

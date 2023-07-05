@@ -13,13 +13,13 @@ circuit SystolicArray :
     output io_out_result_man : UInt<4>
     output io_out_result_exp : UInt<8>
 
-    node _io_out_result_sign_T = xor(io_in_a_sign, io_in_b_sign) @[FP_GEMM.scala 30:38]
-    node _io_out_result_exp_T = add(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 31:36]
-    node _io_out_result_exp_T_1 = tail(_io_out_result_exp_T, 1) @[FP_GEMM.scala 31:36]
-    node _io_out_result_man_T = mul(io_in_a_man, io_in_b_man) @[FP_GEMM.scala 32:36]
-    io_out_result_sign <= _io_out_result_sign_T @[FP_GEMM.scala 30:22]
-    io_out_result_man <= bits(_io_out_result_man_T, 3, 0) @[FP_GEMM.scala 32:21]
-    io_out_result_exp <= _io_out_result_exp_T_1 @[FP_GEMM.scala 31:21]
+    node _io_out_result_sign_T = xor(io_in_a_sign, io_in_b_sign) @[FP_GEMM.scala 29:38]
+    node _io_out_result_exp_T = add(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 30:36]
+    node _io_out_result_exp_T_1 = tail(_io_out_result_exp_T, 1) @[FP_GEMM.scala 30:36]
+    node _io_out_result_man_T = mul(io_in_a_man, io_in_b_man) @[FP_GEMM.scala 31:36]
+    io_out_result_sign <= _io_out_result_sign_T @[FP_GEMM.scala 29:22]
+    io_out_result_man <= bits(_io_out_result_man_T, 3, 0) @[FP_GEMM.scala 31:21]
+    io_out_result_exp <= _io_out_result_exp_T_1 @[FP_GEMM.scala 30:21]
 
   module FPAdder :
     input clock : Clock
@@ -34,27 +34,27 @@ circuit SystolicArray :
     output io_out_result_man : UInt<4>
     output io_out_result_exp : UInt<8>
 
-    node _exp_diff_T = gt(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 46:34]
-    node _exp_diff_T_1 = sub(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 46:61]
-    node _exp_diff_T_2 = tail(_exp_diff_T_1, 1) @[FP_GEMM.scala 46:61]
-    node _exp_diff_T_3 = sub(io_in_b_exp, io_in_a_exp) @[FP_GEMM.scala 46:88]
-    node _exp_diff_T_4 = tail(_exp_diff_T_3, 1) @[FP_GEMM.scala 46:88]
-    node exp_diff = mux(_exp_diff_T, _exp_diff_T_2, _exp_diff_T_4) @[FP_GEMM.scala 46:21]
-    node _io_out_result_sign_T = gt(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 48:41]
-    node _io_out_result_sign_T_1 = mux(_io_out_result_sign_T, io_in_a_sign, io_in_b_sign) @[FP_GEMM.scala 48:28]
-    node _io_out_result_exp_T = gt(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 49:40]
-    node _io_out_result_exp_T_1 = mux(_io_out_result_exp_T, io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 49:27]
-    node _io_out_result_man_T = gt(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 50:40]
-    node _io_out_result_man_T_1 = dshr(io_in_b_man, exp_diff) @[FP_GEMM.scala 50:82]
-    node _io_out_result_man_T_2 = add(io_in_a_man, _io_out_result_man_T_1) @[FP_GEMM.scala 50:67]
-    node _io_out_result_man_T_3 = tail(_io_out_result_man_T_2, 1) @[FP_GEMM.scala 50:67]
-    node _io_out_result_man_T_4 = dshr(io_in_a_man, exp_diff) @[FP_GEMM.scala 50:109]
-    node _io_out_result_man_T_5 = add(_io_out_result_man_T_4, io_in_b_man) @[FP_GEMM.scala 50:122]
-    node _io_out_result_man_T_6 = tail(_io_out_result_man_T_5, 1) @[FP_GEMM.scala 50:122]
-    node _io_out_result_man_T_7 = mux(_io_out_result_man_T, _io_out_result_man_T_3, _io_out_result_man_T_6) @[FP_GEMM.scala 50:27]
-    io_out_result_sign <= _io_out_result_sign_T_1 @[FP_GEMM.scala 48:22]
-    io_out_result_man <= _io_out_result_man_T_7 @[FP_GEMM.scala 50:21]
-    io_out_result_exp <= _io_out_result_exp_T_1 @[FP_GEMM.scala 49:21]
+    node _exp_diff_T = gt(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 45:34]
+    node _exp_diff_T_1 = sub(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 45:61]
+    node _exp_diff_T_2 = tail(_exp_diff_T_1, 1) @[FP_GEMM.scala 45:61]
+    node _exp_diff_T_3 = sub(io_in_b_exp, io_in_a_exp) @[FP_GEMM.scala 45:88]
+    node _exp_diff_T_4 = tail(_exp_diff_T_3, 1) @[FP_GEMM.scala 45:88]
+    node exp_diff = mux(_exp_diff_T, _exp_diff_T_2, _exp_diff_T_4) @[FP_GEMM.scala 45:21]
+    node _io_out_result_sign_T = gt(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 47:41]
+    node _io_out_result_sign_T_1 = mux(_io_out_result_sign_T, io_in_a_sign, io_in_b_sign) @[FP_GEMM.scala 47:28]
+    node _io_out_result_exp_T = gt(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 48:40]
+    node _io_out_result_exp_T_1 = mux(_io_out_result_exp_T, io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 48:27]
+    node _io_out_result_man_T = gt(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 49:40]
+    node _io_out_result_man_T_1 = dshr(io_in_b_man, exp_diff) @[FP_GEMM.scala 49:82]
+    node _io_out_result_man_T_2 = add(io_in_a_man, _io_out_result_man_T_1) @[FP_GEMM.scala 49:67]
+    node _io_out_result_man_T_3 = tail(_io_out_result_man_T_2, 1) @[FP_GEMM.scala 49:67]
+    node _io_out_result_man_T_4 = dshr(io_in_a_man, exp_diff) @[FP_GEMM.scala 49:109]
+    node _io_out_result_man_T_5 = add(_io_out_result_man_T_4, io_in_b_man) @[FP_GEMM.scala 49:122]
+    node _io_out_result_man_T_6 = tail(_io_out_result_man_T_5, 1) @[FP_GEMM.scala 49:122]
+    node _io_out_result_man_T_7 = mux(_io_out_result_man_T, _io_out_result_man_T_3, _io_out_result_man_T_6) @[FP_GEMM.scala 49:27]
+    io_out_result_sign <= _io_out_result_sign_T_1 @[FP_GEMM.scala 47:22]
+    io_out_result_man <= _io_out_result_man_T_7 @[FP_GEMM.scala 49:21]
+    io_out_result_exp <= _io_out_result_exp_T_1 @[FP_GEMM.scala 48:21]
 
   module PE :
     input clock : Clock
@@ -75,51 +75,51 @@ circuit SystolicArray :
     output io_out_result_man : UInt<4>
     output io_out_result_exp : UInt<8>
 
-    inst fpmult of FPMult @[FP_GEMM.scala 72:24]
-    inst fpadder of FPAdder @[FP_GEMM.scala 76:25]
+    inst fpmult of FPMult @[FP_GEMM.scala 71:24]
+    inst fpadder of FPAdder @[FP_GEMM.scala 75:25]
     reg result_buffer_sign : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), result_buffer_sign) @[FP_GEMM.scala 69:28]
+      reset => (UInt<1>("h0"), result_buffer_sign) @[FP_GEMM.scala 68:28]
     reg result_buffer_man : UInt<4>, clock with :
-      reset => (UInt<1>("h0"), result_buffer_man) @[FP_GEMM.scala 69:28]
+      reset => (UInt<1>("h0"), result_buffer_man) @[FP_GEMM.scala 68:28]
     reg result_buffer_exp : UInt<8>, clock with :
-      reset => (UInt<1>("h0"), result_buffer_exp) @[FP_GEMM.scala 69:28]
+      reset => (UInt<1>("h0"), result_buffer_exp) @[FP_GEMM.scala 68:28]
     reg mult_buffer_sign : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), mult_buffer_sign) @[FP_GEMM.scala 70:26]
+      reset => (UInt<1>("h0"), mult_buffer_sign) @[FP_GEMM.scala 69:26]
     reg mult_buffer_man : UInt<4>, clock with :
-      reset => (UInt<1>("h0"), mult_buffer_man) @[FP_GEMM.scala 70:26]
+      reset => (UInt<1>("h0"), mult_buffer_man) @[FP_GEMM.scala 69:26]
     reg mult_buffer_exp : UInt<8>, clock with :
-      reset => (UInt<1>("h0"), mult_buffer_exp) @[FP_GEMM.scala 70:26]
-    io_out_hor_sign <= io_in_hor_sign @[FP_GEMM.scala 81:16]
-    io_out_hor_man <= io_in_hor_man @[FP_GEMM.scala 81:16]
-    io_out_hor_exp <= io_in_hor_exp @[FP_GEMM.scala 81:16]
-    io_out_ver_sign <= io_in_ver_sign @[FP_GEMM.scala 82:16]
-    io_out_ver_man <= io_in_ver_man @[FP_GEMM.scala 82:16]
-    io_out_ver_exp <= io_in_ver_exp @[FP_GEMM.scala 82:16]
-    io_out_result_sign <= result_buffer_sign @[FP_GEMM.scala 83:19]
-    io_out_result_man <= result_buffer_man @[FP_GEMM.scala 83:19]
-    io_out_result_exp <= result_buffer_exp @[FP_GEMM.scala 83:19]
-    result_buffer_sign <= fpadder.io_out_result_sign @[FP_GEMM.scala 79:19]
-    result_buffer_man <= fpadder.io_out_result_man @[FP_GEMM.scala 79:19]
-    result_buffer_exp <= fpadder.io_out_result_exp @[FP_GEMM.scala 79:19]
-    mult_buffer_sign <= mult_buffer_sign @[FP_GEMM.scala 70:26]
-    mult_buffer_man <= mult_buffer_man @[FP_GEMM.scala 70:26]
-    mult_buffer_exp <= mult_buffer_exp @[FP_GEMM.scala 70:26]
+      reset => (UInt<1>("h0"), mult_buffer_exp) @[FP_GEMM.scala 69:26]
+    io_out_hor_sign <= io_in_hor_sign @[FP_GEMM.scala 80:16]
+    io_out_hor_man <= io_in_hor_man @[FP_GEMM.scala 80:16]
+    io_out_hor_exp <= io_in_hor_exp @[FP_GEMM.scala 80:16]
+    io_out_ver_sign <= io_in_ver_sign @[FP_GEMM.scala 81:16]
+    io_out_ver_man <= io_in_ver_man @[FP_GEMM.scala 81:16]
+    io_out_ver_exp <= io_in_ver_exp @[FP_GEMM.scala 81:16]
+    io_out_result_sign <= result_buffer_sign @[FP_GEMM.scala 82:19]
+    io_out_result_man <= result_buffer_man @[FP_GEMM.scala 82:19]
+    io_out_result_exp <= result_buffer_exp @[FP_GEMM.scala 82:19]
+    result_buffer_sign <= fpadder.io_out_result_sign @[FP_GEMM.scala 78:19]
+    result_buffer_man <= fpadder.io_out_result_man @[FP_GEMM.scala 78:19]
+    result_buffer_exp <= fpadder.io_out_result_exp @[FP_GEMM.scala 78:19]
+    mult_buffer_sign <= mult_buffer_sign @[FP_GEMM.scala 69:26]
+    mult_buffer_man <= mult_buffer_man @[FP_GEMM.scala 69:26]
+    mult_buffer_exp <= mult_buffer_exp @[FP_GEMM.scala 69:26]
     fpmult.clock <= clock
     fpmult.reset <= reset
-    fpmult.io_in_a_sign <= io_in_hor_sign @[FP_GEMM.scala 73:20]
-    fpmult.io_in_a_man <= io_in_hor_man @[FP_GEMM.scala 73:20]
-    fpmult.io_in_a_exp <= io_in_hor_exp @[FP_GEMM.scala 73:20]
-    fpmult.io_in_b_sign <= io_in_ver_sign @[FP_GEMM.scala 74:20]
-    fpmult.io_in_b_man <= io_in_ver_man @[FP_GEMM.scala 74:20]
-    fpmult.io_in_b_exp <= io_in_ver_exp @[FP_GEMM.scala 74:20]
+    fpmult.io_in_a_sign <= io_in_hor_sign @[FP_GEMM.scala 72:20]
+    fpmult.io_in_a_man <= io_in_hor_man @[FP_GEMM.scala 72:20]
+    fpmult.io_in_a_exp <= io_in_hor_exp @[FP_GEMM.scala 72:20]
+    fpmult.io_in_b_sign <= io_in_ver_sign @[FP_GEMM.scala 73:20]
+    fpmult.io_in_b_man <= io_in_ver_man @[FP_GEMM.scala 73:20]
+    fpmult.io_in_b_exp <= io_in_ver_exp @[FP_GEMM.scala 73:20]
     fpadder.clock <= clock
     fpadder.reset <= reset
-    fpadder.io_in_a_sign <= fpmult.io_out_result_sign @[FP_GEMM.scala 77:21]
-    fpadder.io_in_a_man <= fpmult.io_out_result_man @[FP_GEMM.scala 77:21]
-    fpadder.io_in_a_exp <= fpmult.io_out_result_exp @[FP_GEMM.scala 77:21]
-    fpadder.io_in_b_sign <= result_buffer_sign @[FP_GEMM.scala 78:21]
-    fpadder.io_in_b_man <= result_buffer_man @[FP_GEMM.scala 78:21]
-    fpadder.io_in_b_exp <= result_buffer_exp @[FP_GEMM.scala 78:21]
+    fpadder.io_in_a_sign <= fpmult.io_out_result_sign @[FP_GEMM.scala 76:21]
+    fpadder.io_in_a_man <= fpmult.io_out_result_man @[FP_GEMM.scala 76:21]
+    fpadder.io_in_a_exp <= fpmult.io_out_result_exp @[FP_GEMM.scala 76:21]
+    fpadder.io_in_b_sign <= result_buffer_sign @[FP_GEMM.scala 77:21]
+    fpadder.io_in_b_man <= result_buffer_man @[FP_GEMM.scala 77:21]
+    fpadder.io_in_b_exp <= result_buffer_exp @[FP_GEMM.scala 77:21]
 
   module Queue :
     input clock : Clock
@@ -721,246 +721,276 @@ circuit SystolicArray :
     output io_out_1_1_result_man : UInt<4>
     output io_out_1_1_result_exp : UInt<8>
 
-    inst pes_0_0 of PE @[FP_GEMM.scala 102:34]
-    inst pes_0_1 of PE @[FP_GEMM.scala 102:34]
-    inst pes_1_0 of PE @[FP_GEMM.scala 102:34]
-    inst pes_1_1 of PE @[FP_GEMM.scala 102:34]
-    inst inputQueue of Queue @[FP_GEMM.scala 103:26]
+    inst pes_0_0 of PE @[FP_GEMM.scala 101:34]
+    inst pes_0_1 of PE @[FP_GEMM.scala 101:34]
+    inst pes_1_0 of PE @[FP_GEMM.scala 101:34]
+    inst pes_1_1 of PE @[FP_GEMM.scala 101:34]
+    inst inputQueue of Queue @[FP_GEMM.scala 102:26]
     reg counter : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), counter) @[FP_GEMM.scala 112:24]
-    node _T = and(inputQueue.io_deq_valid, inputQueue.io_deq_ready) @[FP_GEMM.scala 117:35]
-    node _GEN_0 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_hor_exp) @[FP_GEMM.scala 118:{27,27}]
-    node _GEN_1 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_0_1_hor_exp, _GEN_0) @[FP_GEMM.scala 118:{27,27}]
-    node _GEN_2 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_hor_man) @[FP_GEMM.scala 118:{27,27}]
-    node _GEN_3 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_0_1_hor_man, _GEN_2) @[FP_GEMM.scala 118:{27,27}]
-    node _GEN_4 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_hor_sign) @[FP_GEMM.scala 118:{27,27}]
-    node _GEN_5 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_0_1_hor_sign, _GEN_4) @[FP_GEMM.scala 118:{27,27}]
-    node _GEN_6 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_ver_exp) @[FP_GEMM.scala 119:{27,27}]
-    node _GEN_7 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_0_ver_exp, _GEN_6) @[FP_GEMM.scala 119:{27,27}]
-    node _GEN_8 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_ver_man) @[FP_GEMM.scala 119:{27,27}]
-    node _GEN_9 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_0_ver_man, _GEN_8) @[FP_GEMM.scala 119:{27,27}]
-    node _GEN_10 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_ver_sign) @[FP_GEMM.scala 119:{27,27}]
-    node _GEN_11 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_0_ver_sign, _GEN_10) @[FP_GEMM.scala 119:{27,27}]
-    node _inputQueue_io_deq_bits_0_counter_hor_exp = _GEN_1 @[FP_GEMM.scala 118:27]
-    node _pes_0_0_io_in_hor_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 122:{44,44}]
-    node _GEN_12 = mux(_T, _inputQueue_io_deq_bits_0_counter_hor_exp, _pes_0_0_io_in_hor_WIRE_exp) @[FP_GEMM.scala 117:62 118:27 122:29]
-    node _inputQueue_io_deq_bits_0_counter_hor_man = _GEN_3 @[FP_GEMM.scala 118:27]
-    node _pes_0_0_io_in_hor_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 122:{44,44}]
-    node _GEN_13 = mux(_T, _inputQueue_io_deq_bits_0_counter_hor_man, _pes_0_0_io_in_hor_WIRE_man) @[FP_GEMM.scala 117:62 118:27 122:29]
-    node _inputQueue_io_deq_bits_0_counter_hor_sign = _GEN_5 @[FP_GEMM.scala 118:27]
-    node _pes_0_0_io_in_hor_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 122:{44,44}]
-    node _GEN_14 = mux(_T, _inputQueue_io_deq_bits_0_counter_hor_sign, _pes_0_0_io_in_hor_WIRE_sign) @[FP_GEMM.scala 117:62 118:27 122:29]
-    node _inputQueue_io_deq_bits_counter_0_ver_exp = _GEN_7 @[FP_GEMM.scala 119:27]
-    node _pes_0_0_io_in_ver_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 123:{44,44}]
-    node _GEN_15 = mux(_T, _inputQueue_io_deq_bits_counter_0_ver_exp, _pes_0_0_io_in_ver_WIRE_exp) @[FP_GEMM.scala 117:62 119:27 123:29]
-    node _inputQueue_io_deq_bits_counter_0_ver_man = _GEN_9 @[FP_GEMM.scala 119:27]
-    node _pes_0_0_io_in_ver_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 123:{44,44}]
-    node _GEN_16 = mux(_T, _inputQueue_io_deq_bits_counter_0_ver_man, _pes_0_0_io_in_ver_WIRE_man) @[FP_GEMM.scala 117:62 119:27 123:29]
-    node _inputQueue_io_deq_bits_counter_0_ver_sign = _GEN_11 @[FP_GEMM.scala 119:27]
-    node _pes_0_0_io_in_ver_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 123:{44,44}]
-    node _GEN_17 = mux(_T, _inputQueue_io_deq_bits_counter_0_ver_sign, _pes_0_0_io_in_ver_WIRE_sign) @[FP_GEMM.scala 117:62 119:27 123:29]
-    node _T_1 = and(inputQueue.io_deq_valid, inputQueue.io_deq_ready) @[FP_GEMM.scala 117:35]
-    reg pes_1_0_io_in_hor_r_sign : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_sign) @[Reg.scala 19:16]
-    reg pes_1_0_io_in_hor_r_man : UInt<4>, clock with :
-      reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_man) @[Reg.scala 19:16]
-    reg pes_1_0_io_in_hor_r_exp : UInt<8>, clock with :
-      reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_exp) @[Reg.scala 19:16]
-    node _GEN_18 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_1_0_hor_sign) @[Reg.scala 20:{22,22}]
-    node _GEN_19 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_hor_sign, _GEN_18) @[Reg.scala 20:{22,22}]
-    node _GEN_20 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_1_0_hor_man) @[Reg.scala 20:{22,22}]
-    node _GEN_21 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_hor_man, _GEN_20) @[Reg.scala 20:{22,22}]
-    node _GEN_22 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_1_0_hor_exp) @[Reg.scala 20:{22,22}]
-    node _GEN_23 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_hor_exp, _GEN_22) @[Reg.scala 20:{22,22}]
-    node _inputQueue_io_deq_bits_1_counter_hor_sign = _GEN_19 @[Reg.scala 20:22]
-    node _GEN_24 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_1_counter_hor_sign, pes_1_0_io_in_hor_r_sign) @[Reg.scala 19:16 20:{18,22}]
-    node _inputQueue_io_deq_bits_1_counter_hor_man = _GEN_21 @[Reg.scala 20:22]
-    node _GEN_25 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_1_counter_hor_man, pes_1_0_io_in_hor_r_man) @[Reg.scala 19:16 20:{18,22}]
-    node _inputQueue_io_deq_bits_1_counter_hor_exp = _GEN_23 @[Reg.scala 20:22]
-    node _GEN_26 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_1_counter_hor_exp, pes_1_0_io_in_hor_r_exp) @[Reg.scala 19:16 20:{18,22}]
-    reg pes_0_1_io_in_ver_r_sign : UInt<1>, clock with :
-      reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_sign) @[Reg.scala 19:16]
-    reg pes_0_1_io_in_ver_r_man : UInt<4>, clock with :
-      reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_man) @[Reg.scala 19:16]
-    reg pes_0_1_io_in_ver_r_exp : UInt<8>, clock with :
-      reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_exp) @[Reg.scala 19:16]
-    node _GEN_27 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_1_ver_sign) @[Reg.scala 20:{22,22}]
-    node _GEN_28 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_ver_sign, _GEN_27) @[Reg.scala 20:{22,22}]
-    node _GEN_29 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_1_ver_man) @[Reg.scala 20:{22,22}]
-    node _GEN_30 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_ver_man, _GEN_29) @[Reg.scala 20:{22,22}]
-    node _GEN_31 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_1_ver_exp) @[Reg.scala 20:{22,22}]
-    node _GEN_32 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_ver_exp, _GEN_31) @[Reg.scala 20:{22,22}]
-    node _inputQueue_io_deq_bits_counter_1_ver_sign = _GEN_28 @[Reg.scala 20:22]
-    node _GEN_33 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_counter_1_ver_sign, pes_0_1_io_in_ver_r_sign) @[Reg.scala 19:16 20:{18,22}]
-    node _inputQueue_io_deq_bits_counter_1_ver_man = _GEN_30 @[Reg.scala 20:22]
-    node _GEN_34 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_counter_1_ver_man, pes_0_1_io_in_ver_r_man) @[Reg.scala 19:16 20:{18,22}]
-    node _inputQueue_io_deq_bits_counter_1_ver_exp = _GEN_32 @[Reg.scala 20:22]
-    node _GEN_35 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_counter_1_ver_exp, pes_0_1_io_in_ver_r_exp) @[Reg.scala 19:16 20:{18,22}]
-    node _pes_1_0_io_in_hor_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 122:{44,44}]
-    node _GEN_36 = mux(_T_1, pes_1_0_io_in_hor_r_exp, _pes_1_0_io_in_hor_WIRE_exp) @[FP_GEMM.scala 117:62 118:27 122:29]
-    node _pes_1_0_io_in_hor_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 122:{44,44}]
-    node _GEN_37 = mux(_T_1, pes_1_0_io_in_hor_r_man, _pes_1_0_io_in_hor_WIRE_man) @[FP_GEMM.scala 117:62 118:27 122:29]
-    node _pes_1_0_io_in_hor_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 122:{44,44}]
-    node _GEN_38 = mux(_T_1, pes_1_0_io_in_hor_r_sign, _pes_1_0_io_in_hor_WIRE_sign) @[FP_GEMM.scala 117:62 118:27 122:29]
-    node _pes_0_1_io_in_ver_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 123:{44,44}]
-    node _GEN_39 = mux(_T_1, pes_0_1_io_in_ver_r_exp, _pes_0_1_io_in_ver_WIRE_exp) @[FP_GEMM.scala 117:62 119:27 123:29]
-    node _pes_0_1_io_in_ver_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 123:{44,44}]
-    node _GEN_40 = mux(_T_1, pes_0_1_io_in_ver_r_man, _pes_0_1_io_in_ver_WIRE_man) @[FP_GEMM.scala 117:62 119:27 123:29]
-    node _pes_0_1_io_in_ver_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 123:{44,44}]
-    node _GEN_41 = mux(_T_1, pes_0_1_io_in_ver_r_sign, _pes_0_1_io_in_ver_WIRE_sign) @[FP_GEMM.scala 117:62 119:27 123:29]
-    node _T_2 = and(inputQueue.io_deq_valid, inputQueue.io_deq_ready) @[FP_GEMM.scala 127:32]
-    node _counter_T = add(counter, UInt<1>("h1")) @[FP_GEMM.scala 128:24]
-    node _counter_T_1 = tail(_counter_T, 1) @[FP_GEMM.scala 128:24]
-    node _GEN_42 = mux(_T_2, _counter_T_1, counter) @[FP_GEMM.scala 127:60 128:13 112:24]
+      reset => (UInt<1>("h0"), counter) @[FP_GEMM.scala 111:24]
+    node _GEN_0 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_hor_sign) @[FP_GEMM.scala 115:{31,31}]
+    node _GEN_1 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_hor_man) @[FP_GEMM.scala 115:{31,31}]
+    node _GEN_2 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_hor_exp) @[FP_GEMM.scala 115:{31,31}]
+    node _GEN_3 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_0_1_hor_sign, _GEN_0) @[FP_GEMM.scala 115:{31,31}]
+    node _GEN_4 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_0_1_hor_man, _GEN_1) @[FP_GEMM.scala 115:{31,31}]
+    node _GEN_5 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_0_1_hor_exp, _GEN_2) @[FP_GEMM.scala 115:{31,31}]
+    node _inputQueue_io_deq_bits_0_counter_hor_sign = _GEN_3 @[FP_GEMM.scala 115:31]
+    node _pes_0_0_io_in_hor_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 115:{159,159}]
+    node _pes_0_0_io_in_hor_T_sign = mux(inputQueue.io_deq_valid, _inputQueue_io_deq_bits_0_counter_hor_sign, _pes_0_0_io_in_hor_WIRE_sign) @[FP_GEMM.scala 115:31]
+    node _inputQueue_io_deq_bits_0_counter_hor_man = _GEN_4 @[FP_GEMM.scala 115:31]
+    node _pes_0_0_io_in_hor_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 115:{159,159}]
+    node _pes_0_0_io_in_hor_T_man = mux(inputQueue.io_deq_valid, _inputQueue_io_deq_bits_0_counter_hor_man, _pes_0_0_io_in_hor_WIRE_man) @[FP_GEMM.scala 115:31]
+    node _inputQueue_io_deq_bits_0_counter_hor_exp = _GEN_5 @[FP_GEMM.scala 115:31]
+    node _pes_0_0_io_in_hor_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 115:{159,159}]
+    node _pes_0_0_io_in_hor_T_exp = mux(inputQueue.io_deq_valid, _inputQueue_io_deq_bits_0_counter_hor_exp, _pes_0_0_io_in_hor_WIRE_exp) @[FP_GEMM.scala 115:31]
+    node _GEN_6 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_ver_sign) @[FP_GEMM.scala 116:{31,31}]
+    node _GEN_7 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_ver_man) @[FP_GEMM.scala 116:{31,31}]
+    node _GEN_8 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_0_ver_exp) @[FP_GEMM.scala 116:{31,31}]
+    node _GEN_9 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_0_ver_sign, _GEN_6) @[FP_GEMM.scala 116:{31,31}]
+    node _GEN_10 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_0_ver_man, _GEN_7) @[FP_GEMM.scala 116:{31,31}]
+    node _GEN_11 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_0_ver_exp, _GEN_8) @[FP_GEMM.scala 116:{31,31}]
+    node _inputQueue_io_deq_bits_counter_0_ver_sign = _GEN_9 @[FP_GEMM.scala 116:31]
+    node _pes_0_0_io_in_ver_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 116:{159,159}]
+    node _pes_0_0_io_in_ver_T_sign = mux(inputQueue.io_deq_valid, _inputQueue_io_deq_bits_counter_0_ver_sign, _pes_0_0_io_in_ver_WIRE_sign) @[FP_GEMM.scala 116:31]
+    node _inputQueue_io_deq_bits_counter_0_ver_man = _GEN_10 @[FP_GEMM.scala 116:31]
+    node _pes_0_0_io_in_ver_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 116:{159,159}]
+    node _pes_0_0_io_in_ver_T_man = mux(inputQueue.io_deq_valid, _inputQueue_io_deq_bits_counter_0_ver_man, _pes_0_0_io_in_ver_WIRE_man) @[FP_GEMM.scala 116:31]
+    node _inputQueue_io_deq_bits_counter_0_ver_exp = _GEN_11 @[FP_GEMM.scala 116:31]
+    node _pes_0_0_io_in_ver_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 116:{159,159}]
+    node _pes_0_0_io_in_ver_T_exp = mux(inputQueue.io_deq_valid, _inputQueue_io_deq_bits_counter_0_ver_exp, _pes_0_0_io_in_ver_WIRE_exp) @[FP_GEMM.scala 116:31]
+    reg pes_1_0_io_in_hor_r : UInt<1>, clock with :
+      reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r) @[Reg.scala 19:16]
+    node _GEN_12 = mux(UInt<1>("h1"), inputQueue.io_deq_valid, pes_1_0_io_in_hor_r) @[Reg.scala 19:16 20:{18,22}]
+    reg pes_1_0_io_in_hor_r_1_sign : UInt<1>, clock with :
+      reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_1_sign) @[Reg.scala 19:16]
+    reg pes_1_0_io_in_hor_r_1_man : UInt<4>, clock with :
+      reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_1_man) @[Reg.scala 19:16]
+    reg pes_1_0_io_in_hor_r_1_exp : UInt<8>, clock with :
+      reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_1_exp) @[Reg.scala 19:16]
+    node _GEN_13 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_1_0_hor_sign) @[Reg.scala 20:{22,22}]
+    node _GEN_14 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_hor_sign, _GEN_13) @[Reg.scala 20:{22,22}]
+    node _GEN_15 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_1_0_hor_man) @[Reg.scala 20:{22,22}]
+    node _GEN_16 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_hor_man, _GEN_15) @[Reg.scala 20:{22,22}]
+    node _GEN_17 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_1_0_hor_exp) @[Reg.scala 20:{22,22}]
+    node _GEN_18 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_hor_exp, _GEN_17) @[Reg.scala 20:{22,22}]
+    node _inputQueue_io_deq_bits_1_counter_hor_sign = _GEN_14 @[Reg.scala 20:22]
+    node _GEN_19 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_1_counter_hor_sign, pes_1_0_io_in_hor_r_1_sign) @[Reg.scala 19:16 20:{18,22}]
+    node _inputQueue_io_deq_bits_1_counter_hor_man = _GEN_16 @[Reg.scala 20:22]
+    node _GEN_20 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_1_counter_hor_man, pes_1_0_io_in_hor_r_1_man) @[Reg.scala 19:16 20:{18,22}]
+    node _inputQueue_io_deq_bits_1_counter_hor_exp = _GEN_18 @[Reg.scala 20:22]
+    node _GEN_21 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_1_counter_hor_exp, pes_1_0_io_in_hor_r_1_exp) @[Reg.scala 19:16 20:{18,22}]
+    reg pes_1_0_io_in_hor_r_2_sign : UInt<1>, clock with :
+      reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_2_sign) @[Reg.scala 19:16]
+    reg pes_1_0_io_in_hor_r_2_man : UInt<4>, clock with :
+      reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_2_man) @[Reg.scala 19:16]
+    reg pes_1_0_io_in_hor_r_2_exp : UInt<8>, clock with :
+      reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_2_exp) @[Reg.scala 19:16]
+    node _pes_1_0_io_in_hor_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 115:{159,159}]
+    node _GEN_22 = mux(UInt<1>("h1"), _pes_1_0_io_in_hor_WIRE_sign, pes_1_0_io_in_hor_r_2_sign) @[Reg.scala 19:16 20:{18,22}]
+    node _pes_1_0_io_in_hor_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 115:{159,159}]
+    node _GEN_23 = mux(UInt<1>("h1"), _pes_1_0_io_in_hor_WIRE_man, pes_1_0_io_in_hor_r_2_man) @[Reg.scala 19:16 20:{18,22}]
+    node _pes_1_0_io_in_hor_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 115:{159,159}]
+    node _GEN_24 = mux(UInt<1>("h1"), _pes_1_0_io_in_hor_WIRE_exp, pes_1_0_io_in_hor_r_2_exp) @[Reg.scala 19:16 20:{18,22}]
+    node _pes_1_0_io_in_hor_T_sign = mux(pes_1_0_io_in_hor_r, pes_1_0_io_in_hor_r_1_sign, pes_1_0_io_in_hor_r_2_sign) @[FP_GEMM.scala 115:31]
+    node _pes_1_0_io_in_hor_T_man = mux(pes_1_0_io_in_hor_r, pes_1_0_io_in_hor_r_1_man, pes_1_0_io_in_hor_r_2_man) @[FP_GEMM.scala 115:31]
+    node _pes_1_0_io_in_hor_T_exp = mux(pes_1_0_io_in_hor_r, pes_1_0_io_in_hor_r_1_exp, pes_1_0_io_in_hor_r_2_exp) @[FP_GEMM.scala 115:31]
+    reg pes_0_1_io_in_ver_r : UInt<1>, clock with :
+      reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r) @[Reg.scala 19:16]
+    node _GEN_25 = mux(UInt<1>("h1"), inputQueue.io_deq_valid, pes_0_1_io_in_ver_r) @[Reg.scala 19:16 20:{18,22}]
+    reg pes_0_1_io_in_ver_r_1_sign : UInt<1>, clock with :
+      reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_1_sign) @[Reg.scala 19:16]
+    reg pes_0_1_io_in_ver_r_1_man : UInt<4>, clock with :
+      reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_1_man) @[Reg.scala 19:16]
+    reg pes_0_1_io_in_ver_r_1_exp : UInt<8>, clock with :
+      reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_1_exp) @[Reg.scala 19:16]
+    node _GEN_26 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_1_ver_sign) @[Reg.scala 20:{22,22}]
+    node _GEN_27 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_ver_sign, _GEN_26) @[Reg.scala 20:{22,22}]
+    node _GEN_28 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_1_ver_man) @[Reg.scala 20:{22,22}]
+    node _GEN_29 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_ver_man, _GEN_28) @[Reg.scala 20:{22,22}]
+    node _GEN_30 = validif(eq(UInt<1>("h0"), counter), inputQueue.io_deq_bits_0_1_ver_exp) @[Reg.scala 20:{22,22}]
+    node _GEN_31 = mux(eq(UInt<1>("h1"), counter), inputQueue.io_deq_bits_1_1_ver_exp, _GEN_30) @[Reg.scala 20:{22,22}]
+    node _inputQueue_io_deq_bits_counter_1_ver_sign = _GEN_27 @[Reg.scala 20:22]
+    node _GEN_32 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_counter_1_ver_sign, pes_0_1_io_in_ver_r_1_sign) @[Reg.scala 19:16 20:{18,22}]
+    node _inputQueue_io_deq_bits_counter_1_ver_man = _GEN_29 @[Reg.scala 20:22]
+    node _GEN_33 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_counter_1_ver_man, pes_0_1_io_in_ver_r_1_man) @[Reg.scala 19:16 20:{18,22}]
+    node _inputQueue_io_deq_bits_counter_1_ver_exp = _GEN_31 @[Reg.scala 20:22]
+    node _GEN_34 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_counter_1_ver_exp, pes_0_1_io_in_ver_r_1_exp) @[Reg.scala 19:16 20:{18,22}]
+    reg pes_0_1_io_in_ver_r_2_sign : UInt<1>, clock with :
+      reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_2_sign) @[Reg.scala 19:16]
+    reg pes_0_1_io_in_ver_r_2_man : UInt<4>, clock with :
+      reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_2_man) @[Reg.scala 19:16]
+    reg pes_0_1_io_in_ver_r_2_exp : UInt<8>, clock with :
+      reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_2_exp) @[Reg.scala 19:16]
+    node _pes_0_1_io_in_ver_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 116:{159,159}]
+    node _GEN_35 = mux(UInt<1>("h1"), _pes_0_1_io_in_ver_WIRE_sign, pes_0_1_io_in_ver_r_2_sign) @[Reg.scala 19:16 20:{18,22}]
+    node _pes_0_1_io_in_ver_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 116:{159,159}]
+    node _GEN_36 = mux(UInt<1>("h1"), _pes_0_1_io_in_ver_WIRE_man, pes_0_1_io_in_ver_r_2_man) @[Reg.scala 19:16 20:{18,22}]
+    node _pes_0_1_io_in_ver_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 116:{159,159}]
+    node _GEN_37 = mux(UInt<1>("h1"), _pes_0_1_io_in_ver_WIRE_exp, pes_0_1_io_in_ver_r_2_exp) @[Reg.scala 19:16 20:{18,22}]
+    node _pes_0_1_io_in_ver_T_sign = mux(pes_0_1_io_in_ver_r, pes_0_1_io_in_ver_r_1_sign, pes_0_1_io_in_ver_r_2_sign) @[FP_GEMM.scala 116:31]
+    node _pes_0_1_io_in_ver_T_man = mux(pes_0_1_io_in_ver_r, pes_0_1_io_in_ver_r_1_man, pes_0_1_io_in_ver_r_2_man) @[FP_GEMM.scala 116:31]
+    node _pes_0_1_io_in_ver_T_exp = mux(pes_0_1_io_in_ver_r, pes_0_1_io_in_ver_r_1_exp, pes_0_1_io_in_ver_r_2_exp) @[FP_GEMM.scala 116:31]
+    node _T = and(inputQueue.io_deq_valid, inputQueue.io_deq_ready) @[FP_GEMM.scala 119:32]
+    node _counter_T = add(counter, UInt<1>("h1")) @[FP_GEMM.scala 120:24]
+    node _counter_T_1 = tail(_counter_T, 1) @[FP_GEMM.scala 120:24]
+    node _GEN_38 = mux(_T, _counter_T_1, counter) @[FP_GEMM.scala 119:60 120:13 111:24]
     reg pes_0_1_io_in_hor_r_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_hor_r_sign) @[Reg.scala 19:16]
     reg pes_0_1_io_in_hor_r_man : UInt<4>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_hor_r_man) @[Reg.scala 19:16]
     reg pes_0_1_io_in_hor_r_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_hor_r_exp) @[Reg.scala 19:16]
-    node _GEN_43 = mux(UInt<1>("h1"), pes_0_0.io_out_hor_sign, pes_0_1_io_in_hor_r_sign) @[Reg.scala 19:16 20:{18,22}]
-    node _GEN_44 = mux(UInt<1>("h1"), pes_0_0.io_out_hor_man, pes_0_1_io_in_hor_r_man) @[Reg.scala 19:16 20:{18,22}]
-    node _GEN_45 = mux(UInt<1>("h1"), pes_0_0.io_out_hor_exp, pes_0_1_io_in_hor_r_exp) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_39 = mux(UInt<1>("h1"), pes_0_0.io_out_hor_sign, pes_0_1_io_in_hor_r_sign) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_40 = mux(UInt<1>("h1"), pes_0_0.io_out_hor_man, pes_0_1_io_in_hor_r_man) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_41 = mux(UInt<1>("h1"), pes_0_0.io_out_hor_exp, pes_0_1_io_in_hor_r_exp) @[Reg.scala 19:16 20:{18,22}]
     reg pes_1_1_io_in_hor_r_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_hor_r_sign) @[Reg.scala 19:16]
     reg pes_1_1_io_in_hor_r_man : UInt<4>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_hor_r_man) @[Reg.scala 19:16]
     reg pes_1_1_io_in_hor_r_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_hor_r_exp) @[Reg.scala 19:16]
-    node _GEN_46 = mux(UInt<1>("h1"), pes_1_0.io_out_hor_sign, pes_1_1_io_in_hor_r_sign) @[Reg.scala 19:16 20:{18,22}]
-    node _GEN_47 = mux(UInt<1>("h1"), pes_1_0.io_out_hor_man, pes_1_1_io_in_hor_r_man) @[Reg.scala 19:16 20:{18,22}]
-    node _GEN_48 = mux(UInt<1>("h1"), pes_1_0.io_out_hor_exp, pes_1_1_io_in_hor_r_exp) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_42 = mux(UInt<1>("h1"), pes_1_0.io_out_hor_sign, pes_1_1_io_in_hor_r_sign) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_43 = mux(UInt<1>("h1"), pes_1_0.io_out_hor_man, pes_1_1_io_in_hor_r_man) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_44 = mux(UInt<1>("h1"), pes_1_0.io_out_hor_exp, pes_1_1_io_in_hor_r_exp) @[Reg.scala 19:16 20:{18,22}]
     reg pes_1_0_io_in_ver_r_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_ver_r_sign) @[Reg.scala 19:16]
     reg pes_1_0_io_in_ver_r_man : UInt<4>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_ver_r_man) @[Reg.scala 19:16]
     reg pes_1_0_io_in_ver_r_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_ver_r_exp) @[Reg.scala 19:16]
-    node _GEN_49 = mux(UInt<1>("h1"), pes_0_0.io_out_ver_sign, pes_1_0_io_in_ver_r_sign) @[Reg.scala 19:16 20:{18,22}]
-    node _GEN_50 = mux(UInt<1>("h1"), pes_0_0.io_out_ver_man, pes_1_0_io_in_ver_r_man) @[Reg.scala 19:16 20:{18,22}]
-    node _GEN_51 = mux(UInt<1>("h1"), pes_0_0.io_out_ver_exp, pes_1_0_io_in_ver_r_exp) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_45 = mux(UInt<1>("h1"), pes_0_0.io_out_ver_sign, pes_1_0_io_in_ver_r_sign) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_46 = mux(UInt<1>("h1"), pes_0_0.io_out_ver_man, pes_1_0_io_in_ver_r_man) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_47 = mux(UInt<1>("h1"), pes_0_0.io_out_ver_exp, pes_1_0_io_in_ver_r_exp) @[Reg.scala 19:16 20:{18,22}]
     reg pes_1_1_io_in_ver_r_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_ver_r_sign) @[Reg.scala 19:16]
     reg pes_1_1_io_in_ver_r_man : UInt<4>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_ver_r_man) @[Reg.scala 19:16]
     reg pes_1_1_io_in_ver_r_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_ver_r_exp) @[Reg.scala 19:16]
-    node _GEN_52 = mux(UInt<1>("h1"), pes_0_1.io_out_ver_sign, pes_1_1_io_in_ver_r_sign) @[Reg.scala 19:16 20:{18,22}]
-    node _GEN_53 = mux(UInt<1>("h1"), pes_0_1.io_out_ver_man, pes_1_1_io_in_ver_r_man) @[Reg.scala 19:16 20:{18,22}]
-    node _GEN_54 = mux(UInt<1>("h1"), pes_0_1.io_out_ver_exp, pes_1_1_io_in_ver_r_exp) @[Reg.scala 19:16 20:{18,22}]
-    io_in_ready <= inputQueue.io_enq_ready @[FP_GEMM.scala 110:21]
-    io_out_0_0_hor_sign <= pes_0_0.io_out_hor_sign @[FP_GEMM.scala 148:24]
-    io_out_0_0_hor_man <= pes_0_0.io_out_hor_man @[FP_GEMM.scala 148:24]
-    io_out_0_0_hor_exp <= pes_0_0.io_out_hor_exp @[FP_GEMM.scala 148:24]
-    io_out_0_0_ver_sign <= pes_0_0.io_out_ver_sign @[FP_GEMM.scala 149:24]
-    io_out_0_0_ver_man <= pes_0_0.io_out_ver_man @[FP_GEMM.scala 149:24]
-    io_out_0_0_ver_exp <= pes_0_0.io_out_ver_exp @[FP_GEMM.scala 149:24]
-    io_out_0_0_result_sign <= pes_0_0.io_out_result_sign @[FP_GEMM.scala 150:27]
-    io_out_0_0_result_man <= pes_0_0.io_out_result_man @[FP_GEMM.scala 150:27]
-    io_out_0_0_result_exp <= pes_0_0.io_out_result_exp @[FP_GEMM.scala 150:27]
-    io_out_0_1_hor_sign <= pes_0_1.io_out_hor_sign @[FP_GEMM.scala 148:24]
-    io_out_0_1_hor_man <= pes_0_1.io_out_hor_man @[FP_GEMM.scala 148:24]
-    io_out_0_1_hor_exp <= pes_0_1.io_out_hor_exp @[FP_GEMM.scala 148:24]
-    io_out_0_1_ver_sign <= pes_0_1.io_out_ver_sign @[FP_GEMM.scala 149:24]
-    io_out_0_1_ver_man <= pes_0_1.io_out_ver_man @[FP_GEMM.scala 149:24]
-    io_out_0_1_ver_exp <= pes_0_1.io_out_ver_exp @[FP_GEMM.scala 149:24]
-    io_out_0_1_result_sign <= pes_0_1.io_out_result_sign @[FP_GEMM.scala 150:27]
-    io_out_0_1_result_man <= pes_0_1.io_out_result_man @[FP_GEMM.scala 150:27]
-    io_out_0_1_result_exp <= pes_0_1.io_out_result_exp @[FP_GEMM.scala 150:27]
-    io_out_1_0_hor_sign <= pes_1_0.io_out_hor_sign @[FP_GEMM.scala 148:24]
-    io_out_1_0_hor_man <= pes_1_0.io_out_hor_man @[FP_GEMM.scala 148:24]
-    io_out_1_0_hor_exp <= pes_1_0.io_out_hor_exp @[FP_GEMM.scala 148:24]
-    io_out_1_0_ver_sign <= pes_1_0.io_out_ver_sign @[FP_GEMM.scala 149:24]
-    io_out_1_0_ver_man <= pes_1_0.io_out_ver_man @[FP_GEMM.scala 149:24]
-    io_out_1_0_ver_exp <= pes_1_0.io_out_ver_exp @[FP_GEMM.scala 149:24]
-    io_out_1_0_result_sign <= pes_1_0.io_out_result_sign @[FP_GEMM.scala 150:27]
-    io_out_1_0_result_man <= pes_1_0.io_out_result_man @[FP_GEMM.scala 150:27]
-    io_out_1_0_result_exp <= pes_1_0.io_out_result_exp @[FP_GEMM.scala 150:27]
-    io_out_1_1_hor_sign <= pes_1_1.io_out_hor_sign @[FP_GEMM.scala 148:24]
-    io_out_1_1_hor_man <= pes_1_1.io_out_hor_man @[FP_GEMM.scala 148:24]
-    io_out_1_1_hor_exp <= pes_1_1.io_out_hor_exp @[FP_GEMM.scala 148:24]
-    io_out_1_1_ver_sign <= pes_1_1.io_out_ver_sign @[FP_GEMM.scala 149:24]
-    io_out_1_1_ver_man <= pes_1_1.io_out_ver_man @[FP_GEMM.scala 149:24]
-    io_out_1_1_ver_exp <= pes_1_1.io_out_ver_exp @[FP_GEMM.scala 149:24]
-    io_out_1_1_result_sign <= pes_1_1.io_out_result_sign @[FP_GEMM.scala 150:27]
-    io_out_1_1_result_man <= pes_1_1.io_out_result_man @[FP_GEMM.scala 150:27]
-    io_out_1_1_result_exp <= pes_1_1.io_out_result_exp @[FP_GEMM.scala 150:27]
+    node _GEN_48 = mux(UInt<1>("h1"), pes_0_1.io_out_ver_sign, pes_1_1_io_in_ver_r_sign) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_49 = mux(UInt<1>("h1"), pes_0_1.io_out_ver_man, pes_1_1_io_in_ver_r_man) @[Reg.scala 19:16 20:{18,22}]
+    node _GEN_50 = mux(UInt<1>("h1"), pes_0_1.io_out_ver_exp, pes_1_1_io_in_ver_r_exp) @[Reg.scala 19:16 20:{18,22}]
+    io_in_ready <= inputQueue.io_enq_ready @[FP_GEMM.scala 109:21]
+    io_out_0_0_hor_sign <= pes_0_0.io_out_hor_sign @[FP_GEMM.scala 140:24]
+    io_out_0_0_hor_man <= pes_0_0.io_out_hor_man @[FP_GEMM.scala 140:24]
+    io_out_0_0_hor_exp <= pes_0_0.io_out_hor_exp @[FP_GEMM.scala 140:24]
+    io_out_0_0_ver_sign <= pes_0_0.io_out_ver_sign @[FP_GEMM.scala 141:24]
+    io_out_0_0_ver_man <= pes_0_0.io_out_ver_man @[FP_GEMM.scala 141:24]
+    io_out_0_0_ver_exp <= pes_0_0.io_out_ver_exp @[FP_GEMM.scala 141:24]
+    io_out_0_0_result_sign <= pes_0_0.io_out_result_sign @[FP_GEMM.scala 142:27]
+    io_out_0_0_result_man <= pes_0_0.io_out_result_man @[FP_GEMM.scala 142:27]
+    io_out_0_0_result_exp <= pes_0_0.io_out_result_exp @[FP_GEMM.scala 142:27]
+    io_out_0_1_hor_sign <= pes_0_1.io_out_hor_sign @[FP_GEMM.scala 140:24]
+    io_out_0_1_hor_man <= pes_0_1.io_out_hor_man @[FP_GEMM.scala 140:24]
+    io_out_0_1_hor_exp <= pes_0_1.io_out_hor_exp @[FP_GEMM.scala 140:24]
+    io_out_0_1_ver_sign <= pes_0_1.io_out_ver_sign @[FP_GEMM.scala 141:24]
+    io_out_0_1_ver_man <= pes_0_1.io_out_ver_man @[FP_GEMM.scala 141:24]
+    io_out_0_1_ver_exp <= pes_0_1.io_out_ver_exp @[FP_GEMM.scala 141:24]
+    io_out_0_1_result_sign <= pes_0_1.io_out_result_sign @[FP_GEMM.scala 142:27]
+    io_out_0_1_result_man <= pes_0_1.io_out_result_man @[FP_GEMM.scala 142:27]
+    io_out_0_1_result_exp <= pes_0_1.io_out_result_exp @[FP_GEMM.scala 142:27]
+    io_out_1_0_hor_sign <= pes_1_0.io_out_hor_sign @[FP_GEMM.scala 140:24]
+    io_out_1_0_hor_man <= pes_1_0.io_out_hor_man @[FP_GEMM.scala 140:24]
+    io_out_1_0_hor_exp <= pes_1_0.io_out_hor_exp @[FP_GEMM.scala 140:24]
+    io_out_1_0_ver_sign <= pes_1_0.io_out_ver_sign @[FP_GEMM.scala 141:24]
+    io_out_1_0_ver_man <= pes_1_0.io_out_ver_man @[FP_GEMM.scala 141:24]
+    io_out_1_0_ver_exp <= pes_1_0.io_out_ver_exp @[FP_GEMM.scala 141:24]
+    io_out_1_0_result_sign <= pes_1_0.io_out_result_sign @[FP_GEMM.scala 142:27]
+    io_out_1_0_result_man <= pes_1_0.io_out_result_man @[FP_GEMM.scala 142:27]
+    io_out_1_0_result_exp <= pes_1_0.io_out_result_exp @[FP_GEMM.scala 142:27]
+    io_out_1_1_hor_sign <= pes_1_1.io_out_hor_sign @[FP_GEMM.scala 140:24]
+    io_out_1_1_hor_man <= pes_1_1.io_out_hor_man @[FP_GEMM.scala 140:24]
+    io_out_1_1_hor_exp <= pes_1_1.io_out_hor_exp @[FP_GEMM.scala 140:24]
+    io_out_1_1_ver_sign <= pes_1_1.io_out_ver_sign @[FP_GEMM.scala 141:24]
+    io_out_1_1_ver_man <= pes_1_1.io_out_ver_man @[FP_GEMM.scala 141:24]
+    io_out_1_1_ver_exp <= pes_1_1.io_out_ver_exp @[FP_GEMM.scala 141:24]
+    io_out_1_1_result_sign <= pes_1_1.io_out_result_sign @[FP_GEMM.scala 142:27]
+    io_out_1_1_result_man <= pes_1_1.io_out_result_man @[FP_GEMM.scala 142:27]
+    io_out_1_1_result_exp <= pes_1_1.io_out_result_exp @[FP_GEMM.scala 142:27]
     pes_0_0.clock <= clock
     pes_0_0.reset <= reset
-    pes_0_0.io_in_hor_sign <= _GEN_14
-    pes_0_0.io_in_hor_man <= _GEN_13
-    pes_0_0.io_in_hor_exp <= _GEN_12
-    pes_0_0.io_in_ver_sign <= _GEN_17
-    pes_0_0.io_in_ver_man <= _GEN_16
-    pes_0_0.io_in_ver_exp <= _GEN_15
+    pes_0_0.io_in_hor_sign <= _pes_0_0_io_in_hor_T_sign @[FP_GEMM.scala 115:25]
+    pes_0_0.io_in_hor_man <= _pes_0_0_io_in_hor_T_man @[FP_GEMM.scala 115:25]
+    pes_0_0.io_in_hor_exp <= _pes_0_0_io_in_hor_T_exp @[FP_GEMM.scala 115:25]
+    pes_0_0.io_in_ver_sign <= _pes_0_0_io_in_ver_T_sign @[FP_GEMM.scala 116:25]
+    pes_0_0.io_in_ver_man <= _pes_0_0_io_in_ver_T_man @[FP_GEMM.scala 116:25]
+    pes_0_0.io_in_ver_exp <= _pes_0_0_io_in_ver_T_exp @[FP_GEMM.scala 116:25]
     pes_0_1.clock <= clock
     pes_0_1.reset <= reset
-    pes_0_1.io_in_hor_sign <= pes_0_1_io_in_hor_r_sign @[FP_GEMM.scala 134:27]
-    pes_0_1.io_in_hor_man <= pes_0_1_io_in_hor_r_man @[FP_GEMM.scala 134:27]
-    pes_0_1.io_in_hor_exp <= pes_0_1_io_in_hor_r_exp @[FP_GEMM.scala 134:27]
-    pes_0_1.io_in_ver_sign <= _GEN_41
-    pes_0_1.io_in_ver_man <= _GEN_40
-    pes_0_1.io_in_ver_exp <= _GEN_39
+    pes_0_1.io_in_hor_sign <= pes_0_1_io_in_hor_r_sign @[FP_GEMM.scala 126:27]
+    pes_0_1.io_in_hor_man <= pes_0_1_io_in_hor_r_man @[FP_GEMM.scala 126:27]
+    pes_0_1.io_in_hor_exp <= pes_0_1_io_in_hor_r_exp @[FP_GEMM.scala 126:27]
+    pes_0_1.io_in_ver_sign <= _pes_0_1_io_in_ver_T_sign @[FP_GEMM.scala 116:25]
+    pes_0_1.io_in_ver_man <= _pes_0_1_io_in_ver_T_man @[FP_GEMM.scala 116:25]
+    pes_0_1.io_in_ver_exp <= _pes_0_1_io_in_ver_T_exp @[FP_GEMM.scala 116:25]
     pes_1_0.clock <= clock
     pes_1_0.reset <= reset
-    pes_1_0.io_in_hor_sign <= _GEN_38
-    pes_1_0.io_in_hor_man <= _GEN_37
-    pes_1_0.io_in_hor_exp <= _GEN_36
-    pes_1_0.io_in_ver_sign <= pes_1_0_io_in_ver_r_sign @[FP_GEMM.scala 141:27]
-    pes_1_0.io_in_ver_man <= pes_1_0_io_in_ver_r_man @[FP_GEMM.scala 141:27]
-    pes_1_0.io_in_ver_exp <= pes_1_0_io_in_ver_r_exp @[FP_GEMM.scala 141:27]
+    pes_1_0.io_in_hor_sign <= _pes_1_0_io_in_hor_T_sign @[FP_GEMM.scala 115:25]
+    pes_1_0.io_in_hor_man <= _pes_1_0_io_in_hor_T_man @[FP_GEMM.scala 115:25]
+    pes_1_0.io_in_hor_exp <= _pes_1_0_io_in_hor_T_exp @[FP_GEMM.scala 115:25]
+    pes_1_0.io_in_ver_sign <= pes_1_0_io_in_ver_r_sign @[FP_GEMM.scala 133:27]
+    pes_1_0.io_in_ver_man <= pes_1_0_io_in_ver_r_man @[FP_GEMM.scala 133:27]
+    pes_1_0.io_in_ver_exp <= pes_1_0_io_in_ver_r_exp @[FP_GEMM.scala 133:27]
     pes_1_1.clock <= clock
     pes_1_1.reset <= reset
-    pes_1_1.io_in_hor_sign <= pes_1_1_io_in_hor_r_sign @[FP_GEMM.scala 134:27]
-    pes_1_1.io_in_hor_man <= pes_1_1_io_in_hor_r_man @[FP_GEMM.scala 134:27]
-    pes_1_1.io_in_hor_exp <= pes_1_1_io_in_hor_r_exp @[FP_GEMM.scala 134:27]
-    pes_1_1.io_in_ver_sign <= pes_1_1_io_in_ver_r_sign @[FP_GEMM.scala 141:27]
-    pes_1_1.io_in_ver_man <= pes_1_1_io_in_ver_r_man @[FP_GEMM.scala 141:27]
-    pes_1_1.io_in_ver_exp <= pes_1_1_io_in_ver_r_exp @[FP_GEMM.scala 141:27]
+    pes_1_1.io_in_hor_sign <= pes_1_1_io_in_hor_r_sign @[FP_GEMM.scala 126:27]
+    pes_1_1.io_in_hor_man <= pes_1_1_io_in_hor_r_man @[FP_GEMM.scala 126:27]
+    pes_1_1.io_in_hor_exp <= pes_1_1_io_in_hor_r_exp @[FP_GEMM.scala 126:27]
+    pes_1_1.io_in_ver_sign <= pes_1_1_io_in_ver_r_sign @[FP_GEMM.scala 133:27]
+    pes_1_1.io_in_ver_man <= pes_1_1_io_in_ver_r_man @[FP_GEMM.scala 133:27]
+    pes_1_1.io_in_ver_exp <= pes_1_1_io_in_ver_r_exp @[FP_GEMM.scala 133:27]
     inputQueue.clock <= clock
     inputQueue.reset <= reset
-    inputQueue.io_enq_valid <= io_in_valid @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_0_hor_sign <= io_in_bits_0_0_hor_sign @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_0_hor_man <= io_in_bits_0_0_hor_man @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_0_hor_exp <= io_in_bits_0_0_hor_exp @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_0_ver_sign <= io_in_bits_0_0_ver_sign @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_0_ver_man <= io_in_bits_0_0_ver_man @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_0_ver_exp <= io_in_bits_0_0_ver_exp @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_1_hor_sign <= io_in_bits_0_1_hor_sign @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_1_hor_man <= io_in_bits_0_1_hor_man @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_1_hor_exp <= io_in_bits_0_1_hor_exp @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_1_ver_sign <= io_in_bits_0_1_ver_sign @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_1_ver_man <= io_in_bits_0_1_ver_man @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_0_1_ver_exp <= io_in_bits_0_1_ver_exp @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_0_hor_sign <= io_in_bits_1_0_hor_sign @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_0_hor_man <= io_in_bits_1_0_hor_man @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_0_hor_exp <= io_in_bits_1_0_hor_exp @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_0_ver_sign <= io_in_bits_1_0_ver_sign @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_0_ver_man <= io_in_bits_1_0_ver_man @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_0_ver_exp <= io_in_bits_1_0_ver_exp @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_1_hor_sign <= io_in_bits_1_1_hor_sign @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_1_hor_man <= io_in_bits_1_1_hor_man @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_1_hor_exp <= io_in_bits_1_1_hor_exp @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_1_ver_sign <= io_in_bits_1_1_ver_sign @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_1_ver_man <= io_in_bits_1_1_ver_man @[FP_GEMM.scala 110:21]
-    inputQueue.io_enq_bits_1_1_ver_exp <= io_in_bits_1_1_ver_exp @[FP_GEMM.scala 110:21]
-    inputQueue.io_deq_ready <= UInt<1>("h1") @[FP_GEMM.scala 108:27]
-    counter <= mux(reset, UInt<1>("h0"), _GEN_42) @[FP_GEMM.scala 112:{24,24}]
-    pes_1_0_io_in_hor_r_sign <= _GEN_24
-    pes_1_0_io_in_hor_r_man <= _GEN_25
-    pes_1_0_io_in_hor_r_exp <= _GEN_26
-    pes_0_1_io_in_ver_r_sign <= _GEN_33
-    pes_0_1_io_in_ver_r_man <= _GEN_34
-    pes_0_1_io_in_ver_r_exp <= _GEN_35
-    pes_0_1_io_in_hor_r_sign <= _GEN_43
-    pes_0_1_io_in_hor_r_man <= _GEN_44
-    pes_0_1_io_in_hor_r_exp <= _GEN_45
-    pes_1_1_io_in_hor_r_sign <= _GEN_46
-    pes_1_1_io_in_hor_r_man <= _GEN_47
-    pes_1_1_io_in_hor_r_exp <= _GEN_48
-    pes_1_0_io_in_ver_r_sign <= _GEN_49
-    pes_1_0_io_in_ver_r_man <= _GEN_50
-    pes_1_0_io_in_ver_r_exp <= _GEN_51
-    pes_1_1_io_in_ver_r_sign <= _GEN_52
-    pes_1_1_io_in_ver_r_man <= _GEN_53
-    pes_1_1_io_in_ver_r_exp <= _GEN_54
+    inputQueue.io_enq_valid <= io_in_valid @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_0_hor_sign <= io_in_bits_0_0_hor_sign @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_0_hor_man <= io_in_bits_0_0_hor_man @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_0_hor_exp <= io_in_bits_0_0_hor_exp @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_0_ver_sign <= io_in_bits_0_0_ver_sign @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_0_ver_man <= io_in_bits_0_0_ver_man @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_0_ver_exp <= io_in_bits_0_0_ver_exp @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_1_hor_sign <= io_in_bits_0_1_hor_sign @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_1_hor_man <= io_in_bits_0_1_hor_man @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_1_hor_exp <= io_in_bits_0_1_hor_exp @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_1_ver_sign <= io_in_bits_0_1_ver_sign @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_1_ver_man <= io_in_bits_0_1_ver_man @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_0_1_ver_exp <= io_in_bits_0_1_ver_exp @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_0_hor_sign <= io_in_bits_1_0_hor_sign @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_0_hor_man <= io_in_bits_1_0_hor_man @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_0_hor_exp <= io_in_bits_1_0_hor_exp @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_0_ver_sign <= io_in_bits_1_0_ver_sign @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_0_ver_man <= io_in_bits_1_0_ver_man @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_0_ver_exp <= io_in_bits_1_0_ver_exp @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_1_hor_sign <= io_in_bits_1_1_hor_sign @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_1_hor_man <= io_in_bits_1_1_hor_man @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_1_hor_exp <= io_in_bits_1_1_hor_exp @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_1_ver_sign <= io_in_bits_1_1_ver_sign @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_1_ver_man <= io_in_bits_1_1_ver_man @[FP_GEMM.scala 109:21]
+    inputQueue.io_enq_bits_1_1_ver_exp <= io_in_bits_1_1_ver_exp @[FP_GEMM.scala 109:21]
+    inputQueue.io_deq_ready <= UInt<1>("h1") @[FP_GEMM.scala 107:27]
+    counter <= mux(reset, UInt<1>("h0"), _GEN_38) @[FP_GEMM.scala 111:{24,24}]
+    pes_1_0_io_in_hor_r <= _GEN_12
+    pes_1_0_io_in_hor_r_1_sign <= _GEN_19
+    pes_1_0_io_in_hor_r_1_man <= _GEN_20
+    pes_1_0_io_in_hor_r_1_exp <= _GEN_21
+    pes_1_0_io_in_hor_r_2_sign <= _GEN_22
+    pes_1_0_io_in_hor_r_2_man <= _GEN_23
+    pes_1_0_io_in_hor_r_2_exp <= _GEN_24
+    pes_0_1_io_in_ver_r <= _GEN_25
+    pes_0_1_io_in_ver_r_1_sign <= _GEN_32
+    pes_0_1_io_in_ver_r_1_man <= _GEN_33
+    pes_0_1_io_in_ver_r_1_exp <= _GEN_34
+    pes_0_1_io_in_ver_r_2_sign <= _GEN_35
+    pes_0_1_io_in_ver_r_2_man <= _GEN_36
+    pes_0_1_io_in_ver_r_2_exp <= _GEN_37
+    pes_0_1_io_in_hor_r_sign <= _GEN_39
+    pes_0_1_io_in_hor_r_man <= _GEN_40
+    pes_0_1_io_in_hor_r_exp <= _GEN_41
+    pes_1_1_io_in_hor_r_sign <= _GEN_42
+    pes_1_1_io_in_hor_r_man <= _GEN_43
+    pes_1_1_io_in_hor_r_exp <= _GEN_44
+    pes_1_0_io_in_ver_r_sign <= _GEN_45
+    pes_1_0_io_in_ver_r_man <= _GEN_46
+    pes_1_0_io_in_ver_r_exp <= _GEN_47
+    pes_1_1_io_in_ver_r_sign <= _GEN_48
+    pes_1_1_io_in_ver_r_man <= _GEN_49
+    pes_1_1_io_in_ver_r_exp <= _GEN_50

@@ -9,10 +9,10 @@ module FPMult(
   output [3:0] io_out_result_man,
   output [7:0] io_out_result_exp
 );
-  wire [7:0] _io_out_result_man_T = io_in_a_man * io_in_b_man; // @[FP_GEMM.scala 32:36]
-  assign io_out_result_sign = io_in_a_sign ^ io_in_b_sign; // @[FP_GEMM.scala 30:38]
-  assign io_out_result_man = _io_out_result_man_T[3:0]; // @[FP_GEMM.scala 32:21]
-  assign io_out_result_exp = io_in_a_exp + io_in_b_exp; // @[FP_GEMM.scala 31:36]
+  wire [7:0] _io_out_result_man_T = io_in_a_man * io_in_b_man; // @[FP_GEMM.scala 31:36]
+  assign io_out_result_sign = io_in_a_sign ^ io_in_b_sign; // @[FP_GEMM.scala 29:38]
+  assign io_out_result_man = _io_out_result_man_T[3:0]; // @[FP_GEMM.scala 31:21]
+  assign io_out_result_exp = io_in_a_exp + io_in_b_exp; // @[FP_GEMM.scala 30:36]
 endmodule
 module FPAdder(
   input        io_in_a_sign,
@@ -25,17 +25,17 @@ module FPAdder(
   output [3:0] io_out_result_man,
   output [7:0] io_out_result_exp
 );
-  wire  _exp_diff_T = io_in_a_exp > io_in_b_exp; // @[FP_GEMM.scala 46:34]
-  wire [7:0] _exp_diff_T_2 = io_in_a_exp - io_in_b_exp; // @[FP_GEMM.scala 46:61]
-  wire [7:0] _exp_diff_T_4 = io_in_b_exp - io_in_a_exp; // @[FP_GEMM.scala 46:88]
-  wire [7:0] exp_diff = io_in_a_exp > io_in_b_exp ? _exp_diff_T_2 : _exp_diff_T_4; // @[FP_GEMM.scala 46:21]
-  wire [3:0] _io_out_result_man_T_1 = io_in_b_man >> exp_diff; // @[FP_GEMM.scala 50:82]
-  wire [3:0] _io_out_result_man_T_3 = io_in_a_man + _io_out_result_man_T_1; // @[FP_GEMM.scala 50:67]
-  wire [3:0] _io_out_result_man_T_4 = io_in_a_man >> exp_diff; // @[FP_GEMM.scala 50:109]
-  wire [3:0] _io_out_result_man_T_6 = _io_out_result_man_T_4 + io_in_b_man; // @[FP_GEMM.scala 50:122]
-  assign io_out_result_sign = _exp_diff_T ? io_in_a_sign : io_in_b_sign; // @[FP_GEMM.scala 48:28]
-  assign io_out_result_man = _exp_diff_T ? _io_out_result_man_T_3 : _io_out_result_man_T_6; // @[FP_GEMM.scala 50:27]
-  assign io_out_result_exp = _exp_diff_T ? io_in_a_exp : io_in_b_exp; // @[FP_GEMM.scala 49:27]
+  wire  _exp_diff_T = io_in_a_exp > io_in_b_exp; // @[FP_GEMM.scala 45:34]
+  wire [7:0] _exp_diff_T_2 = io_in_a_exp - io_in_b_exp; // @[FP_GEMM.scala 45:61]
+  wire [7:0] _exp_diff_T_4 = io_in_b_exp - io_in_a_exp; // @[FP_GEMM.scala 45:88]
+  wire [7:0] exp_diff = io_in_a_exp > io_in_b_exp ? _exp_diff_T_2 : _exp_diff_T_4; // @[FP_GEMM.scala 45:21]
+  wire [3:0] _io_out_result_man_T_1 = io_in_b_man >> exp_diff; // @[FP_GEMM.scala 49:82]
+  wire [3:0] _io_out_result_man_T_3 = io_in_a_man + _io_out_result_man_T_1; // @[FP_GEMM.scala 49:67]
+  wire [3:0] _io_out_result_man_T_4 = io_in_a_man >> exp_diff; // @[FP_GEMM.scala 49:109]
+  wire [3:0] _io_out_result_man_T_6 = _io_out_result_man_T_4 + io_in_b_man; // @[FP_GEMM.scala 49:122]
+  assign io_out_result_sign = _exp_diff_T ? io_in_a_sign : io_in_b_sign; // @[FP_GEMM.scala 47:28]
+  assign io_out_result_man = _exp_diff_T ? _io_out_result_man_T_3 : _io_out_result_man_T_6; // @[FP_GEMM.scala 49:27]
+  assign io_out_result_exp = _exp_diff_T ? io_in_a_exp : io_in_b_exp; // @[FP_GEMM.scala 48:27]
 endmodule
 module PE(
   input        clock,
@@ -60,28 +60,28 @@ module PE(
   reg [31:0] _RAND_1;
   reg [31:0] _RAND_2;
 `endif // RANDOMIZE_REG_INIT
-  wire  fpmult_io_in_a_sign; // @[FP_GEMM.scala 72:24]
-  wire [3:0] fpmult_io_in_a_man; // @[FP_GEMM.scala 72:24]
-  wire [7:0] fpmult_io_in_a_exp; // @[FP_GEMM.scala 72:24]
-  wire  fpmult_io_in_b_sign; // @[FP_GEMM.scala 72:24]
-  wire [3:0] fpmult_io_in_b_man; // @[FP_GEMM.scala 72:24]
-  wire [7:0] fpmult_io_in_b_exp; // @[FP_GEMM.scala 72:24]
-  wire  fpmult_io_out_result_sign; // @[FP_GEMM.scala 72:24]
-  wire [3:0] fpmult_io_out_result_man; // @[FP_GEMM.scala 72:24]
-  wire [7:0] fpmult_io_out_result_exp; // @[FP_GEMM.scala 72:24]
-  wire  fpadder_io_in_a_sign; // @[FP_GEMM.scala 76:25]
-  wire [3:0] fpadder_io_in_a_man; // @[FP_GEMM.scala 76:25]
-  wire [7:0] fpadder_io_in_a_exp; // @[FP_GEMM.scala 76:25]
-  wire  fpadder_io_in_b_sign; // @[FP_GEMM.scala 76:25]
-  wire [3:0] fpadder_io_in_b_man; // @[FP_GEMM.scala 76:25]
-  wire [7:0] fpadder_io_in_b_exp; // @[FP_GEMM.scala 76:25]
-  wire  fpadder_io_out_result_sign; // @[FP_GEMM.scala 76:25]
-  wire [3:0] fpadder_io_out_result_man; // @[FP_GEMM.scala 76:25]
-  wire [7:0] fpadder_io_out_result_exp; // @[FP_GEMM.scala 76:25]
-  reg  result_buffer_sign; // @[FP_GEMM.scala 69:28]
-  reg [3:0] result_buffer_man; // @[FP_GEMM.scala 69:28]
-  reg [7:0] result_buffer_exp; // @[FP_GEMM.scala 69:28]
-  FPMult fpmult ( // @[FP_GEMM.scala 72:24]
+  wire  fpmult_io_in_a_sign; // @[FP_GEMM.scala 71:24]
+  wire [3:0] fpmult_io_in_a_man; // @[FP_GEMM.scala 71:24]
+  wire [7:0] fpmult_io_in_a_exp; // @[FP_GEMM.scala 71:24]
+  wire  fpmult_io_in_b_sign; // @[FP_GEMM.scala 71:24]
+  wire [3:0] fpmult_io_in_b_man; // @[FP_GEMM.scala 71:24]
+  wire [7:0] fpmult_io_in_b_exp; // @[FP_GEMM.scala 71:24]
+  wire  fpmult_io_out_result_sign; // @[FP_GEMM.scala 71:24]
+  wire [3:0] fpmult_io_out_result_man; // @[FP_GEMM.scala 71:24]
+  wire [7:0] fpmult_io_out_result_exp; // @[FP_GEMM.scala 71:24]
+  wire  fpadder_io_in_a_sign; // @[FP_GEMM.scala 75:25]
+  wire [3:0] fpadder_io_in_a_man; // @[FP_GEMM.scala 75:25]
+  wire [7:0] fpadder_io_in_a_exp; // @[FP_GEMM.scala 75:25]
+  wire  fpadder_io_in_b_sign; // @[FP_GEMM.scala 75:25]
+  wire [3:0] fpadder_io_in_b_man; // @[FP_GEMM.scala 75:25]
+  wire [7:0] fpadder_io_in_b_exp; // @[FP_GEMM.scala 75:25]
+  wire  fpadder_io_out_result_sign; // @[FP_GEMM.scala 75:25]
+  wire [3:0] fpadder_io_out_result_man; // @[FP_GEMM.scala 75:25]
+  wire [7:0] fpadder_io_out_result_exp; // @[FP_GEMM.scala 75:25]
+  reg  result_buffer_sign; // @[FP_GEMM.scala 68:28]
+  reg [3:0] result_buffer_man; // @[FP_GEMM.scala 68:28]
+  reg [7:0] result_buffer_exp; // @[FP_GEMM.scala 68:28]
+  FPMult fpmult ( // @[FP_GEMM.scala 71:24]
     .io_in_a_sign(fpmult_io_in_a_sign),
     .io_in_a_man(fpmult_io_in_a_man),
     .io_in_a_exp(fpmult_io_in_a_exp),
@@ -92,7 +92,7 @@ module PE(
     .io_out_result_man(fpmult_io_out_result_man),
     .io_out_result_exp(fpmult_io_out_result_exp)
   );
-  FPAdder fpadder ( // @[FP_GEMM.scala 76:25]
+  FPAdder fpadder ( // @[FP_GEMM.scala 75:25]
     .io_in_a_sign(fpadder_io_in_a_sign),
     .io_in_a_man(fpadder_io_in_a_man),
     .io_in_a_exp(fpadder_io_in_a_exp),
@@ -103,31 +103,31 @@ module PE(
     .io_out_result_man(fpadder_io_out_result_man),
     .io_out_result_exp(fpadder_io_out_result_exp)
   );
-  assign io_out_hor_sign = io_in_hor_sign; // @[FP_GEMM.scala 81:16]
-  assign io_out_hor_man = io_in_hor_man; // @[FP_GEMM.scala 81:16]
-  assign io_out_hor_exp = io_in_hor_exp; // @[FP_GEMM.scala 81:16]
-  assign io_out_ver_sign = io_in_ver_sign; // @[FP_GEMM.scala 82:16]
-  assign io_out_ver_man = io_in_ver_man; // @[FP_GEMM.scala 82:16]
-  assign io_out_ver_exp = io_in_ver_exp; // @[FP_GEMM.scala 82:16]
-  assign io_out_result_sign = result_buffer_sign; // @[FP_GEMM.scala 83:19]
-  assign io_out_result_man = result_buffer_man; // @[FP_GEMM.scala 83:19]
-  assign io_out_result_exp = result_buffer_exp; // @[FP_GEMM.scala 83:19]
-  assign fpmult_io_in_a_sign = io_in_hor_sign; // @[FP_GEMM.scala 73:20]
-  assign fpmult_io_in_a_man = io_in_hor_man; // @[FP_GEMM.scala 73:20]
-  assign fpmult_io_in_a_exp = io_in_hor_exp; // @[FP_GEMM.scala 73:20]
-  assign fpmult_io_in_b_sign = io_in_ver_sign; // @[FP_GEMM.scala 74:20]
-  assign fpmult_io_in_b_man = io_in_ver_man; // @[FP_GEMM.scala 74:20]
-  assign fpmult_io_in_b_exp = io_in_ver_exp; // @[FP_GEMM.scala 74:20]
-  assign fpadder_io_in_a_sign = fpmult_io_out_result_sign; // @[FP_GEMM.scala 77:21]
-  assign fpadder_io_in_a_man = fpmult_io_out_result_man; // @[FP_GEMM.scala 77:21]
-  assign fpadder_io_in_a_exp = fpmult_io_out_result_exp; // @[FP_GEMM.scala 77:21]
-  assign fpadder_io_in_b_sign = result_buffer_sign; // @[FP_GEMM.scala 78:21]
-  assign fpadder_io_in_b_man = result_buffer_man; // @[FP_GEMM.scala 78:21]
-  assign fpadder_io_in_b_exp = result_buffer_exp; // @[FP_GEMM.scala 78:21]
+  assign io_out_hor_sign = io_in_hor_sign; // @[FP_GEMM.scala 80:16]
+  assign io_out_hor_man = io_in_hor_man; // @[FP_GEMM.scala 80:16]
+  assign io_out_hor_exp = io_in_hor_exp; // @[FP_GEMM.scala 80:16]
+  assign io_out_ver_sign = io_in_ver_sign; // @[FP_GEMM.scala 81:16]
+  assign io_out_ver_man = io_in_ver_man; // @[FP_GEMM.scala 81:16]
+  assign io_out_ver_exp = io_in_ver_exp; // @[FP_GEMM.scala 81:16]
+  assign io_out_result_sign = result_buffer_sign; // @[FP_GEMM.scala 82:19]
+  assign io_out_result_man = result_buffer_man; // @[FP_GEMM.scala 82:19]
+  assign io_out_result_exp = result_buffer_exp; // @[FP_GEMM.scala 82:19]
+  assign fpmult_io_in_a_sign = io_in_hor_sign; // @[FP_GEMM.scala 72:20]
+  assign fpmult_io_in_a_man = io_in_hor_man; // @[FP_GEMM.scala 72:20]
+  assign fpmult_io_in_a_exp = io_in_hor_exp; // @[FP_GEMM.scala 72:20]
+  assign fpmult_io_in_b_sign = io_in_ver_sign; // @[FP_GEMM.scala 73:20]
+  assign fpmult_io_in_b_man = io_in_ver_man; // @[FP_GEMM.scala 73:20]
+  assign fpmult_io_in_b_exp = io_in_ver_exp; // @[FP_GEMM.scala 73:20]
+  assign fpadder_io_in_a_sign = fpmult_io_out_result_sign; // @[FP_GEMM.scala 76:21]
+  assign fpadder_io_in_a_man = fpmult_io_out_result_man; // @[FP_GEMM.scala 76:21]
+  assign fpadder_io_in_a_exp = fpmult_io_out_result_exp; // @[FP_GEMM.scala 76:21]
+  assign fpadder_io_in_b_sign = result_buffer_sign; // @[FP_GEMM.scala 77:21]
+  assign fpadder_io_in_b_man = result_buffer_man; // @[FP_GEMM.scala 77:21]
+  assign fpadder_io_in_b_exp = result_buffer_exp; // @[FP_GEMM.scala 77:21]
   always @(posedge clock) begin
-    result_buffer_sign <= fpadder_io_out_result_sign; // @[FP_GEMM.scala 79:19]
-    result_buffer_man <= fpadder_io_out_result_man; // @[FP_GEMM.scala 79:19]
-    result_buffer_exp <= fpadder_io_out_result_exp; // @[FP_GEMM.scala 79:19]
+    result_buffer_sign <= fpadder_io_out_result_sign; // @[FP_GEMM.scala 78:19]
+    result_buffer_man <= fpadder_io_out_result_man; // @[FP_GEMM.scala 78:19]
+    result_buffer_exp <= fpadder_io_out_result_exp; // @[FP_GEMM.scala 78:19]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -958,147 +958,150 @@ module SystolicArray(
   reg [31:0] _RAND_16;
   reg [31:0] _RAND_17;
   reg [31:0] _RAND_18;
+  reg [31:0] _RAND_19;
+  reg [31:0] _RAND_20;
 `endif // RANDOMIZE_REG_INIT
-  wire  pes_0_0_clock; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_0_io_in_hor_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_0_0_io_in_hor_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_0_0_io_in_hor_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_0_io_in_ver_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_0_0_io_in_ver_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_0_0_io_in_ver_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_0_io_out_hor_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_0_0_io_out_hor_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_0_0_io_out_hor_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_0_io_out_ver_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_0_0_io_out_ver_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_0_0_io_out_ver_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_0_io_out_result_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_0_0_io_out_result_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_0_0_io_out_result_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_1_clock; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_1_io_in_hor_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_0_1_io_in_hor_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_0_1_io_in_hor_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_1_io_in_ver_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_0_1_io_in_ver_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_0_1_io_in_ver_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_1_io_out_hor_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_0_1_io_out_hor_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_0_1_io_out_hor_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_1_io_out_ver_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_0_1_io_out_ver_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_0_1_io_out_ver_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_0_1_io_out_result_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_0_1_io_out_result_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_0_1_io_out_result_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_0_clock; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_0_io_in_hor_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_1_0_io_in_hor_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_1_0_io_in_hor_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_0_io_in_ver_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_1_0_io_in_ver_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_1_0_io_in_ver_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_0_io_out_hor_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_1_0_io_out_hor_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_1_0_io_out_hor_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_0_io_out_ver_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_1_0_io_out_ver_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_1_0_io_out_ver_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_0_io_out_result_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_1_0_io_out_result_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_1_0_io_out_result_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_1_clock; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_1_io_in_hor_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_1_1_io_in_hor_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_1_1_io_in_hor_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_1_io_in_ver_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_1_1_io_in_ver_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_1_1_io_in_ver_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_1_io_out_hor_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_1_1_io_out_hor_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_1_1_io_out_hor_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_1_io_out_ver_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_1_1_io_out_ver_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_1_1_io_out_ver_exp; // @[FP_GEMM.scala 102:34]
-  wire  pes_1_1_io_out_result_sign; // @[FP_GEMM.scala 102:34]
-  wire [3:0] pes_1_1_io_out_result_man; // @[FP_GEMM.scala 102:34]
-  wire [7:0] pes_1_1_io_out_result_exp; // @[FP_GEMM.scala 102:34]
-  wire  inputQueue_clock; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_reset; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_enq_ready; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_enq_valid; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_enq_bits_0_0_hor_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_enq_bits_0_0_hor_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_enq_bits_0_0_hor_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_enq_bits_0_0_ver_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_enq_bits_0_0_ver_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_enq_bits_0_0_ver_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_enq_bits_0_1_hor_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_enq_bits_0_1_hor_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_enq_bits_0_1_hor_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_enq_bits_0_1_ver_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_enq_bits_0_1_ver_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_enq_bits_0_1_ver_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_enq_bits_1_0_hor_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_enq_bits_1_0_hor_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_enq_bits_1_0_hor_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_enq_bits_1_0_ver_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_enq_bits_1_0_ver_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_enq_bits_1_0_ver_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_enq_bits_1_1_hor_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_enq_bits_1_1_hor_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_enq_bits_1_1_hor_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_enq_bits_1_1_ver_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_enq_bits_1_1_ver_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_enq_bits_1_1_ver_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_deq_ready; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_deq_valid; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_deq_bits_0_0_hor_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_deq_bits_0_0_hor_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_deq_bits_0_0_hor_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_deq_bits_0_0_ver_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_deq_bits_0_0_ver_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_deq_bits_0_0_ver_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_deq_bits_0_1_hor_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_deq_bits_0_1_hor_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_deq_bits_0_1_hor_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_deq_bits_0_1_ver_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_deq_bits_0_1_ver_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_deq_bits_0_1_ver_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_deq_bits_1_0_hor_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_deq_bits_1_0_hor_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_deq_bits_1_0_hor_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_deq_bits_1_0_ver_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_deq_bits_1_0_ver_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_deq_bits_1_0_ver_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_deq_bits_1_1_hor_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_deq_bits_1_1_hor_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_deq_bits_1_1_hor_exp; // @[FP_GEMM.scala 103:26]
-  wire  inputQueue_io_deq_bits_1_1_ver_sign; // @[FP_GEMM.scala 103:26]
-  wire [3:0] inputQueue_io_deq_bits_1_1_ver_man; // @[FP_GEMM.scala 103:26]
-  wire [7:0] inputQueue_io_deq_bits_1_1_ver_exp; // @[FP_GEMM.scala 103:26]
-  reg  counter; // @[FP_GEMM.scala 112:24]
-  wire  _T = inputQueue_io_deq_valid & inputQueue_io_deq_ready; // @[FP_GEMM.scala 117:35]
-  wire [7:0] _GEN_0 = inputQueue_io_deq_bits_0_0_hor_exp; // @[FP_GEMM.scala 118:{27,27}]
-  wire [7:0] _GEN_1 = counter ? inputQueue_io_deq_bits_0_1_hor_exp : _GEN_0; // @[FP_GEMM.scala 118:{27,27}]
-  wire [3:0] _GEN_2 = inputQueue_io_deq_bits_0_0_hor_man; // @[FP_GEMM.scala 118:{27,27}]
-  wire [3:0] _GEN_3 = counter ? inputQueue_io_deq_bits_0_1_hor_man : _GEN_2; // @[FP_GEMM.scala 118:{27,27}]
-  wire  _GEN_5 = counter ? inputQueue_io_deq_bits_0_1_hor_sign : inputQueue_io_deq_bits_0_0_hor_sign; // @[FP_GEMM.scala 118:{27,27}]
-  wire [7:0] _GEN_6 = inputQueue_io_deq_bits_0_0_ver_exp; // @[FP_GEMM.scala 119:{27,27}]
-  wire [7:0] _GEN_7 = counter ? inputQueue_io_deq_bits_1_0_ver_exp : _GEN_6; // @[FP_GEMM.scala 119:{27,27}]
-  wire [3:0] _GEN_8 = inputQueue_io_deq_bits_0_0_ver_man; // @[FP_GEMM.scala 119:{27,27}]
-  wire [3:0] _GEN_9 = counter ? inputQueue_io_deq_bits_1_0_ver_man : _GEN_8; // @[FP_GEMM.scala 119:{27,27}]
-  wire  _GEN_11 = counter ? inputQueue_io_deq_bits_1_0_ver_sign : inputQueue_io_deq_bits_0_0_ver_sign; // @[FP_GEMM.scala 119:{27,27}]
-  reg  pes_1_0_io_in_hor_r_sign; // @[Reg.scala 19:16]
-  reg [3:0] pes_1_0_io_in_hor_r_man; // @[Reg.scala 19:16]
-  reg [7:0] pes_1_0_io_in_hor_r_exp; // @[Reg.scala 19:16]
-  wire [3:0] _GEN_20 = inputQueue_io_deq_bits_1_0_hor_man; // @[Reg.scala 20:{22,22}]
-  wire [7:0] _GEN_22 = inputQueue_io_deq_bits_1_0_hor_exp; // @[Reg.scala 20:{22,22}]
-  reg  pes_0_1_io_in_ver_r_sign; // @[Reg.scala 19:16]
-  reg [3:0] pes_0_1_io_in_ver_r_man; // @[Reg.scala 19:16]
-  reg [7:0] pes_0_1_io_in_ver_r_exp; // @[Reg.scala 19:16]
-  wire [3:0] _GEN_29 = inputQueue_io_deq_bits_0_1_ver_man; // @[Reg.scala 20:{22,22}]
-  wire [7:0] _GEN_31 = inputQueue_io_deq_bits_0_1_ver_exp; // @[Reg.scala 20:{22,22}]
+  wire  pes_0_0_clock; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_0_io_in_hor_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_0_0_io_in_hor_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_0_0_io_in_hor_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_0_io_in_ver_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_0_0_io_in_ver_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_0_0_io_in_ver_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_0_io_out_hor_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_0_0_io_out_hor_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_0_0_io_out_hor_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_0_io_out_ver_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_0_0_io_out_ver_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_0_0_io_out_ver_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_0_io_out_result_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_0_0_io_out_result_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_0_0_io_out_result_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_1_clock; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_1_io_in_hor_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_0_1_io_in_hor_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_0_1_io_in_hor_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_1_io_in_ver_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_0_1_io_in_ver_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_0_1_io_in_ver_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_1_io_out_hor_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_0_1_io_out_hor_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_0_1_io_out_hor_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_1_io_out_ver_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_0_1_io_out_ver_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_0_1_io_out_ver_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_0_1_io_out_result_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_0_1_io_out_result_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_0_1_io_out_result_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_0_clock; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_0_io_in_hor_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_1_0_io_in_hor_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_1_0_io_in_hor_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_0_io_in_ver_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_1_0_io_in_ver_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_1_0_io_in_ver_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_0_io_out_hor_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_1_0_io_out_hor_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_1_0_io_out_hor_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_0_io_out_ver_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_1_0_io_out_ver_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_1_0_io_out_ver_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_0_io_out_result_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_1_0_io_out_result_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_1_0_io_out_result_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_1_clock; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_1_io_in_hor_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_1_1_io_in_hor_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_1_1_io_in_hor_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_1_io_in_ver_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_1_1_io_in_ver_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_1_1_io_in_ver_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_1_io_out_hor_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_1_1_io_out_hor_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_1_1_io_out_hor_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_1_io_out_ver_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_1_1_io_out_ver_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_1_1_io_out_ver_exp; // @[FP_GEMM.scala 101:34]
+  wire  pes_1_1_io_out_result_sign; // @[FP_GEMM.scala 101:34]
+  wire [3:0] pes_1_1_io_out_result_man; // @[FP_GEMM.scala 101:34]
+  wire [7:0] pes_1_1_io_out_result_exp; // @[FP_GEMM.scala 101:34]
+  wire  inputQueue_clock; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_reset; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_enq_ready; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_enq_valid; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_enq_bits_0_0_hor_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_enq_bits_0_0_hor_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_enq_bits_0_0_hor_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_enq_bits_0_0_ver_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_enq_bits_0_0_ver_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_enq_bits_0_0_ver_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_enq_bits_0_1_hor_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_enq_bits_0_1_hor_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_enq_bits_0_1_hor_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_enq_bits_0_1_ver_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_enq_bits_0_1_ver_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_enq_bits_0_1_ver_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_enq_bits_1_0_hor_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_enq_bits_1_0_hor_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_enq_bits_1_0_hor_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_enq_bits_1_0_ver_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_enq_bits_1_0_ver_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_enq_bits_1_0_ver_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_enq_bits_1_1_hor_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_enq_bits_1_1_hor_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_enq_bits_1_1_hor_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_enq_bits_1_1_ver_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_enq_bits_1_1_ver_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_enq_bits_1_1_ver_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_deq_ready; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_deq_valid; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_deq_bits_0_0_hor_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_deq_bits_0_0_hor_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_deq_bits_0_0_hor_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_deq_bits_0_0_ver_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_deq_bits_0_0_ver_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_deq_bits_0_0_ver_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_deq_bits_0_1_hor_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_deq_bits_0_1_hor_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_deq_bits_0_1_hor_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_deq_bits_0_1_ver_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_deq_bits_0_1_ver_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_deq_bits_0_1_ver_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_deq_bits_1_0_hor_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_deq_bits_1_0_hor_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_deq_bits_1_0_hor_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_deq_bits_1_0_ver_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_deq_bits_1_0_ver_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_deq_bits_1_0_ver_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_deq_bits_1_1_hor_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_deq_bits_1_1_hor_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_deq_bits_1_1_hor_exp; // @[FP_GEMM.scala 102:26]
+  wire  inputQueue_io_deq_bits_1_1_ver_sign; // @[FP_GEMM.scala 102:26]
+  wire [3:0] inputQueue_io_deq_bits_1_1_ver_man; // @[FP_GEMM.scala 102:26]
+  wire [7:0] inputQueue_io_deq_bits_1_1_ver_exp; // @[FP_GEMM.scala 102:26]
+  reg  counter; // @[FP_GEMM.scala 111:24]
+  wire [3:0] _GEN_1 = inputQueue_io_deq_bits_0_0_hor_man; // @[FP_GEMM.scala 115:{31,31}]
+  wire [7:0] _GEN_2 = inputQueue_io_deq_bits_0_0_hor_exp; // @[FP_GEMM.scala 115:{31,31}]
+  wire  _GEN_3 = counter ? inputQueue_io_deq_bits_0_1_hor_sign : inputQueue_io_deq_bits_0_0_hor_sign; // @[FP_GEMM.scala 115:{31,31}]
+  wire [3:0] _GEN_4 = counter ? inputQueue_io_deq_bits_0_1_hor_man : _GEN_1; // @[FP_GEMM.scala 115:{31,31}]
+  wire [7:0] _GEN_5 = counter ? inputQueue_io_deq_bits_0_1_hor_exp : _GEN_2; // @[FP_GEMM.scala 115:{31,31}]
+  wire [3:0] _GEN_7 = inputQueue_io_deq_bits_0_0_ver_man; // @[FP_GEMM.scala 116:{31,31}]
+  wire [7:0] _GEN_8 = inputQueue_io_deq_bits_0_0_ver_exp; // @[FP_GEMM.scala 116:{31,31}]
+  wire  _GEN_9 = counter ? inputQueue_io_deq_bits_1_0_ver_sign : inputQueue_io_deq_bits_0_0_ver_sign; // @[FP_GEMM.scala 116:{31,31}]
+  wire [3:0] _GEN_10 = counter ? inputQueue_io_deq_bits_1_0_ver_man : _GEN_7; // @[FP_GEMM.scala 116:{31,31}]
+  wire [7:0] _GEN_11 = counter ? inputQueue_io_deq_bits_1_0_ver_exp : _GEN_8; // @[FP_GEMM.scala 116:{31,31}]
+  reg  pes_1_0_io_in_hor_r; // @[Reg.scala 19:16]
+  reg  pes_1_0_io_in_hor_r_1_sign; // @[Reg.scala 19:16]
+  reg [3:0] pes_1_0_io_in_hor_r_1_man; // @[Reg.scala 19:16]
+  reg [7:0] pes_1_0_io_in_hor_r_1_exp; // @[Reg.scala 19:16]
+  wire [3:0] _GEN_15 = inputQueue_io_deq_bits_1_0_hor_man; // @[Reg.scala 20:{22,22}]
+  wire [7:0] _GEN_17 = inputQueue_io_deq_bits_1_0_hor_exp; // @[Reg.scala 20:{22,22}]
+  reg  pes_0_1_io_in_ver_r; // @[Reg.scala 19:16]
+  reg  pes_0_1_io_in_ver_r_1_sign; // @[Reg.scala 19:16]
+  reg [3:0] pes_0_1_io_in_ver_r_1_man; // @[Reg.scala 19:16]
+  reg [7:0] pes_0_1_io_in_ver_r_1_exp; // @[Reg.scala 19:16]
+  wire [3:0] _GEN_28 = inputQueue_io_deq_bits_0_1_ver_man; // @[Reg.scala 20:{22,22}]
+  wire [7:0] _GEN_30 = inputQueue_io_deq_bits_0_1_ver_exp; // @[Reg.scala 20:{22,22}]
   reg  pes_0_1_io_in_hor_r_sign; // @[Reg.scala 19:16]
   reg [3:0] pes_0_1_io_in_hor_r_man; // @[Reg.scala 19:16]
   reg [7:0] pes_0_1_io_in_hor_r_exp; // @[Reg.scala 19:16]
@@ -1111,7 +1114,7 @@ module SystolicArray(
   reg  pes_1_1_io_in_ver_r_sign; // @[Reg.scala 19:16]
   reg [3:0] pes_1_1_io_in_ver_r_man; // @[Reg.scala 19:16]
   reg [7:0] pes_1_1_io_in_ver_r_exp; // @[Reg.scala 19:16]
-  PE pes_0_0 ( // @[FP_GEMM.scala 102:34]
+  PE pes_0_0 ( // @[FP_GEMM.scala 101:34]
     .clock(pes_0_0_clock),
     .io_in_hor_sign(pes_0_0_io_in_hor_sign),
     .io_in_hor_man(pes_0_0_io_in_hor_man),
@@ -1129,7 +1132,7 @@ module SystolicArray(
     .io_out_result_man(pes_0_0_io_out_result_man),
     .io_out_result_exp(pes_0_0_io_out_result_exp)
   );
-  PE pes_0_1 ( // @[FP_GEMM.scala 102:34]
+  PE pes_0_1 ( // @[FP_GEMM.scala 101:34]
     .clock(pes_0_1_clock),
     .io_in_hor_sign(pes_0_1_io_in_hor_sign),
     .io_in_hor_man(pes_0_1_io_in_hor_man),
@@ -1147,7 +1150,7 @@ module SystolicArray(
     .io_out_result_man(pes_0_1_io_out_result_man),
     .io_out_result_exp(pes_0_1_io_out_result_exp)
   );
-  PE pes_1_0 ( // @[FP_GEMM.scala 102:34]
+  PE pes_1_0 ( // @[FP_GEMM.scala 101:34]
     .clock(pes_1_0_clock),
     .io_in_hor_sign(pes_1_0_io_in_hor_sign),
     .io_in_hor_man(pes_1_0_io_in_hor_man),
@@ -1165,7 +1168,7 @@ module SystolicArray(
     .io_out_result_man(pes_1_0_io_out_result_man),
     .io_out_result_exp(pes_1_0_io_out_result_exp)
   );
-  PE pes_1_1 ( // @[FP_GEMM.scala 102:34]
+  PE pes_1_1 ( // @[FP_GEMM.scala 101:34]
     .clock(pes_1_1_clock),
     .io_in_hor_sign(pes_1_1_io_in_hor_sign),
     .io_in_hor_man(pes_1_1_io_in_hor_man),
@@ -1183,7 +1186,7 @@ module SystolicArray(
     .io_out_result_man(pes_1_1_io_out_result_man),
     .io_out_result_exp(pes_1_1_io_out_result_exp)
   );
-  Queue inputQueue ( // @[FP_GEMM.scala 103:26]
+  Queue inputQueue ( // @[FP_GEMM.scala 102:26]
     .clock(inputQueue_clock),
     .reset(inputQueue_reset),
     .io_enq_ready(inputQueue_io_enq_ready),
@@ -1239,134 +1242,136 @@ module SystolicArray(
     .io_deq_bits_1_1_ver_man(inputQueue_io_deq_bits_1_1_ver_man),
     .io_deq_bits_1_1_ver_exp(inputQueue_io_deq_bits_1_1_ver_exp)
   );
-  assign io_in_ready = inputQueue_io_enq_ready; // @[FP_GEMM.scala 110:21]
-  assign io_out_0_0_hor_sign = pes_0_0_io_out_hor_sign; // @[FP_GEMM.scala 148:24]
-  assign io_out_0_0_hor_man = pes_0_0_io_out_hor_man; // @[FP_GEMM.scala 148:24]
-  assign io_out_0_0_hor_exp = pes_0_0_io_out_hor_exp; // @[FP_GEMM.scala 148:24]
-  assign io_out_0_0_ver_sign = pes_0_0_io_out_ver_sign; // @[FP_GEMM.scala 149:24]
-  assign io_out_0_0_ver_man = pes_0_0_io_out_ver_man; // @[FP_GEMM.scala 149:24]
-  assign io_out_0_0_ver_exp = pes_0_0_io_out_ver_exp; // @[FP_GEMM.scala 149:24]
-  assign io_out_0_0_result_sign = pes_0_0_io_out_result_sign; // @[FP_GEMM.scala 150:27]
-  assign io_out_0_0_result_man = pes_0_0_io_out_result_man; // @[FP_GEMM.scala 150:27]
-  assign io_out_0_0_result_exp = pes_0_0_io_out_result_exp; // @[FP_GEMM.scala 150:27]
-  assign io_out_0_1_hor_sign = pes_0_1_io_out_hor_sign; // @[FP_GEMM.scala 148:24]
-  assign io_out_0_1_hor_man = pes_0_1_io_out_hor_man; // @[FP_GEMM.scala 148:24]
-  assign io_out_0_1_hor_exp = pes_0_1_io_out_hor_exp; // @[FP_GEMM.scala 148:24]
-  assign io_out_0_1_ver_sign = pes_0_1_io_out_ver_sign; // @[FP_GEMM.scala 149:24]
-  assign io_out_0_1_ver_man = pes_0_1_io_out_ver_man; // @[FP_GEMM.scala 149:24]
-  assign io_out_0_1_ver_exp = pes_0_1_io_out_ver_exp; // @[FP_GEMM.scala 149:24]
-  assign io_out_0_1_result_sign = pes_0_1_io_out_result_sign; // @[FP_GEMM.scala 150:27]
-  assign io_out_0_1_result_man = pes_0_1_io_out_result_man; // @[FP_GEMM.scala 150:27]
-  assign io_out_0_1_result_exp = pes_0_1_io_out_result_exp; // @[FP_GEMM.scala 150:27]
-  assign io_out_1_0_hor_sign = pes_1_0_io_out_hor_sign; // @[FP_GEMM.scala 148:24]
-  assign io_out_1_0_hor_man = pes_1_0_io_out_hor_man; // @[FP_GEMM.scala 148:24]
-  assign io_out_1_0_hor_exp = pes_1_0_io_out_hor_exp; // @[FP_GEMM.scala 148:24]
-  assign io_out_1_0_ver_sign = pes_1_0_io_out_ver_sign; // @[FP_GEMM.scala 149:24]
-  assign io_out_1_0_ver_man = pes_1_0_io_out_ver_man; // @[FP_GEMM.scala 149:24]
-  assign io_out_1_0_ver_exp = pes_1_0_io_out_ver_exp; // @[FP_GEMM.scala 149:24]
-  assign io_out_1_0_result_sign = pes_1_0_io_out_result_sign; // @[FP_GEMM.scala 150:27]
-  assign io_out_1_0_result_man = pes_1_0_io_out_result_man; // @[FP_GEMM.scala 150:27]
-  assign io_out_1_0_result_exp = pes_1_0_io_out_result_exp; // @[FP_GEMM.scala 150:27]
-  assign io_out_1_1_hor_sign = pes_1_1_io_out_hor_sign; // @[FP_GEMM.scala 148:24]
-  assign io_out_1_1_hor_man = pes_1_1_io_out_hor_man; // @[FP_GEMM.scala 148:24]
-  assign io_out_1_1_hor_exp = pes_1_1_io_out_hor_exp; // @[FP_GEMM.scala 148:24]
-  assign io_out_1_1_ver_sign = pes_1_1_io_out_ver_sign; // @[FP_GEMM.scala 149:24]
-  assign io_out_1_1_ver_man = pes_1_1_io_out_ver_man; // @[FP_GEMM.scala 149:24]
-  assign io_out_1_1_ver_exp = pes_1_1_io_out_ver_exp; // @[FP_GEMM.scala 149:24]
-  assign io_out_1_1_result_sign = pes_1_1_io_out_result_sign; // @[FP_GEMM.scala 150:27]
-  assign io_out_1_1_result_man = pes_1_1_io_out_result_man; // @[FP_GEMM.scala 150:27]
-  assign io_out_1_1_result_exp = pes_1_1_io_out_result_exp; // @[FP_GEMM.scala 150:27]
+  assign io_in_ready = inputQueue_io_enq_ready; // @[FP_GEMM.scala 109:21]
+  assign io_out_0_0_hor_sign = pes_0_0_io_out_hor_sign; // @[FP_GEMM.scala 140:24]
+  assign io_out_0_0_hor_man = pes_0_0_io_out_hor_man; // @[FP_GEMM.scala 140:24]
+  assign io_out_0_0_hor_exp = pes_0_0_io_out_hor_exp; // @[FP_GEMM.scala 140:24]
+  assign io_out_0_0_ver_sign = pes_0_0_io_out_ver_sign; // @[FP_GEMM.scala 141:24]
+  assign io_out_0_0_ver_man = pes_0_0_io_out_ver_man; // @[FP_GEMM.scala 141:24]
+  assign io_out_0_0_ver_exp = pes_0_0_io_out_ver_exp; // @[FP_GEMM.scala 141:24]
+  assign io_out_0_0_result_sign = pes_0_0_io_out_result_sign; // @[FP_GEMM.scala 142:27]
+  assign io_out_0_0_result_man = pes_0_0_io_out_result_man; // @[FP_GEMM.scala 142:27]
+  assign io_out_0_0_result_exp = pes_0_0_io_out_result_exp; // @[FP_GEMM.scala 142:27]
+  assign io_out_0_1_hor_sign = pes_0_1_io_out_hor_sign; // @[FP_GEMM.scala 140:24]
+  assign io_out_0_1_hor_man = pes_0_1_io_out_hor_man; // @[FP_GEMM.scala 140:24]
+  assign io_out_0_1_hor_exp = pes_0_1_io_out_hor_exp; // @[FP_GEMM.scala 140:24]
+  assign io_out_0_1_ver_sign = pes_0_1_io_out_ver_sign; // @[FP_GEMM.scala 141:24]
+  assign io_out_0_1_ver_man = pes_0_1_io_out_ver_man; // @[FP_GEMM.scala 141:24]
+  assign io_out_0_1_ver_exp = pes_0_1_io_out_ver_exp; // @[FP_GEMM.scala 141:24]
+  assign io_out_0_1_result_sign = pes_0_1_io_out_result_sign; // @[FP_GEMM.scala 142:27]
+  assign io_out_0_1_result_man = pes_0_1_io_out_result_man; // @[FP_GEMM.scala 142:27]
+  assign io_out_0_1_result_exp = pes_0_1_io_out_result_exp; // @[FP_GEMM.scala 142:27]
+  assign io_out_1_0_hor_sign = pes_1_0_io_out_hor_sign; // @[FP_GEMM.scala 140:24]
+  assign io_out_1_0_hor_man = pes_1_0_io_out_hor_man; // @[FP_GEMM.scala 140:24]
+  assign io_out_1_0_hor_exp = pes_1_0_io_out_hor_exp; // @[FP_GEMM.scala 140:24]
+  assign io_out_1_0_ver_sign = pes_1_0_io_out_ver_sign; // @[FP_GEMM.scala 141:24]
+  assign io_out_1_0_ver_man = pes_1_0_io_out_ver_man; // @[FP_GEMM.scala 141:24]
+  assign io_out_1_0_ver_exp = pes_1_0_io_out_ver_exp; // @[FP_GEMM.scala 141:24]
+  assign io_out_1_0_result_sign = pes_1_0_io_out_result_sign; // @[FP_GEMM.scala 142:27]
+  assign io_out_1_0_result_man = pes_1_0_io_out_result_man; // @[FP_GEMM.scala 142:27]
+  assign io_out_1_0_result_exp = pes_1_0_io_out_result_exp; // @[FP_GEMM.scala 142:27]
+  assign io_out_1_1_hor_sign = pes_1_1_io_out_hor_sign; // @[FP_GEMM.scala 140:24]
+  assign io_out_1_1_hor_man = pes_1_1_io_out_hor_man; // @[FP_GEMM.scala 140:24]
+  assign io_out_1_1_hor_exp = pes_1_1_io_out_hor_exp; // @[FP_GEMM.scala 140:24]
+  assign io_out_1_1_ver_sign = pes_1_1_io_out_ver_sign; // @[FP_GEMM.scala 141:24]
+  assign io_out_1_1_ver_man = pes_1_1_io_out_ver_man; // @[FP_GEMM.scala 141:24]
+  assign io_out_1_1_ver_exp = pes_1_1_io_out_ver_exp; // @[FP_GEMM.scala 141:24]
+  assign io_out_1_1_result_sign = pes_1_1_io_out_result_sign; // @[FP_GEMM.scala 142:27]
+  assign io_out_1_1_result_man = pes_1_1_io_out_result_man; // @[FP_GEMM.scala 142:27]
+  assign io_out_1_1_result_exp = pes_1_1_io_out_result_exp; // @[FP_GEMM.scala 142:27]
   assign pes_0_0_clock = clock;
-  assign pes_0_0_io_in_hor_sign = inputQueue_io_deq_valid & inputQueue_io_deq_ready & _GEN_5; // @[FP_GEMM.scala 117:62 118:27 122:29]
-  assign pes_0_0_io_in_hor_man = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? _GEN_3 : 4'h0; // @[FP_GEMM.scala 117:62 118:27 122:29]
-  assign pes_0_0_io_in_hor_exp = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? _GEN_1 : 8'h0; // @[FP_GEMM.scala 117:62 118:27 122:29]
-  assign pes_0_0_io_in_ver_sign = inputQueue_io_deq_valid & inputQueue_io_deq_ready & _GEN_11; // @[FP_GEMM.scala 117:62 119:27 123:29]
-  assign pes_0_0_io_in_ver_man = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? _GEN_9 : 4'h0; // @[FP_GEMM.scala 117:62 119:27 123:29]
-  assign pes_0_0_io_in_ver_exp = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? _GEN_7 : 8'h0; // @[FP_GEMM.scala 117:62 119:27 123:29]
+  assign pes_0_0_io_in_hor_sign = inputQueue_io_deq_valid & _GEN_3; // @[FP_GEMM.scala 115:31]
+  assign pes_0_0_io_in_hor_man = inputQueue_io_deq_valid ? _GEN_4 : 4'h0; // @[FP_GEMM.scala 115:31]
+  assign pes_0_0_io_in_hor_exp = inputQueue_io_deq_valid ? _GEN_5 : 8'h0; // @[FP_GEMM.scala 115:31]
+  assign pes_0_0_io_in_ver_sign = inputQueue_io_deq_valid & _GEN_9; // @[FP_GEMM.scala 116:31]
+  assign pes_0_0_io_in_ver_man = inputQueue_io_deq_valid ? _GEN_10 : 4'h0; // @[FP_GEMM.scala 116:31]
+  assign pes_0_0_io_in_ver_exp = inputQueue_io_deq_valid ? _GEN_11 : 8'h0; // @[FP_GEMM.scala 116:31]
   assign pes_0_1_clock = clock;
-  assign pes_0_1_io_in_hor_sign = pes_0_1_io_in_hor_r_sign; // @[FP_GEMM.scala 134:27]
-  assign pes_0_1_io_in_hor_man = pes_0_1_io_in_hor_r_man; // @[FP_GEMM.scala 134:27]
-  assign pes_0_1_io_in_hor_exp = pes_0_1_io_in_hor_r_exp; // @[FP_GEMM.scala 134:27]
-  assign pes_0_1_io_in_ver_sign = inputQueue_io_deq_valid & inputQueue_io_deq_ready & pes_0_1_io_in_ver_r_sign; // @[FP_GEMM.scala 117:62 119:27 123:29]
-  assign pes_0_1_io_in_ver_man = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? pes_0_1_io_in_ver_r_man : 4'h0; // @[FP_GEMM.scala 117:62 119:27 123:29]
-  assign pes_0_1_io_in_ver_exp = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? pes_0_1_io_in_ver_r_exp : 8'h0; // @[FP_GEMM.scala 117:62 119:27 123:29]
+  assign pes_0_1_io_in_hor_sign = pes_0_1_io_in_hor_r_sign; // @[FP_GEMM.scala 126:27]
+  assign pes_0_1_io_in_hor_man = pes_0_1_io_in_hor_r_man; // @[FP_GEMM.scala 126:27]
+  assign pes_0_1_io_in_hor_exp = pes_0_1_io_in_hor_r_exp; // @[FP_GEMM.scala 126:27]
+  assign pes_0_1_io_in_ver_sign = pes_0_1_io_in_ver_r & pes_0_1_io_in_ver_r_1_sign; // @[FP_GEMM.scala 116:31]
+  assign pes_0_1_io_in_ver_man = pes_0_1_io_in_ver_r ? pes_0_1_io_in_ver_r_1_man : 4'h0; // @[FP_GEMM.scala 116:31]
+  assign pes_0_1_io_in_ver_exp = pes_0_1_io_in_ver_r ? pes_0_1_io_in_ver_r_1_exp : 8'h0; // @[FP_GEMM.scala 116:31]
   assign pes_1_0_clock = clock;
-  assign pes_1_0_io_in_hor_sign = inputQueue_io_deq_valid & inputQueue_io_deq_ready & pes_1_0_io_in_hor_r_sign; // @[FP_GEMM.scala 117:62 118:27 122:29]
-  assign pes_1_0_io_in_hor_man = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? pes_1_0_io_in_hor_r_man : 4'h0; // @[FP_GEMM.scala 117:62 118:27 122:29]
-  assign pes_1_0_io_in_hor_exp = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? pes_1_0_io_in_hor_r_exp : 8'h0; // @[FP_GEMM.scala 117:62 118:27 122:29]
-  assign pes_1_0_io_in_ver_sign = pes_1_0_io_in_ver_r_sign; // @[FP_GEMM.scala 141:27]
-  assign pes_1_0_io_in_ver_man = pes_1_0_io_in_ver_r_man; // @[FP_GEMM.scala 141:27]
-  assign pes_1_0_io_in_ver_exp = pes_1_0_io_in_ver_r_exp; // @[FP_GEMM.scala 141:27]
+  assign pes_1_0_io_in_hor_sign = pes_1_0_io_in_hor_r & pes_1_0_io_in_hor_r_1_sign; // @[FP_GEMM.scala 115:31]
+  assign pes_1_0_io_in_hor_man = pes_1_0_io_in_hor_r ? pes_1_0_io_in_hor_r_1_man : 4'h0; // @[FP_GEMM.scala 115:31]
+  assign pes_1_0_io_in_hor_exp = pes_1_0_io_in_hor_r ? pes_1_0_io_in_hor_r_1_exp : 8'h0; // @[FP_GEMM.scala 115:31]
+  assign pes_1_0_io_in_ver_sign = pes_1_0_io_in_ver_r_sign; // @[FP_GEMM.scala 133:27]
+  assign pes_1_0_io_in_ver_man = pes_1_0_io_in_ver_r_man; // @[FP_GEMM.scala 133:27]
+  assign pes_1_0_io_in_ver_exp = pes_1_0_io_in_ver_r_exp; // @[FP_GEMM.scala 133:27]
   assign pes_1_1_clock = clock;
-  assign pes_1_1_io_in_hor_sign = pes_1_1_io_in_hor_r_sign; // @[FP_GEMM.scala 134:27]
-  assign pes_1_1_io_in_hor_man = pes_1_1_io_in_hor_r_man; // @[FP_GEMM.scala 134:27]
-  assign pes_1_1_io_in_hor_exp = pes_1_1_io_in_hor_r_exp; // @[FP_GEMM.scala 134:27]
-  assign pes_1_1_io_in_ver_sign = pes_1_1_io_in_ver_r_sign; // @[FP_GEMM.scala 141:27]
-  assign pes_1_1_io_in_ver_man = pes_1_1_io_in_ver_r_man; // @[FP_GEMM.scala 141:27]
-  assign pes_1_1_io_in_ver_exp = pes_1_1_io_in_ver_r_exp; // @[FP_GEMM.scala 141:27]
+  assign pes_1_1_io_in_hor_sign = pes_1_1_io_in_hor_r_sign; // @[FP_GEMM.scala 126:27]
+  assign pes_1_1_io_in_hor_man = pes_1_1_io_in_hor_r_man; // @[FP_GEMM.scala 126:27]
+  assign pes_1_1_io_in_hor_exp = pes_1_1_io_in_hor_r_exp; // @[FP_GEMM.scala 126:27]
+  assign pes_1_1_io_in_ver_sign = pes_1_1_io_in_ver_r_sign; // @[FP_GEMM.scala 133:27]
+  assign pes_1_1_io_in_ver_man = pes_1_1_io_in_ver_r_man; // @[FP_GEMM.scala 133:27]
+  assign pes_1_1_io_in_ver_exp = pes_1_1_io_in_ver_r_exp; // @[FP_GEMM.scala 133:27]
   assign inputQueue_clock = clock;
   assign inputQueue_reset = reset;
-  assign inputQueue_io_enq_valid = io_in_valid; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_0_hor_sign = io_in_bits_0_0_hor_sign; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_0_hor_man = io_in_bits_0_0_hor_man; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_0_hor_exp = io_in_bits_0_0_hor_exp; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_0_ver_sign = io_in_bits_0_0_ver_sign; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_0_ver_man = io_in_bits_0_0_ver_man; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_0_ver_exp = io_in_bits_0_0_ver_exp; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_1_hor_sign = io_in_bits_0_1_hor_sign; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_1_hor_man = io_in_bits_0_1_hor_man; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_1_hor_exp = io_in_bits_0_1_hor_exp; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_1_ver_sign = io_in_bits_0_1_ver_sign; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_1_ver_man = io_in_bits_0_1_ver_man; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_0_1_ver_exp = io_in_bits_0_1_ver_exp; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_0_hor_sign = io_in_bits_1_0_hor_sign; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_0_hor_man = io_in_bits_1_0_hor_man; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_0_hor_exp = io_in_bits_1_0_hor_exp; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_0_ver_sign = io_in_bits_1_0_ver_sign; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_0_ver_man = io_in_bits_1_0_ver_man; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_0_ver_exp = io_in_bits_1_0_ver_exp; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_1_hor_sign = io_in_bits_1_1_hor_sign; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_1_hor_man = io_in_bits_1_1_hor_man; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_1_hor_exp = io_in_bits_1_1_hor_exp; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_1_ver_sign = io_in_bits_1_1_ver_sign; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_1_ver_man = io_in_bits_1_1_ver_man; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_enq_bits_1_1_ver_exp = io_in_bits_1_1_ver_exp; // @[FP_GEMM.scala 110:21]
-  assign inputQueue_io_deq_ready = 1'h1; // @[FP_GEMM.scala 108:27]
+  assign inputQueue_io_enq_valid = io_in_valid; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_0_hor_sign = io_in_bits_0_0_hor_sign; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_0_hor_man = io_in_bits_0_0_hor_man; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_0_hor_exp = io_in_bits_0_0_hor_exp; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_0_ver_sign = io_in_bits_0_0_ver_sign; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_0_ver_man = io_in_bits_0_0_ver_man; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_0_ver_exp = io_in_bits_0_0_ver_exp; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_1_hor_sign = io_in_bits_0_1_hor_sign; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_1_hor_man = io_in_bits_0_1_hor_man; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_1_hor_exp = io_in_bits_0_1_hor_exp; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_1_ver_sign = io_in_bits_0_1_ver_sign; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_1_ver_man = io_in_bits_0_1_ver_man; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_0_1_ver_exp = io_in_bits_0_1_ver_exp; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_0_hor_sign = io_in_bits_1_0_hor_sign; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_0_hor_man = io_in_bits_1_0_hor_man; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_0_hor_exp = io_in_bits_1_0_hor_exp; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_0_ver_sign = io_in_bits_1_0_ver_sign; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_0_ver_man = io_in_bits_1_0_ver_man; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_0_ver_exp = io_in_bits_1_0_ver_exp; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_1_hor_sign = io_in_bits_1_1_hor_sign; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_1_hor_man = io_in_bits_1_1_hor_man; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_1_hor_exp = io_in_bits_1_1_hor_exp; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_1_ver_sign = io_in_bits_1_1_ver_sign; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_1_ver_man = io_in_bits_1_1_ver_man; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_enq_bits_1_1_ver_exp = io_in_bits_1_1_ver_exp; // @[FP_GEMM.scala 109:21]
+  assign inputQueue_io_deq_ready = 1'h1; // @[FP_GEMM.scala 107:27]
   always @(posedge clock) begin
-    if (reset) begin // @[FP_GEMM.scala 112:24]
-      counter <= 1'h0; // @[FP_GEMM.scala 112:24]
-    end else if (_T) begin // @[FP_GEMM.scala 127:60]
-      counter <= counter + 1'h1; // @[FP_GEMM.scala 128:13]
+    if (reset) begin // @[FP_GEMM.scala 111:24]
+      counter <= 1'h0; // @[FP_GEMM.scala 111:24]
+    end else if (inputQueue_io_deq_valid & inputQueue_io_deq_ready) begin // @[FP_GEMM.scala 119:60]
+      counter <= counter + 1'h1; // @[FP_GEMM.scala 120:13]
+    end
+    pes_1_0_io_in_hor_r <= inputQueue_io_deq_valid; // @[Reg.scala 19:16 20:{18,22}]
+    if (counter) begin // @[Reg.scala 20:22]
+      pes_1_0_io_in_hor_r_1_sign <= inputQueue_io_deq_bits_1_1_hor_sign; // @[Reg.scala 20:22]
+    end else begin
+      pes_1_0_io_in_hor_r_1_sign <= inputQueue_io_deq_bits_1_0_hor_sign;
     end
     if (counter) begin // @[Reg.scala 20:22]
-      pes_1_0_io_in_hor_r_sign <= inputQueue_io_deq_bits_1_1_hor_sign; // @[Reg.scala 20:22]
+      pes_1_0_io_in_hor_r_1_man <= inputQueue_io_deq_bits_1_1_hor_man; // @[Reg.scala 20:22]
     end else begin
-      pes_1_0_io_in_hor_r_sign <= inputQueue_io_deq_bits_1_0_hor_sign;
+      pes_1_0_io_in_hor_r_1_man <= _GEN_15;
     end
     if (counter) begin // @[Reg.scala 20:22]
-      pes_1_0_io_in_hor_r_man <= inputQueue_io_deq_bits_1_1_hor_man; // @[Reg.scala 20:22]
+      pes_1_0_io_in_hor_r_1_exp <= inputQueue_io_deq_bits_1_1_hor_exp; // @[Reg.scala 20:22]
     end else begin
-      pes_1_0_io_in_hor_r_man <= _GEN_20;
+      pes_1_0_io_in_hor_r_1_exp <= _GEN_17;
+    end
+    pes_0_1_io_in_ver_r <= inputQueue_io_deq_valid; // @[Reg.scala 19:16 20:{18,22}]
+    if (counter) begin // @[Reg.scala 20:22]
+      pes_0_1_io_in_ver_r_1_sign <= inputQueue_io_deq_bits_1_1_ver_sign; // @[Reg.scala 20:22]
+    end else begin
+      pes_0_1_io_in_ver_r_1_sign <= inputQueue_io_deq_bits_0_1_ver_sign;
     end
     if (counter) begin // @[Reg.scala 20:22]
-      pes_1_0_io_in_hor_r_exp <= inputQueue_io_deq_bits_1_1_hor_exp; // @[Reg.scala 20:22]
+      pes_0_1_io_in_ver_r_1_man <= inputQueue_io_deq_bits_1_1_ver_man; // @[Reg.scala 20:22]
     end else begin
-      pes_1_0_io_in_hor_r_exp <= _GEN_22;
+      pes_0_1_io_in_ver_r_1_man <= _GEN_28;
     end
     if (counter) begin // @[Reg.scala 20:22]
-      pes_0_1_io_in_ver_r_sign <= inputQueue_io_deq_bits_1_1_ver_sign; // @[Reg.scala 20:22]
+      pes_0_1_io_in_ver_r_1_exp <= inputQueue_io_deq_bits_1_1_ver_exp; // @[Reg.scala 20:22]
     end else begin
-      pes_0_1_io_in_ver_r_sign <= inputQueue_io_deq_bits_0_1_ver_sign;
-    end
-    if (counter) begin // @[Reg.scala 20:22]
-      pes_0_1_io_in_ver_r_man <= inputQueue_io_deq_bits_1_1_ver_man; // @[Reg.scala 20:22]
-    end else begin
-      pes_0_1_io_in_ver_r_man <= _GEN_29;
-    end
-    if (counter) begin // @[Reg.scala 20:22]
-      pes_0_1_io_in_ver_r_exp <= inputQueue_io_deq_bits_1_1_ver_exp; // @[Reg.scala 20:22]
-    end else begin
-      pes_0_1_io_in_ver_r_exp <= _GEN_31;
+      pes_0_1_io_in_ver_r_1_exp <= _GEN_30;
     end
     pes_0_1_io_in_hor_r_sign <= pes_0_0_io_out_hor_sign; // @[Reg.scala 19:16 20:{18,22}]
     pes_0_1_io_in_hor_r_man <= pes_0_0_io_out_hor_man; // @[Reg.scala 19:16 20:{18,22}]
@@ -1420,41 +1425,45 @@ initial begin
   _RAND_0 = {1{`RANDOM}};
   counter = _RAND_0[0:0];
   _RAND_1 = {1{`RANDOM}};
-  pes_1_0_io_in_hor_r_sign = _RAND_1[0:0];
+  pes_1_0_io_in_hor_r = _RAND_1[0:0];
   _RAND_2 = {1{`RANDOM}};
-  pes_1_0_io_in_hor_r_man = _RAND_2[3:0];
+  pes_1_0_io_in_hor_r_1_sign = _RAND_2[0:0];
   _RAND_3 = {1{`RANDOM}};
-  pes_1_0_io_in_hor_r_exp = _RAND_3[7:0];
+  pes_1_0_io_in_hor_r_1_man = _RAND_3[3:0];
   _RAND_4 = {1{`RANDOM}};
-  pes_0_1_io_in_ver_r_sign = _RAND_4[0:0];
+  pes_1_0_io_in_hor_r_1_exp = _RAND_4[7:0];
   _RAND_5 = {1{`RANDOM}};
-  pes_0_1_io_in_ver_r_man = _RAND_5[3:0];
+  pes_0_1_io_in_ver_r = _RAND_5[0:0];
   _RAND_6 = {1{`RANDOM}};
-  pes_0_1_io_in_ver_r_exp = _RAND_6[7:0];
+  pes_0_1_io_in_ver_r_1_sign = _RAND_6[0:0];
   _RAND_7 = {1{`RANDOM}};
-  pes_0_1_io_in_hor_r_sign = _RAND_7[0:0];
+  pes_0_1_io_in_ver_r_1_man = _RAND_7[3:0];
   _RAND_8 = {1{`RANDOM}};
-  pes_0_1_io_in_hor_r_man = _RAND_8[3:0];
+  pes_0_1_io_in_ver_r_1_exp = _RAND_8[7:0];
   _RAND_9 = {1{`RANDOM}};
-  pes_0_1_io_in_hor_r_exp = _RAND_9[7:0];
+  pes_0_1_io_in_hor_r_sign = _RAND_9[0:0];
   _RAND_10 = {1{`RANDOM}};
-  pes_1_1_io_in_hor_r_sign = _RAND_10[0:0];
+  pes_0_1_io_in_hor_r_man = _RAND_10[3:0];
   _RAND_11 = {1{`RANDOM}};
-  pes_1_1_io_in_hor_r_man = _RAND_11[3:0];
+  pes_0_1_io_in_hor_r_exp = _RAND_11[7:0];
   _RAND_12 = {1{`RANDOM}};
-  pes_1_1_io_in_hor_r_exp = _RAND_12[7:0];
+  pes_1_1_io_in_hor_r_sign = _RAND_12[0:0];
   _RAND_13 = {1{`RANDOM}};
-  pes_1_0_io_in_ver_r_sign = _RAND_13[0:0];
+  pes_1_1_io_in_hor_r_man = _RAND_13[3:0];
   _RAND_14 = {1{`RANDOM}};
-  pes_1_0_io_in_ver_r_man = _RAND_14[3:0];
+  pes_1_1_io_in_hor_r_exp = _RAND_14[7:0];
   _RAND_15 = {1{`RANDOM}};
-  pes_1_0_io_in_ver_r_exp = _RAND_15[7:0];
+  pes_1_0_io_in_ver_r_sign = _RAND_15[0:0];
   _RAND_16 = {1{`RANDOM}};
-  pes_1_1_io_in_ver_r_sign = _RAND_16[0:0];
+  pes_1_0_io_in_ver_r_man = _RAND_16[3:0];
   _RAND_17 = {1{`RANDOM}};
-  pes_1_1_io_in_ver_r_man = _RAND_17[3:0];
+  pes_1_0_io_in_ver_r_exp = _RAND_17[7:0];
   _RAND_18 = {1{`RANDOM}};
-  pes_1_1_io_in_ver_r_exp = _RAND_18[7:0];
+  pes_1_1_io_in_ver_r_sign = _RAND_18[0:0];
+  _RAND_19 = {1{`RANDOM}};
+  pes_1_1_io_in_ver_r_man = _RAND_19[3:0];
+  _RAND_20 = {1{`RANDOM}};
+  pes_1_1_io_in_ver_r_exp = _RAND_20[7:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
