@@ -14618,3 +14618,131 @@ WARNING: Unmatched cancel notification for request id 7712
 2023.07.05 13:13:12 INFO  time: compiled hbfp_accelerator-test in 1.11s
 2023.07.05 13:13:54 INFO  compiling hbfp_accelerator-test (1 scala source)
 2023.07.05 13:13:55 INFO  time: compiled hbfp_accelerator-test in 1.15s
+Jul 05, 2023 1:19:10 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.07.05 13:22:13 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:22:15 INFO  time: compiled hbfp_accelerator-test in 1.3s
+2023.07.05 13:22:27 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:22:28 INFO  time: compiled hbfp_accelerator-test in 1.17s
+2023.07.05 13:24:56 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:24:56 INFO  time: compiled hbfp_accelerator-test in 0.4s
+2023.07.05 13:25:07 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:25:08 INFO  time: compiled hbfp_accelerator-test in 1.19s
+2023.07.05 13:27:17 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:27:18 INFO  time: compiled hbfp_accelerator-test in 1.06s
+Jul 05, 2023 1:46:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.07.05 13:48:27 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:48:28 INFO  time: compiled hbfp_accelerator-test in 1.16s
+Jul 05, 2023 1:48:40 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 8391
+2023.07.05 13:48:51 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 13:48:52 INFO  time: compiled hbfp_accelerator-test in 1.17s
+Jul 05, 2023 1:50:42 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.07.05 14:56:08 INFO  Shutting down server
+2023.07.05 14:56:08 INFO  shutting down Metals
+2023.07.05 14:56:08 INFO  Shut down connection with build server.
+2023.07.05 14:56:08 INFO  Shut down connection with build server.
+2023.07.05 14:56:08 INFO  Exiting server
+2023.07.05 19:12:53 INFO  Started: Metals version 0.11.12 in workspace '/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator' for client Visual Studio Code 1.79.2.
+Jul 05, 2023 7:12:53 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.16.3 by Redgate
+Jul 05, 2023 7:12:53 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+Jul 05, 2023 7:12:53 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+Jul 05, 2023 7:12:53 PM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFO: Database: jdbc:h2:file:/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/.metals/metals (H2 2.1)
+Jul 05, 2023 7:12:53 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.025s)
+Jul 05, 2023 7:12:53 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": 4
+Jul 05, 2023 7:12:53 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "PUBLIC" is up to date. No migration necessary.
+2023.07.05 19:12:54 INFO  time: initialize in 0.48s
+2023.07.05 19:12:56 INFO  Attempting to connect to the build server...
+2023.07.05 19:12:56 INFO  Bloop uses /usr/lib/jvm/java-11-openjdk-amd64 defined at /home/vpatel/.bloop/bloop.json
+2023.07.05 19:12:56 INFO  skipping build import with status 'Installed'
+2023.07.05 19:12:56 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/.metals/bsp.trace.json or /home/vpatel/.cache/metals/bsp.trace.json
+2023.07.05 19:12:56 INFO  Attempting to connect to the build server...
+2023.07.05 19:12:56 INFO  Bloop uses /usr/lib/jvm/java-11-openjdk-amd64 defined at /home/vpatel/.bloop/bloop.json
+2023.07.05 19:12:56 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/project/.metals/bsp.trace.json or /home/vpatel/.cache/metals/bsp.trace.json
+2023.07.05 19:12:56 INFO  time: Connected to build server in 0.53s
+2023.07.05 19:12:56 INFO  Connected to Build server: Bloop v1.5.6
+2023.07.05 19:12:56 INFO  time: Imported build in 0.12s
+2023.07.05 19:12:59 INFO  no build target found for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.07.05 19:13:01 INFO  time: code lens generation in 5.06s
+2023.07.05 19:13:01 INFO  time: code lens generation in 2.84s
+2023.07.05 19:13:02 INFO  time: code lens generation in 5.29s
+2023.07.05 19:13:04 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2023.07.05 19:13:04 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2023.07.05 19:13:04 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/src.zip, /usr/lib/jvm/java-11-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2023.07.05 19:13:04 INFO  time: indexed workspace in 8.51s
+Jul 05, 2023 7:13:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "build/publishDiagnostics",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/systolic_array.scala"
+    },
+    "buildTarget": {
+      "uri": "file:/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/?id\u003dhbfp_accelerator"
+    },
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 0,
+            "character": 0
+          },
+          "end": {
+            "line": 0,
+            "character": 0
+          }
+        },
+        "severity": 3,
+        "source": "bloop",
+        "message": "\nFound names but no class, trait or object is defined in the compilation unit.\nThe incremental compiler cannot record the dependency information in such case.\nSome errors like unused import referring to a non-existent class might not be reported.\n    "
+      }
+    ],
+    "reset": true
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/systolic_array.scala
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:219)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:371)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:422)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3206)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:380)
+	at scala.meta.internal.metals.Diagnostics.onPublishDiagnostics(Diagnostics.scala:166)
+	at scala.meta.internal.metals.Diagnostics.onBuildPublishDiagnostics(Diagnostics.scala:146)
+	at scala.meta.internal.metals.clients.language.ForwardingMetalsBuildClient.onBuildPublishDiagnostics(ForwardingMetalsBuildClient.scala:109)
+	... 16 more
+

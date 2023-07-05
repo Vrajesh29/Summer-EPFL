@@ -4,13 +4,13 @@ circuit SystolicArray :
     input clock : Clock
     input reset : UInt<1>
     input io_in_a_sign : UInt<1>
-    input io_in_a_man : UInt<4>
+    input io_in_a_man : UInt<5>
     input io_in_a_exp : UInt<8>
     input io_in_b_sign : UInt<1>
-    input io_in_b_man : UInt<4>
+    input io_in_b_man : UInt<5>
     input io_in_b_exp : UInt<8>
     output io_out_result_sign : UInt<1>
-    output io_out_result_man : UInt<4>
+    output io_out_result_man : UInt<5>
     output io_out_result_exp : UInt<8>
 
     node _io_out_result_sign_T = xor(io_in_a_sign, io_in_b_sign) @[FP_GEMM.scala 29:38]
@@ -18,20 +18,20 @@ circuit SystolicArray :
     node _io_out_result_exp_T_1 = tail(_io_out_result_exp_T, 1) @[FP_GEMM.scala 30:36]
     node _io_out_result_man_T = mul(io_in_a_man, io_in_b_man) @[FP_GEMM.scala 31:36]
     io_out_result_sign <= _io_out_result_sign_T @[FP_GEMM.scala 29:22]
-    io_out_result_man <= bits(_io_out_result_man_T, 3, 0) @[FP_GEMM.scala 31:21]
+    io_out_result_man <= bits(_io_out_result_man_T, 4, 0) @[FP_GEMM.scala 31:21]
     io_out_result_exp <= _io_out_result_exp_T_1 @[FP_GEMM.scala 30:21]
 
   module FPAdder :
     input clock : Clock
     input reset : UInt<1>
     input io_in_a_sign : UInt<1>
-    input io_in_a_man : UInt<4>
+    input io_in_a_man : UInt<5>
     input io_in_a_exp : UInt<8>
     input io_in_b_sign : UInt<1>
-    input io_in_b_man : UInt<4>
+    input io_in_b_man : UInt<5>
     input io_in_b_exp : UInt<8>
     output io_out_result_sign : UInt<1>
-    output io_out_result_man : UInt<4>
+    output io_out_result_man : UInt<5>
     output io_out_result_exp : UInt<8>
 
     node _exp_diff_T = gt(io_in_a_exp, io_in_b_exp) @[FP_GEMM.scala 45:34]
@@ -60,32 +60,32 @@ circuit SystolicArray :
     input clock : Clock
     input reset : UInt<1>
     input io_in_hor_sign : UInt<1>
-    input io_in_hor_man : UInt<4>
+    input io_in_hor_man : UInt<5>
     input io_in_hor_exp : UInt<8>
     input io_in_ver_sign : UInt<1>
-    input io_in_ver_man : UInt<4>
+    input io_in_ver_man : UInt<5>
     input io_in_ver_exp : UInt<8>
     output io_out_hor_sign : UInt<1>
-    output io_out_hor_man : UInt<4>
+    output io_out_hor_man : UInt<5>
     output io_out_hor_exp : UInt<8>
     output io_out_ver_sign : UInt<1>
-    output io_out_ver_man : UInt<4>
+    output io_out_ver_man : UInt<5>
     output io_out_ver_exp : UInt<8>
     output io_out_result_sign : UInt<1>
-    output io_out_result_man : UInt<4>
+    output io_out_result_man : UInt<5>
     output io_out_result_exp : UInt<8>
 
     inst fpmult of FPMult @[FP_GEMM.scala 71:24]
     inst fpadder of FPAdder @[FP_GEMM.scala 75:25]
     reg result_buffer_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), result_buffer_sign) @[FP_GEMM.scala 68:28]
-    reg result_buffer_man : UInt<4>, clock with :
+    reg result_buffer_man : UInt<5>, clock with :
       reset => (UInt<1>("h0"), result_buffer_man) @[FP_GEMM.scala 68:28]
     reg result_buffer_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), result_buffer_exp) @[FP_GEMM.scala 68:28]
     reg mult_buffer_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), mult_buffer_sign) @[FP_GEMM.scala 69:26]
-    reg mult_buffer_man : UInt<4>, clock with :
+    reg mult_buffer_man : UInt<5>, clock with :
       reset => (UInt<1>("h0"), mult_buffer_man) @[FP_GEMM.scala 69:26]
     reg mult_buffer_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), mult_buffer_exp) @[FP_GEMM.scala 69:26]
@@ -127,54 +127,54 @@ circuit SystolicArray :
     output io_enq_ready : UInt<1>
     input io_enq_valid : UInt<1>
     input io_enq_bits_0_0_hor_sign : UInt<1>
-    input io_enq_bits_0_0_hor_man : UInt<4>
+    input io_enq_bits_0_0_hor_man : UInt<5>
     input io_enq_bits_0_0_hor_exp : UInt<8>
     input io_enq_bits_0_0_ver_sign : UInt<1>
-    input io_enq_bits_0_0_ver_man : UInt<4>
+    input io_enq_bits_0_0_ver_man : UInt<5>
     input io_enq_bits_0_0_ver_exp : UInt<8>
     input io_enq_bits_0_1_hor_sign : UInt<1>
-    input io_enq_bits_0_1_hor_man : UInt<4>
+    input io_enq_bits_0_1_hor_man : UInt<5>
     input io_enq_bits_0_1_hor_exp : UInt<8>
     input io_enq_bits_0_1_ver_sign : UInt<1>
-    input io_enq_bits_0_1_ver_man : UInt<4>
+    input io_enq_bits_0_1_ver_man : UInt<5>
     input io_enq_bits_0_1_ver_exp : UInt<8>
     input io_enq_bits_1_0_hor_sign : UInt<1>
-    input io_enq_bits_1_0_hor_man : UInt<4>
+    input io_enq_bits_1_0_hor_man : UInt<5>
     input io_enq_bits_1_0_hor_exp : UInt<8>
     input io_enq_bits_1_0_ver_sign : UInt<1>
-    input io_enq_bits_1_0_ver_man : UInt<4>
+    input io_enq_bits_1_0_ver_man : UInt<5>
     input io_enq_bits_1_0_ver_exp : UInt<8>
     input io_enq_bits_1_1_hor_sign : UInt<1>
-    input io_enq_bits_1_1_hor_man : UInt<4>
+    input io_enq_bits_1_1_hor_man : UInt<5>
     input io_enq_bits_1_1_hor_exp : UInt<8>
     input io_enq_bits_1_1_ver_sign : UInt<1>
-    input io_enq_bits_1_1_ver_man : UInt<4>
+    input io_enq_bits_1_1_ver_man : UInt<5>
     input io_enq_bits_1_1_ver_exp : UInt<8>
     input io_deq_ready : UInt<1>
     output io_deq_valid : UInt<1>
     output io_deq_bits_0_0_hor_sign : UInt<1>
-    output io_deq_bits_0_0_hor_man : UInt<4>
+    output io_deq_bits_0_0_hor_man : UInt<5>
     output io_deq_bits_0_0_hor_exp : UInt<8>
     output io_deq_bits_0_0_ver_sign : UInt<1>
-    output io_deq_bits_0_0_ver_man : UInt<4>
+    output io_deq_bits_0_0_ver_man : UInt<5>
     output io_deq_bits_0_0_ver_exp : UInt<8>
     output io_deq_bits_0_1_hor_sign : UInt<1>
-    output io_deq_bits_0_1_hor_man : UInt<4>
+    output io_deq_bits_0_1_hor_man : UInt<5>
     output io_deq_bits_0_1_hor_exp : UInt<8>
     output io_deq_bits_0_1_ver_sign : UInt<1>
-    output io_deq_bits_0_1_ver_man : UInt<4>
+    output io_deq_bits_0_1_ver_man : UInt<5>
     output io_deq_bits_0_1_ver_exp : UInt<8>
     output io_deq_bits_1_0_hor_sign : UInt<1>
-    output io_deq_bits_1_0_hor_man : UInt<4>
+    output io_deq_bits_1_0_hor_man : UInt<5>
     output io_deq_bits_1_0_hor_exp : UInt<8>
     output io_deq_bits_1_0_ver_sign : UInt<1>
-    output io_deq_bits_1_0_ver_man : UInt<4>
+    output io_deq_bits_1_0_ver_man : UInt<5>
     output io_deq_bits_1_0_ver_exp : UInt<8>
     output io_deq_bits_1_1_hor_sign : UInt<1>
-    output io_deq_bits_1_1_hor_man : UInt<4>
+    output io_deq_bits_1_1_hor_man : UInt<5>
     output io_deq_bits_1_1_hor_exp : UInt<8>
     output io_deq_bits_1_1_ver_sign : UInt<1>
-    output io_deq_bits_1_1_ver_man : UInt<4>
+    output io_deq_bits_1_1_ver_man : UInt<5>
     output io_deq_bits_1_1_ver_exp : UInt<8>
     output io_count : UInt<2>
 
@@ -187,7 +187,7 @@ circuit SystolicArray :
       writer => MPORT
       read-under-write => undefined
     mem ram_0_0_hor_man : @[Decoupled.scala 273:95]
-      data-type => UInt<4>
+      data-type => UInt<5>
       depth => 2
       read-latency => 0
       write-latency => 1
@@ -211,7 +211,7 @@ circuit SystolicArray :
       writer => MPORT
       read-under-write => undefined
     mem ram_0_0_ver_man : @[Decoupled.scala 273:95]
-      data-type => UInt<4>
+      data-type => UInt<5>
       depth => 2
       read-latency => 0
       write-latency => 1
@@ -235,7 +235,7 @@ circuit SystolicArray :
       writer => MPORT
       read-under-write => undefined
     mem ram_0_1_hor_man : @[Decoupled.scala 273:95]
-      data-type => UInt<4>
+      data-type => UInt<5>
       depth => 2
       read-latency => 0
       write-latency => 1
@@ -259,7 +259,7 @@ circuit SystolicArray :
       writer => MPORT
       read-under-write => undefined
     mem ram_0_1_ver_man : @[Decoupled.scala 273:95]
-      data-type => UInt<4>
+      data-type => UInt<5>
       depth => 2
       read-latency => 0
       write-latency => 1
@@ -283,7 +283,7 @@ circuit SystolicArray :
       writer => MPORT
       read-under-write => undefined
     mem ram_1_0_hor_man : @[Decoupled.scala 273:95]
-      data-type => UInt<4>
+      data-type => UInt<5>
       depth => 2
       read-latency => 0
       write-latency => 1
@@ -307,7 +307,7 @@ circuit SystolicArray :
       writer => MPORT
       read-under-write => undefined
     mem ram_1_0_ver_man : @[Decoupled.scala 273:95]
-      data-type => UInt<4>
+      data-type => UInt<5>
       depth => 2
       read-latency => 0
       write-latency => 1
@@ -331,7 +331,7 @@ circuit SystolicArray :
       writer => MPORT
       read-under-write => undefined
     mem ram_1_1_hor_man : @[Decoupled.scala 273:95]
-      data-type => UInt<4>
+      data-type => UInt<5>
       depth => 2
       read-latency => 0
       write-latency => 1
@@ -355,7 +355,7 @@ circuit SystolicArray :
       writer => MPORT
       read-under-write => undefined
     mem ram_1_1_ver_man : @[Decoupled.scala 273:95]
-      data-type => UInt<4>
+      data-type => UInt<5>
       depth => 2
       read-latency => 0
       write-latency => 1
@@ -661,64 +661,64 @@ circuit SystolicArray :
     output io_in_ready : UInt<1>
     input io_in_valid : UInt<1>
     input io_in_bits_0_0_hor_sign : UInt<1>
-    input io_in_bits_0_0_hor_man : UInt<4>
+    input io_in_bits_0_0_hor_man : UInt<5>
     input io_in_bits_0_0_hor_exp : UInt<8>
     input io_in_bits_0_0_ver_sign : UInt<1>
-    input io_in_bits_0_0_ver_man : UInt<4>
+    input io_in_bits_0_0_ver_man : UInt<5>
     input io_in_bits_0_0_ver_exp : UInt<8>
     input io_in_bits_0_1_hor_sign : UInt<1>
-    input io_in_bits_0_1_hor_man : UInt<4>
+    input io_in_bits_0_1_hor_man : UInt<5>
     input io_in_bits_0_1_hor_exp : UInt<8>
     input io_in_bits_0_1_ver_sign : UInt<1>
-    input io_in_bits_0_1_ver_man : UInt<4>
+    input io_in_bits_0_1_ver_man : UInt<5>
     input io_in_bits_0_1_ver_exp : UInt<8>
     input io_in_bits_1_0_hor_sign : UInt<1>
-    input io_in_bits_1_0_hor_man : UInt<4>
+    input io_in_bits_1_0_hor_man : UInt<5>
     input io_in_bits_1_0_hor_exp : UInt<8>
     input io_in_bits_1_0_ver_sign : UInt<1>
-    input io_in_bits_1_0_ver_man : UInt<4>
+    input io_in_bits_1_0_ver_man : UInt<5>
     input io_in_bits_1_0_ver_exp : UInt<8>
     input io_in_bits_1_1_hor_sign : UInt<1>
-    input io_in_bits_1_1_hor_man : UInt<4>
+    input io_in_bits_1_1_hor_man : UInt<5>
     input io_in_bits_1_1_hor_exp : UInt<8>
     input io_in_bits_1_1_ver_sign : UInt<1>
-    input io_in_bits_1_1_ver_man : UInt<4>
+    input io_in_bits_1_1_ver_man : UInt<5>
     input io_in_bits_1_1_ver_exp : UInt<8>
     output io_out_0_0_hor_sign : UInt<1>
-    output io_out_0_0_hor_man : UInt<4>
+    output io_out_0_0_hor_man : UInt<5>
     output io_out_0_0_hor_exp : UInt<8>
     output io_out_0_0_ver_sign : UInt<1>
-    output io_out_0_0_ver_man : UInt<4>
+    output io_out_0_0_ver_man : UInt<5>
     output io_out_0_0_ver_exp : UInt<8>
     output io_out_0_0_result_sign : UInt<1>
-    output io_out_0_0_result_man : UInt<4>
+    output io_out_0_0_result_man : UInt<5>
     output io_out_0_0_result_exp : UInt<8>
     output io_out_0_1_hor_sign : UInt<1>
-    output io_out_0_1_hor_man : UInt<4>
+    output io_out_0_1_hor_man : UInt<5>
     output io_out_0_1_hor_exp : UInt<8>
     output io_out_0_1_ver_sign : UInt<1>
-    output io_out_0_1_ver_man : UInt<4>
+    output io_out_0_1_ver_man : UInt<5>
     output io_out_0_1_ver_exp : UInt<8>
     output io_out_0_1_result_sign : UInt<1>
-    output io_out_0_1_result_man : UInt<4>
+    output io_out_0_1_result_man : UInt<5>
     output io_out_0_1_result_exp : UInt<8>
     output io_out_1_0_hor_sign : UInt<1>
-    output io_out_1_0_hor_man : UInt<4>
+    output io_out_1_0_hor_man : UInt<5>
     output io_out_1_0_hor_exp : UInt<8>
     output io_out_1_0_ver_sign : UInt<1>
-    output io_out_1_0_ver_man : UInt<4>
+    output io_out_1_0_ver_man : UInt<5>
     output io_out_1_0_ver_exp : UInt<8>
     output io_out_1_0_result_sign : UInt<1>
-    output io_out_1_0_result_man : UInt<4>
+    output io_out_1_0_result_man : UInt<5>
     output io_out_1_0_result_exp : UInt<8>
     output io_out_1_1_hor_sign : UInt<1>
-    output io_out_1_1_hor_man : UInt<4>
+    output io_out_1_1_hor_man : UInt<5>
     output io_out_1_1_hor_exp : UInt<8>
     output io_out_1_1_ver_sign : UInt<1>
-    output io_out_1_1_ver_man : UInt<4>
+    output io_out_1_1_ver_man : UInt<5>
     output io_out_1_1_ver_exp : UInt<8>
     output io_out_1_1_result_sign : UInt<1>
-    output io_out_1_1_result_man : UInt<4>
+    output io_out_1_1_result_man : UInt<5>
     output io_out_1_1_result_exp : UInt<8>
 
     inst pes_0_0 of PE @[FP_GEMM.scala 101:34]
@@ -738,7 +738,7 @@ circuit SystolicArray :
     node _pes_0_0_io_in_hor_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 115:{159,159}]
     node _pes_0_0_io_in_hor_T_sign = mux(inputQueue.io_deq_valid, _inputQueue_io_deq_bits_0_counter_hor_sign, _pes_0_0_io_in_hor_WIRE_sign) @[FP_GEMM.scala 115:31]
     node _inputQueue_io_deq_bits_0_counter_hor_man = _GEN_4 @[FP_GEMM.scala 115:31]
-    node _pes_0_0_io_in_hor_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 115:{159,159}]
+    node _pes_0_0_io_in_hor_WIRE_man = UInt<5>("h0") @[FP_GEMM.scala 115:{159,159}]
     node _pes_0_0_io_in_hor_T_man = mux(inputQueue.io_deq_valid, _inputQueue_io_deq_bits_0_counter_hor_man, _pes_0_0_io_in_hor_WIRE_man) @[FP_GEMM.scala 115:31]
     node _inputQueue_io_deq_bits_0_counter_hor_exp = _GEN_5 @[FP_GEMM.scala 115:31]
     node _pes_0_0_io_in_hor_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 115:{159,159}]
@@ -753,7 +753,7 @@ circuit SystolicArray :
     node _pes_0_0_io_in_ver_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 116:{159,159}]
     node _pes_0_0_io_in_ver_T_sign = mux(inputQueue.io_deq_valid, _inputQueue_io_deq_bits_counter_0_ver_sign, _pes_0_0_io_in_ver_WIRE_sign) @[FP_GEMM.scala 116:31]
     node _inputQueue_io_deq_bits_counter_0_ver_man = _GEN_10 @[FP_GEMM.scala 116:31]
-    node _pes_0_0_io_in_ver_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 116:{159,159}]
+    node _pes_0_0_io_in_ver_WIRE_man = UInt<5>("h0") @[FP_GEMM.scala 116:{159,159}]
     node _pes_0_0_io_in_ver_T_man = mux(inputQueue.io_deq_valid, _inputQueue_io_deq_bits_counter_0_ver_man, _pes_0_0_io_in_ver_WIRE_man) @[FP_GEMM.scala 116:31]
     node _inputQueue_io_deq_bits_counter_0_ver_exp = _GEN_11 @[FP_GEMM.scala 116:31]
     node _pes_0_0_io_in_ver_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 116:{159,159}]
@@ -763,7 +763,7 @@ circuit SystolicArray :
     node _GEN_12 = mux(UInt<1>("h1"), inputQueue.io_deq_valid, pes_1_0_io_in_hor_r) @[Reg.scala 19:16 20:{18,22}]
     reg pes_1_0_io_in_hor_r_1_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_1_sign) @[Reg.scala 19:16]
-    reg pes_1_0_io_in_hor_r_1_man : UInt<4>, clock with :
+    reg pes_1_0_io_in_hor_r_1_man : UInt<5>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_1_man) @[Reg.scala 19:16]
     reg pes_1_0_io_in_hor_r_1_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_1_exp) @[Reg.scala 19:16]
@@ -781,13 +781,13 @@ circuit SystolicArray :
     node _GEN_21 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_1_counter_hor_exp, pes_1_0_io_in_hor_r_1_exp) @[Reg.scala 19:16 20:{18,22}]
     reg pes_1_0_io_in_hor_r_2_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_2_sign) @[Reg.scala 19:16]
-    reg pes_1_0_io_in_hor_r_2_man : UInt<4>, clock with :
+    reg pes_1_0_io_in_hor_r_2_man : UInt<5>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_2_man) @[Reg.scala 19:16]
     reg pes_1_0_io_in_hor_r_2_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_hor_r_2_exp) @[Reg.scala 19:16]
     node _pes_1_0_io_in_hor_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 115:{159,159}]
     node _GEN_22 = mux(UInt<1>("h1"), _pes_1_0_io_in_hor_WIRE_sign, pes_1_0_io_in_hor_r_2_sign) @[Reg.scala 19:16 20:{18,22}]
-    node _pes_1_0_io_in_hor_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 115:{159,159}]
+    node _pes_1_0_io_in_hor_WIRE_man = UInt<5>("h0") @[FP_GEMM.scala 115:{159,159}]
     node _GEN_23 = mux(UInt<1>("h1"), _pes_1_0_io_in_hor_WIRE_man, pes_1_0_io_in_hor_r_2_man) @[Reg.scala 19:16 20:{18,22}]
     node _pes_1_0_io_in_hor_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 115:{159,159}]
     node _GEN_24 = mux(UInt<1>("h1"), _pes_1_0_io_in_hor_WIRE_exp, pes_1_0_io_in_hor_r_2_exp) @[Reg.scala 19:16 20:{18,22}]
@@ -799,7 +799,7 @@ circuit SystolicArray :
     node _GEN_25 = mux(UInt<1>("h1"), inputQueue.io_deq_valid, pes_0_1_io_in_ver_r) @[Reg.scala 19:16 20:{18,22}]
     reg pes_0_1_io_in_ver_r_1_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_1_sign) @[Reg.scala 19:16]
-    reg pes_0_1_io_in_ver_r_1_man : UInt<4>, clock with :
+    reg pes_0_1_io_in_ver_r_1_man : UInt<5>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_1_man) @[Reg.scala 19:16]
     reg pes_0_1_io_in_ver_r_1_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_1_exp) @[Reg.scala 19:16]
@@ -817,13 +817,13 @@ circuit SystolicArray :
     node _GEN_34 = mux(UInt<1>("h1"), _inputQueue_io_deq_bits_counter_1_ver_exp, pes_0_1_io_in_ver_r_1_exp) @[Reg.scala 19:16 20:{18,22}]
     reg pes_0_1_io_in_ver_r_2_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_2_sign) @[Reg.scala 19:16]
-    reg pes_0_1_io_in_ver_r_2_man : UInt<4>, clock with :
+    reg pes_0_1_io_in_ver_r_2_man : UInt<5>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_2_man) @[Reg.scala 19:16]
     reg pes_0_1_io_in_ver_r_2_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_ver_r_2_exp) @[Reg.scala 19:16]
     node _pes_0_1_io_in_ver_WIRE_sign = UInt<1>("h0") @[FP_GEMM.scala 116:{159,159}]
     node _GEN_35 = mux(UInt<1>("h1"), _pes_0_1_io_in_ver_WIRE_sign, pes_0_1_io_in_ver_r_2_sign) @[Reg.scala 19:16 20:{18,22}]
-    node _pes_0_1_io_in_ver_WIRE_man = UInt<4>("h0") @[FP_GEMM.scala 116:{159,159}]
+    node _pes_0_1_io_in_ver_WIRE_man = UInt<5>("h0") @[FP_GEMM.scala 116:{159,159}]
     node _GEN_36 = mux(UInt<1>("h1"), _pes_0_1_io_in_ver_WIRE_man, pes_0_1_io_in_ver_r_2_man) @[Reg.scala 19:16 20:{18,22}]
     node _pes_0_1_io_in_ver_WIRE_exp = UInt<8>("h0") @[FP_GEMM.scala 116:{159,159}]
     node _GEN_37 = mux(UInt<1>("h1"), _pes_0_1_io_in_ver_WIRE_exp, pes_0_1_io_in_ver_r_2_exp) @[Reg.scala 19:16 20:{18,22}]
@@ -836,7 +836,7 @@ circuit SystolicArray :
     node _GEN_38 = mux(_T, _counter_T_1, counter) @[FP_GEMM.scala 119:60 120:13 111:24]
     reg pes_0_1_io_in_hor_r_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_hor_r_sign) @[Reg.scala 19:16]
-    reg pes_0_1_io_in_hor_r_man : UInt<4>, clock with :
+    reg pes_0_1_io_in_hor_r_man : UInt<5>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_hor_r_man) @[Reg.scala 19:16]
     reg pes_0_1_io_in_hor_r_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_0_1_io_in_hor_r_exp) @[Reg.scala 19:16]
@@ -845,7 +845,7 @@ circuit SystolicArray :
     node _GEN_41 = mux(UInt<1>("h1"), pes_0_0.io_out_hor_exp, pes_0_1_io_in_hor_r_exp) @[Reg.scala 19:16 20:{18,22}]
     reg pes_1_1_io_in_hor_r_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_hor_r_sign) @[Reg.scala 19:16]
-    reg pes_1_1_io_in_hor_r_man : UInt<4>, clock with :
+    reg pes_1_1_io_in_hor_r_man : UInt<5>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_hor_r_man) @[Reg.scala 19:16]
     reg pes_1_1_io_in_hor_r_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_hor_r_exp) @[Reg.scala 19:16]
@@ -854,7 +854,7 @@ circuit SystolicArray :
     node _GEN_44 = mux(UInt<1>("h1"), pes_1_0.io_out_hor_exp, pes_1_1_io_in_hor_r_exp) @[Reg.scala 19:16 20:{18,22}]
     reg pes_1_0_io_in_ver_r_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_ver_r_sign) @[Reg.scala 19:16]
-    reg pes_1_0_io_in_ver_r_man : UInt<4>, clock with :
+    reg pes_1_0_io_in_ver_r_man : UInt<5>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_ver_r_man) @[Reg.scala 19:16]
     reg pes_1_0_io_in_ver_r_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_1_0_io_in_ver_r_exp) @[Reg.scala 19:16]
@@ -863,7 +863,7 @@ circuit SystolicArray :
     node _GEN_47 = mux(UInt<1>("h1"), pes_0_0.io_out_ver_exp, pes_1_0_io_in_ver_r_exp) @[Reg.scala 19:16 20:{18,22}]
     reg pes_1_1_io_in_ver_r_sign : UInt<1>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_ver_r_sign) @[Reg.scala 19:16]
-    reg pes_1_1_io_in_ver_r_man : UInt<4>, clock with :
+    reg pes_1_1_io_in_ver_r_man : UInt<5>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_ver_r_man) @[Reg.scala 19:16]
     reg pes_1_1_io_in_ver_r_exp : UInt<8>, clock with :
       reset => (UInt<1>("h0"), pes_1_1_io_in_ver_r_exp) @[Reg.scala 19:16]
