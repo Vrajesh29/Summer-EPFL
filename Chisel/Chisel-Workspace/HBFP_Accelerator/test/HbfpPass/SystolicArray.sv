@@ -184,9 +184,21 @@ module Queue(
   input        reset,
   output       io_enq_ready,
   input        io_enq_valid,
+  input        io_enq_bits_0_0_hor_sign,
+  input  [3:0] io_enq_bits_0_0_hor_man,
+  input  [7:0] io_enq_bits_0_0_hor_exp,
+  input        io_enq_bits_0_0_ver_sign,
+  input  [3:0] io_enq_bits_0_0_ver_man,
+  input  [7:0] io_enq_bits_0_0_ver_exp,
   input        io_enq_bits_0_1_hor_sign,
   input  [3:0] io_enq_bits_0_1_hor_man,
   input  [7:0] io_enq_bits_0_1_hor_exp,
+  input        io_enq_bits_0_1_ver_sign,
+  input  [3:0] io_enq_bits_0_1_ver_man,
+  input  [7:0] io_enq_bits_0_1_ver_exp,
+  input        io_enq_bits_1_0_hor_sign,
+  input  [3:0] io_enq_bits_1_0_hor_man,
+  input  [7:0] io_enq_bits_1_0_hor_exp,
   input        io_enq_bits_1_0_ver_sign,
   input  [3:0] io_enq_bits_1_0_ver_man,
   input  [7:0] io_enq_bits_1_0_ver_exp,
@@ -196,10 +208,23 @@ module Queue(
   input        io_enq_bits_1_1_ver_sign,
   input  [3:0] io_enq_bits_1_1_ver_man,
   input  [7:0] io_enq_bits_1_1_ver_exp,
+  input        io_deq_ready,
   output       io_deq_valid,
+  output       io_deq_bits_0_0_hor_sign,
+  output [3:0] io_deq_bits_0_0_hor_man,
+  output [7:0] io_deq_bits_0_0_hor_exp,
+  output       io_deq_bits_0_0_ver_sign,
+  output [3:0] io_deq_bits_0_0_ver_man,
+  output [7:0] io_deq_bits_0_0_ver_exp,
   output       io_deq_bits_0_1_hor_sign,
   output [3:0] io_deq_bits_0_1_hor_man,
   output [7:0] io_deq_bits_0_1_hor_exp,
+  output       io_deq_bits_0_1_ver_sign,
+  output [3:0] io_deq_bits_0_1_ver_man,
+  output [7:0] io_deq_bits_0_1_ver_exp,
+  output       io_deq_bits_1_0_hor_sign,
+  output [3:0] io_deq_bits_1_0_hor_man,
+  output [7:0] io_deq_bits_1_0_hor_exp,
   output       io_deq_bits_1_0_ver_sign,
   output [3:0] io_deq_bits_1_0_ver_man,
   output [7:0] io_deq_bits_1_0_ver_exp,
@@ -223,12 +248,72 @@ module Queue(
   reg [31:0] _RAND_9;
   reg [31:0] _RAND_10;
   reg [31:0] _RAND_11;
-`endif // RANDOMIZE_MEM_INIT
-`ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_12;
   reg [31:0] _RAND_13;
   reg [31:0] _RAND_14;
+  reg [31:0] _RAND_15;
+  reg [31:0] _RAND_16;
+  reg [31:0] _RAND_17;
+  reg [31:0] _RAND_18;
+  reg [31:0] _RAND_19;
+  reg [31:0] _RAND_20;
+  reg [31:0] _RAND_21;
+  reg [31:0] _RAND_22;
+  reg [31:0] _RAND_23;
+`endif // RANDOMIZE_MEM_INIT
+`ifdef RANDOMIZE_REG_INIT
+  reg [31:0] _RAND_24;
+  reg [31:0] _RAND_25;
+  reg [31:0] _RAND_26;
 `endif // RANDOMIZE_REG_INIT
+  reg  ram_0_0_hor_sign [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_sign_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_sign_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_sign_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_sign_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_sign_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_sign_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_sign_MPORT_en; // @[Decoupled.scala 273:95]
+  reg [3:0] ram_0_0_hor_man [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_man_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_man_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire [3:0] ram_0_0_hor_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire [3:0] ram_0_0_hor_man_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_man_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_man_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_man_MPORT_en; // @[Decoupled.scala 273:95]
+  reg [7:0] ram_0_0_hor_exp [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_exp_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_exp_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire [7:0] ram_0_0_hor_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire [7:0] ram_0_0_hor_exp_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_exp_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_exp_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_hor_exp_MPORT_en; // @[Decoupled.scala 273:95]
+  reg  ram_0_0_ver_sign [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_sign_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_sign_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_sign_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_sign_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_sign_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_sign_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_sign_MPORT_en; // @[Decoupled.scala 273:95]
+  reg [3:0] ram_0_0_ver_man [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_man_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_man_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire [3:0] ram_0_0_ver_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire [3:0] ram_0_0_ver_man_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_man_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_man_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_man_MPORT_en; // @[Decoupled.scala 273:95]
+  reg [7:0] ram_0_0_ver_exp [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_exp_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_exp_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire [7:0] ram_0_0_ver_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire [7:0] ram_0_0_ver_exp_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_exp_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_exp_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_0_0_ver_exp_MPORT_en; // @[Decoupled.scala 273:95]
   reg  ram_0_1_hor_sign [0:1]; // @[Decoupled.scala 273:95]
   wire  ram_0_1_hor_sign_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
   wire  ram_0_1_hor_sign_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
@@ -253,6 +338,54 @@ module Queue(
   wire  ram_0_1_hor_exp_MPORT_addr; // @[Decoupled.scala 273:95]
   wire  ram_0_1_hor_exp_MPORT_mask; // @[Decoupled.scala 273:95]
   wire  ram_0_1_hor_exp_MPORT_en; // @[Decoupled.scala 273:95]
+  reg  ram_0_1_ver_sign [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_sign_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_sign_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_sign_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_sign_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_sign_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_sign_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_sign_MPORT_en; // @[Decoupled.scala 273:95]
+  reg [3:0] ram_0_1_ver_man [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_man_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_man_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire [3:0] ram_0_1_ver_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire [3:0] ram_0_1_ver_man_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_man_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_man_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_man_MPORT_en; // @[Decoupled.scala 273:95]
+  reg [7:0] ram_0_1_ver_exp [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_exp_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_exp_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire [7:0] ram_0_1_ver_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire [7:0] ram_0_1_ver_exp_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_exp_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_exp_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_0_1_ver_exp_MPORT_en; // @[Decoupled.scala 273:95]
+  reg  ram_1_0_hor_sign [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_sign_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_sign_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_sign_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_sign_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_sign_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_sign_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_sign_MPORT_en; // @[Decoupled.scala 273:95]
+  reg [3:0] ram_1_0_hor_man [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_man_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_man_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire [3:0] ram_1_0_hor_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire [3:0] ram_1_0_hor_man_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_man_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_man_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_man_MPORT_en; // @[Decoupled.scala 273:95]
+  reg [7:0] ram_1_0_hor_exp [0:1]; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_exp_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_exp_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire [7:0] ram_1_0_hor_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 273:95]
+  wire [7:0] ram_1_0_hor_exp_MPORT_data; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_exp_MPORT_addr; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_exp_MPORT_mask; // @[Decoupled.scala 273:95]
+  wire  ram_1_0_hor_exp_MPORT_en; // @[Decoupled.scala 273:95]
   reg  ram_1_0_ver_sign [0:1]; // @[Decoupled.scala 273:95]
   wire  ram_1_0_ver_sign_io_deq_bits_MPORT_en; // @[Decoupled.scala 273:95]
   wire  ram_1_0_ver_sign_io_deq_bits_MPORT_addr; // @[Decoupled.scala 273:95]
@@ -332,6 +465,48 @@ module Queue(
   wire  empty = ptr_match & ~maybe_full; // @[Decoupled.scala 278:25]
   wire  full = ptr_match & maybe_full; // @[Decoupled.scala 279:24]
   wire  do_enq = io_enq_ready & io_enq_valid; // @[Decoupled.scala 51:35]
+  assign ram_0_0_hor_sign_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_0_0_hor_sign_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_0_0_hor_sign_io_deq_bits_MPORT_data = ram_0_0_hor_sign[ram_0_0_hor_sign_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_0_0_hor_sign_MPORT_data = io_enq_bits_0_0_hor_sign;
+  assign ram_0_0_hor_sign_MPORT_addr = enq_ptr_value;
+  assign ram_0_0_hor_sign_MPORT_mask = 1'h1;
+  assign ram_0_0_hor_sign_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_0_0_hor_man_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_0_0_hor_man_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_0_0_hor_man_io_deq_bits_MPORT_data = ram_0_0_hor_man[ram_0_0_hor_man_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_0_0_hor_man_MPORT_data = io_enq_bits_0_0_hor_man;
+  assign ram_0_0_hor_man_MPORT_addr = enq_ptr_value;
+  assign ram_0_0_hor_man_MPORT_mask = 1'h1;
+  assign ram_0_0_hor_man_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_0_0_hor_exp_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_0_0_hor_exp_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_0_0_hor_exp_io_deq_bits_MPORT_data = ram_0_0_hor_exp[ram_0_0_hor_exp_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_0_0_hor_exp_MPORT_data = io_enq_bits_0_0_hor_exp;
+  assign ram_0_0_hor_exp_MPORT_addr = enq_ptr_value;
+  assign ram_0_0_hor_exp_MPORT_mask = 1'h1;
+  assign ram_0_0_hor_exp_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_0_0_ver_sign_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_0_0_ver_sign_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_0_0_ver_sign_io_deq_bits_MPORT_data = ram_0_0_ver_sign[ram_0_0_ver_sign_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_0_0_ver_sign_MPORT_data = io_enq_bits_0_0_ver_sign;
+  assign ram_0_0_ver_sign_MPORT_addr = enq_ptr_value;
+  assign ram_0_0_ver_sign_MPORT_mask = 1'h1;
+  assign ram_0_0_ver_sign_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_0_0_ver_man_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_0_0_ver_man_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_0_0_ver_man_io_deq_bits_MPORT_data = ram_0_0_ver_man[ram_0_0_ver_man_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_0_0_ver_man_MPORT_data = io_enq_bits_0_0_ver_man;
+  assign ram_0_0_ver_man_MPORT_addr = enq_ptr_value;
+  assign ram_0_0_ver_man_MPORT_mask = 1'h1;
+  assign ram_0_0_ver_man_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_0_0_ver_exp_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_0_0_ver_exp_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_0_0_ver_exp_io_deq_bits_MPORT_data = ram_0_0_ver_exp[ram_0_0_ver_exp_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_0_0_ver_exp_MPORT_data = io_enq_bits_0_0_ver_exp;
+  assign ram_0_0_ver_exp_MPORT_addr = enq_ptr_value;
+  assign ram_0_0_ver_exp_MPORT_mask = 1'h1;
+  assign ram_0_0_ver_exp_MPORT_en = io_enq_ready & io_enq_valid;
   assign ram_0_1_hor_sign_io_deq_bits_MPORT_en = 1'h1;
   assign ram_0_1_hor_sign_io_deq_bits_MPORT_addr = deq_ptr_value;
   assign ram_0_1_hor_sign_io_deq_bits_MPORT_data = ram_0_1_hor_sign[ram_0_1_hor_sign_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
@@ -353,6 +528,48 @@ module Queue(
   assign ram_0_1_hor_exp_MPORT_addr = enq_ptr_value;
   assign ram_0_1_hor_exp_MPORT_mask = 1'h1;
   assign ram_0_1_hor_exp_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_0_1_ver_sign_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_0_1_ver_sign_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_0_1_ver_sign_io_deq_bits_MPORT_data = ram_0_1_ver_sign[ram_0_1_ver_sign_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_0_1_ver_sign_MPORT_data = io_enq_bits_0_1_ver_sign;
+  assign ram_0_1_ver_sign_MPORT_addr = enq_ptr_value;
+  assign ram_0_1_ver_sign_MPORT_mask = 1'h1;
+  assign ram_0_1_ver_sign_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_0_1_ver_man_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_0_1_ver_man_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_0_1_ver_man_io_deq_bits_MPORT_data = ram_0_1_ver_man[ram_0_1_ver_man_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_0_1_ver_man_MPORT_data = io_enq_bits_0_1_ver_man;
+  assign ram_0_1_ver_man_MPORT_addr = enq_ptr_value;
+  assign ram_0_1_ver_man_MPORT_mask = 1'h1;
+  assign ram_0_1_ver_man_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_0_1_ver_exp_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_0_1_ver_exp_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_0_1_ver_exp_io_deq_bits_MPORT_data = ram_0_1_ver_exp[ram_0_1_ver_exp_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_0_1_ver_exp_MPORT_data = io_enq_bits_0_1_ver_exp;
+  assign ram_0_1_ver_exp_MPORT_addr = enq_ptr_value;
+  assign ram_0_1_ver_exp_MPORT_mask = 1'h1;
+  assign ram_0_1_ver_exp_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_1_0_hor_sign_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_1_0_hor_sign_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_1_0_hor_sign_io_deq_bits_MPORT_data = ram_1_0_hor_sign[ram_1_0_hor_sign_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_1_0_hor_sign_MPORT_data = io_enq_bits_1_0_hor_sign;
+  assign ram_1_0_hor_sign_MPORT_addr = enq_ptr_value;
+  assign ram_1_0_hor_sign_MPORT_mask = 1'h1;
+  assign ram_1_0_hor_sign_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_1_0_hor_man_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_1_0_hor_man_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_1_0_hor_man_io_deq_bits_MPORT_data = ram_1_0_hor_man[ram_1_0_hor_man_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_1_0_hor_man_MPORT_data = io_enq_bits_1_0_hor_man;
+  assign ram_1_0_hor_man_MPORT_addr = enq_ptr_value;
+  assign ram_1_0_hor_man_MPORT_mask = 1'h1;
+  assign ram_1_0_hor_man_MPORT_en = io_enq_ready & io_enq_valid;
+  assign ram_1_0_hor_exp_io_deq_bits_MPORT_en = 1'h1;
+  assign ram_1_0_hor_exp_io_deq_bits_MPORT_addr = deq_ptr_value;
+  assign ram_1_0_hor_exp_io_deq_bits_MPORT_data = ram_1_0_hor_exp[ram_1_0_hor_exp_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
+  assign ram_1_0_hor_exp_MPORT_data = io_enq_bits_1_0_hor_exp;
+  assign ram_1_0_hor_exp_MPORT_addr = enq_ptr_value;
+  assign ram_1_0_hor_exp_MPORT_mask = 1'h1;
+  assign ram_1_0_hor_exp_MPORT_en = io_enq_ready & io_enq_valid;
   assign ram_1_0_ver_sign_io_deq_bits_MPORT_en = 1'h1;
   assign ram_1_0_ver_sign_io_deq_bits_MPORT_addr = deq_ptr_value;
   assign ram_1_0_ver_sign_io_deq_bits_MPORT_data = ram_1_0_ver_sign[ram_1_0_ver_sign_io_deq_bits_MPORT_addr]; // @[Decoupled.scala 273:95]
@@ -418,9 +635,21 @@ module Queue(
   assign ram_1_1_ver_exp_MPORT_en = io_enq_ready & io_enq_valid;
   assign io_enq_ready = ~full; // @[Decoupled.scala 303:19]
   assign io_deq_valid = ~empty; // @[Decoupled.scala 302:19]
+  assign io_deq_bits_0_0_hor_sign = ram_0_0_hor_sign_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_0_0_hor_man = ram_0_0_hor_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_0_0_hor_exp = ram_0_0_hor_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_0_0_ver_sign = ram_0_0_ver_sign_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_0_0_ver_man = ram_0_0_ver_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_0_0_ver_exp = ram_0_0_ver_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
   assign io_deq_bits_0_1_hor_sign = ram_0_1_hor_sign_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
   assign io_deq_bits_0_1_hor_man = ram_0_1_hor_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
   assign io_deq_bits_0_1_hor_exp = ram_0_1_hor_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_0_1_ver_sign = ram_0_1_ver_sign_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_0_1_ver_man = ram_0_1_ver_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_0_1_ver_exp = ram_0_1_ver_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_1_0_hor_sign = ram_1_0_hor_sign_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_1_0_hor_man = ram_1_0_hor_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
+  assign io_deq_bits_1_0_hor_exp = ram_1_0_hor_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
   assign io_deq_bits_1_0_ver_sign = ram_1_0_ver_sign_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
   assign io_deq_bits_1_0_ver_man = ram_1_0_ver_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
   assign io_deq_bits_1_0_ver_exp = ram_1_0_ver_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
@@ -431,6 +660,24 @@ module Queue(
   assign io_deq_bits_1_1_ver_man = ram_1_1_ver_man_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
   assign io_deq_bits_1_1_ver_exp = ram_1_1_ver_exp_io_deq_bits_MPORT_data; // @[Decoupled.scala 310:17]
   always @(posedge clock) begin
+    if (ram_0_0_hor_sign_MPORT_en & ram_0_0_hor_sign_MPORT_mask) begin
+      ram_0_0_hor_sign[ram_0_0_hor_sign_MPORT_addr] <= ram_0_0_hor_sign_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_0_0_hor_man_MPORT_en & ram_0_0_hor_man_MPORT_mask) begin
+      ram_0_0_hor_man[ram_0_0_hor_man_MPORT_addr] <= ram_0_0_hor_man_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_0_0_hor_exp_MPORT_en & ram_0_0_hor_exp_MPORT_mask) begin
+      ram_0_0_hor_exp[ram_0_0_hor_exp_MPORT_addr] <= ram_0_0_hor_exp_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_0_0_ver_sign_MPORT_en & ram_0_0_ver_sign_MPORT_mask) begin
+      ram_0_0_ver_sign[ram_0_0_ver_sign_MPORT_addr] <= ram_0_0_ver_sign_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_0_0_ver_man_MPORT_en & ram_0_0_ver_man_MPORT_mask) begin
+      ram_0_0_ver_man[ram_0_0_ver_man_MPORT_addr] <= ram_0_0_ver_man_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_0_0_ver_exp_MPORT_en & ram_0_0_ver_exp_MPORT_mask) begin
+      ram_0_0_ver_exp[ram_0_0_ver_exp_MPORT_addr] <= ram_0_0_ver_exp_MPORT_data; // @[Decoupled.scala 273:95]
+    end
     if (ram_0_1_hor_sign_MPORT_en & ram_0_1_hor_sign_MPORT_mask) begin
       ram_0_1_hor_sign[ram_0_1_hor_sign_MPORT_addr] <= ram_0_1_hor_sign_MPORT_data; // @[Decoupled.scala 273:95]
     end
@@ -439,6 +686,24 @@ module Queue(
     end
     if (ram_0_1_hor_exp_MPORT_en & ram_0_1_hor_exp_MPORT_mask) begin
       ram_0_1_hor_exp[ram_0_1_hor_exp_MPORT_addr] <= ram_0_1_hor_exp_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_0_1_ver_sign_MPORT_en & ram_0_1_ver_sign_MPORT_mask) begin
+      ram_0_1_ver_sign[ram_0_1_ver_sign_MPORT_addr] <= ram_0_1_ver_sign_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_0_1_ver_man_MPORT_en & ram_0_1_ver_man_MPORT_mask) begin
+      ram_0_1_ver_man[ram_0_1_ver_man_MPORT_addr] <= ram_0_1_ver_man_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_0_1_ver_exp_MPORT_en & ram_0_1_ver_exp_MPORT_mask) begin
+      ram_0_1_ver_exp[ram_0_1_ver_exp_MPORT_addr] <= ram_0_1_ver_exp_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_1_0_hor_sign_MPORT_en & ram_1_0_hor_sign_MPORT_mask) begin
+      ram_1_0_hor_sign[ram_1_0_hor_sign_MPORT_addr] <= ram_1_0_hor_sign_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_1_0_hor_man_MPORT_en & ram_1_0_hor_man_MPORT_mask) begin
+      ram_1_0_hor_man[ram_1_0_hor_man_MPORT_addr] <= ram_1_0_hor_man_MPORT_data; // @[Decoupled.scala 273:95]
+    end
+    if (ram_1_0_hor_exp_MPORT_en & ram_1_0_hor_exp_MPORT_mask) begin
+      ram_1_0_hor_exp[ram_1_0_hor_exp_MPORT_addr] <= ram_1_0_hor_exp_MPORT_data; // @[Decoupled.scala 273:95]
     end
     if (ram_1_0_ver_sign_MPORT_en & ram_1_0_ver_sign_MPORT_mask) begin
       ram_1_0_ver_sign[ram_1_0_ver_sign_MPORT_addr] <= ram_1_0_ver_sign_MPORT_data; // @[Decoupled.scala 273:95]
@@ -521,48 +786,84 @@ initial begin
 `ifdef RANDOMIZE_MEM_INIT
   _RAND_0 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_0_1_hor_sign[initvar] = _RAND_0[0:0];
+    ram_0_0_hor_sign[initvar] = _RAND_0[0:0];
   _RAND_1 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_0_1_hor_man[initvar] = _RAND_1[3:0];
+    ram_0_0_hor_man[initvar] = _RAND_1[3:0];
   _RAND_2 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_0_1_hor_exp[initvar] = _RAND_2[7:0];
+    ram_0_0_hor_exp[initvar] = _RAND_2[7:0];
   _RAND_3 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_1_0_ver_sign[initvar] = _RAND_3[0:0];
+    ram_0_0_ver_sign[initvar] = _RAND_3[0:0];
   _RAND_4 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_1_0_ver_man[initvar] = _RAND_4[3:0];
+    ram_0_0_ver_man[initvar] = _RAND_4[3:0];
   _RAND_5 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_1_0_ver_exp[initvar] = _RAND_5[7:0];
+    ram_0_0_ver_exp[initvar] = _RAND_5[7:0];
   _RAND_6 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_1_1_hor_sign[initvar] = _RAND_6[0:0];
+    ram_0_1_hor_sign[initvar] = _RAND_6[0:0];
   _RAND_7 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_1_1_hor_man[initvar] = _RAND_7[3:0];
+    ram_0_1_hor_man[initvar] = _RAND_7[3:0];
   _RAND_8 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_1_1_hor_exp[initvar] = _RAND_8[7:0];
+    ram_0_1_hor_exp[initvar] = _RAND_8[7:0];
   _RAND_9 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_1_1_ver_sign[initvar] = _RAND_9[0:0];
+    ram_0_1_ver_sign[initvar] = _RAND_9[0:0];
   _RAND_10 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_1_1_ver_man[initvar] = _RAND_10[3:0];
+    ram_0_1_ver_man[initvar] = _RAND_10[3:0];
   _RAND_11 = {1{`RANDOM}};
   for (initvar = 0; initvar < 2; initvar = initvar+1)
-    ram_1_1_ver_exp[initvar] = _RAND_11[7:0];
+    ram_0_1_ver_exp[initvar] = _RAND_11[7:0];
+  _RAND_12 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_0_hor_sign[initvar] = _RAND_12[0:0];
+  _RAND_13 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_0_hor_man[initvar] = _RAND_13[3:0];
+  _RAND_14 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_0_hor_exp[initvar] = _RAND_14[7:0];
+  _RAND_15 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_0_ver_sign[initvar] = _RAND_15[0:0];
+  _RAND_16 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_0_ver_man[initvar] = _RAND_16[3:0];
+  _RAND_17 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_0_ver_exp[initvar] = _RAND_17[7:0];
+  _RAND_18 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_1_hor_sign[initvar] = _RAND_18[0:0];
+  _RAND_19 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_1_hor_man[initvar] = _RAND_19[3:0];
+  _RAND_20 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_1_hor_exp[initvar] = _RAND_20[7:0];
+  _RAND_21 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_1_ver_sign[initvar] = _RAND_21[0:0];
+  _RAND_22 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_1_ver_man[initvar] = _RAND_22[3:0];
+  _RAND_23 = {1{`RANDOM}};
+  for (initvar = 0; initvar < 2; initvar = initvar+1)
+    ram_1_1_ver_exp[initvar] = _RAND_23[7:0];
 `endif // RANDOMIZE_MEM_INIT
 `ifdef RANDOMIZE_REG_INIT
-  _RAND_12 = {1{`RANDOM}};
-  enq_ptr_value = _RAND_12[0:0];
-  _RAND_13 = {1{`RANDOM}};
-  deq_ptr_value = _RAND_13[0:0];
-  _RAND_14 = {1{`RANDOM}};
-  maybe_full = _RAND_14[0:0];
+  _RAND_24 = {1{`RANDOM}};
+  enq_ptr_value = _RAND_24[0:0];
+  _RAND_25 = {1{`RANDOM}};
+  deq_ptr_value = _RAND_25[0:0];
+  _RAND_26 = {1{`RANDOM}};
+  maybe_full = _RAND_26[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
@@ -650,6 +951,13 @@ module SystolicArray(
   reg [31:0] _RAND_9;
   reg [31:0] _RAND_10;
   reg [31:0] _RAND_11;
+  reg [31:0] _RAND_12;
+  reg [31:0] _RAND_13;
+  reg [31:0] _RAND_14;
+  reg [31:0] _RAND_15;
+  reg [31:0] _RAND_16;
+  reg [31:0] _RAND_17;
+  reg [31:0] _RAND_18;
 `endif // RANDOMIZE_REG_INIT
   wire  pes_0_0_clock; // @[FP_GEMM.scala 102:34]
   wire  pes_0_0_io_in_hor_sign; // @[FP_GEMM.scala 102:34]
@@ -719,9 +1027,21 @@ module SystolicArray(
   wire  inputQueue_reset; // @[FP_GEMM.scala 103:26]
   wire  inputQueue_io_enq_ready; // @[FP_GEMM.scala 103:26]
   wire  inputQueue_io_enq_valid; // @[FP_GEMM.scala 103:26]
+  wire  inputQueue_io_enq_bits_0_0_hor_sign; // @[FP_GEMM.scala 103:26]
+  wire [3:0] inputQueue_io_enq_bits_0_0_hor_man; // @[FP_GEMM.scala 103:26]
+  wire [7:0] inputQueue_io_enq_bits_0_0_hor_exp; // @[FP_GEMM.scala 103:26]
+  wire  inputQueue_io_enq_bits_0_0_ver_sign; // @[FP_GEMM.scala 103:26]
+  wire [3:0] inputQueue_io_enq_bits_0_0_ver_man; // @[FP_GEMM.scala 103:26]
+  wire [7:0] inputQueue_io_enq_bits_0_0_ver_exp; // @[FP_GEMM.scala 103:26]
   wire  inputQueue_io_enq_bits_0_1_hor_sign; // @[FP_GEMM.scala 103:26]
   wire [3:0] inputQueue_io_enq_bits_0_1_hor_man; // @[FP_GEMM.scala 103:26]
   wire [7:0] inputQueue_io_enq_bits_0_1_hor_exp; // @[FP_GEMM.scala 103:26]
+  wire  inputQueue_io_enq_bits_0_1_ver_sign; // @[FP_GEMM.scala 103:26]
+  wire [3:0] inputQueue_io_enq_bits_0_1_ver_man; // @[FP_GEMM.scala 103:26]
+  wire [7:0] inputQueue_io_enq_bits_0_1_ver_exp; // @[FP_GEMM.scala 103:26]
+  wire  inputQueue_io_enq_bits_1_0_hor_sign; // @[FP_GEMM.scala 103:26]
+  wire [3:0] inputQueue_io_enq_bits_1_0_hor_man; // @[FP_GEMM.scala 103:26]
+  wire [7:0] inputQueue_io_enq_bits_1_0_hor_exp; // @[FP_GEMM.scala 103:26]
   wire  inputQueue_io_enq_bits_1_0_ver_sign; // @[FP_GEMM.scala 103:26]
   wire [3:0] inputQueue_io_enq_bits_1_0_ver_man; // @[FP_GEMM.scala 103:26]
   wire [7:0] inputQueue_io_enq_bits_1_0_ver_exp; // @[FP_GEMM.scala 103:26]
@@ -731,10 +1051,23 @@ module SystolicArray(
   wire  inputQueue_io_enq_bits_1_1_ver_sign; // @[FP_GEMM.scala 103:26]
   wire [3:0] inputQueue_io_enq_bits_1_1_ver_man; // @[FP_GEMM.scala 103:26]
   wire [7:0] inputQueue_io_enq_bits_1_1_ver_exp; // @[FP_GEMM.scala 103:26]
+  wire  inputQueue_io_deq_ready; // @[FP_GEMM.scala 103:26]
   wire  inputQueue_io_deq_valid; // @[FP_GEMM.scala 103:26]
+  wire  inputQueue_io_deq_bits_0_0_hor_sign; // @[FP_GEMM.scala 103:26]
+  wire [3:0] inputQueue_io_deq_bits_0_0_hor_man; // @[FP_GEMM.scala 103:26]
+  wire [7:0] inputQueue_io_deq_bits_0_0_hor_exp; // @[FP_GEMM.scala 103:26]
+  wire  inputQueue_io_deq_bits_0_0_ver_sign; // @[FP_GEMM.scala 103:26]
+  wire [3:0] inputQueue_io_deq_bits_0_0_ver_man; // @[FP_GEMM.scala 103:26]
+  wire [7:0] inputQueue_io_deq_bits_0_0_ver_exp; // @[FP_GEMM.scala 103:26]
   wire  inputQueue_io_deq_bits_0_1_hor_sign; // @[FP_GEMM.scala 103:26]
   wire [3:0] inputQueue_io_deq_bits_0_1_hor_man; // @[FP_GEMM.scala 103:26]
   wire [7:0] inputQueue_io_deq_bits_0_1_hor_exp; // @[FP_GEMM.scala 103:26]
+  wire  inputQueue_io_deq_bits_0_1_ver_sign; // @[FP_GEMM.scala 103:26]
+  wire [3:0] inputQueue_io_deq_bits_0_1_ver_man; // @[FP_GEMM.scala 103:26]
+  wire [7:0] inputQueue_io_deq_bits_0_1_ver_exp; // @[FP_GEMM.scala 103:26]
+  wire  inputQueue_io_deq_bits_1_0_hor_sign; // @[FP_GEMM.scala 103:26]
+  wire [3:0] inputQueue_io_deq_bits_1_0_hor_man; // @[FP_GEMM.scala 103:26]
+  wire [7:0] inputQueue_io_deq_bits_1_0_hor_exp; // @[FP_GEMM.scala 103:26]
   wire  inputQueue_io_deq_bits_1_0_ver_sign; // @[FP_GEMM.scala 103:26]
   wire [3:0] inputQueue_io_deq_bits_1_0_ver_man; // @[FP_GEMM.scala 103:26]
   wire [7:0] inputQueue_io_deq_bits_1_0_ver_exp; // @[FP_GEMM.scala 103:26]
@@ -744,6 +1077,28 @@ module SystolicArray(
   wire  inputQueue_io_deq_bits_1_1_ver_sign; // @[FP_GEMM.scala 103:26]
   wire [3:0] inputQueue_io_deq_bits_1_1_ver_man; // @[FP_GEMM.scala 103:26]
   wire [7:0] inputQueue_io_deq_bits_1_1_ver_exp; // @[FP_GEMM.scala 103:26]
+  reg  counter; // @[FP_GEMM.scala 112:24]
+  wire  _T = inputQueue_io_deq_valid & inputQueue_io_deq_ready; // @[FP_GEMM.scala 117:35]
+  wire [7:0] _GEN_0 = inputQueue_io_deq_bits_0_0_hor_exp; // @[FP_GEMM.scala 118:{27,27}]
+  wire [7:0] _GEN_1 = counter ? inputQueue_io_deq_bits_0_1_hor_exp : _GEN_0; // @[FP_GEMM.scala 118:{27,27}]
+  wire [3:0] _GEN_2 = inputQueue_io_deq_bits_0_0_hor_man; // @[FP_GEMM.scala 118:{27,27}]
+  wire [3:0] _GEN_3 = counter ? inputQueue_io_deq_bits_0_1_hor_man : _GEN_2; // @[FP_GEMM.scala 118:{27,27}]
+  wire  _GEN_5 = counter ? inputQueue_io_deq_bits_0_1_hor_sign : inputQueue_io_deq_bits_0_0_hor_sign; // @[FP_GEMM.scala 118:{27,27}]
+  wire [7:0] _GEN_6 = inputQueue_io_deq_bits_0_0_ver_exp; // @[FP_GEMM.scala 119:{27,27}]
+  wire [7:0] _GEN_7 = counter ? inputQueue_io_deq_bits_1_0_ver_exp : _GEN_6; // @[FP_GEMM.scala 119:{27,27}]
+  wire [3:0] _GEN_8 = inputQueue_io_deq_bits_0_0_ver_man; // @[FP_GEMM.scala 119:{27,27}]
+  wire [3:0] _GEN_9 = counter ? inputQueue_io_deq_bits_1_0_ver_man : _GEN_8; // @[FP_GEMM.scala 119:{27,27}]
+  wire  _GEN_11 = counter ? inputQueue_io_deq_bits_1_0_ver_sign : inputQueue_io_deq_bits_0_0_ver_sign; // @[FP_GEMM.scala 119:{27,27}]
+  reg  pes_1_0_io_in_hor_r_sign; // @[Reg.scala 19:16]
+  reg [3:0] pes_1_0_io_in_hor_r_man; // @[Reg.scala 19:16]
+  reg [7:0] pes_1_0_io_in_hor_r_exp; // @[Reg.scala 19:16]
+  wire [3:0] _GEN_20 = inputQueue_io_deq_bits_1_0_hor_man; // @[Reg.scala 20:{22,22}]
+  wire [7:0] _GEN_22 = inputQueue_io_deq_bits_1_0_hor_exp; // @[Reg.scala 20:{22,22}]
+  reg  pes_0_1_io_in_ver_r_sign; // @[Reg.scala 19:16]
+  reg [3:0] pes_0_1_io_in_ver_r_man; // @[Reg.scala 19:16]
+  reg [7:0] pes_0_1_io_in_ver_r_exp; // @[Reg.scala 19:16]
+  wire [3:0] _GEN_29 = inputQueue_io_deq_bits_0_1_ver_man; // @[Reg.scala 20:{22,22}]
+  wire [7:0] _GEN_31 = inputQueue_io_deq_bits_0_1_ver_exp; // @[Reg.scala 20:{22,22}]
   reg  pes_0_1_io_in_hor_r_sign; // @[Reg.scala 19:16]
   reg [3:0] pes_0_1_io_in_hor_r_man; // @[Reg.scala 19:16]
   reg [7:0] pes_0_1_io_in_hor_r_exp; // @[Reg.scala 19:16]
@@ -833,9 +1188,21 @@ module SystolicArray(
     .reset(inputQueue_reset),
     .io_enq_ready(inputQueue_io_enq_ready),
     .io_enq_valid(inputQueue_io_enq_valid),
+    .io_enq_bits_0_0_hor_sign(inputQueue_io_enq_bits_0_0_hor_sign),
+    .io_enq_bits_0_0_hor_man(inputQueue_io_enq_bits_0_0_hor_man),
+    .io_enq_bits_0_0_hor_exp(inputQueue_io_enq_bits_0_0_hor_exp),
+    .io_enq_bits_0_0_ver_sign(inputQueue_io_enq_bits_0_0_ver_sign),
+    .io_enq_bits_0_0_ver_man(inputQueue_io_enq_bits_0_0_ver_man),
+    .io_enq_bits_0_0_ver_exp(inputQueue_io_enq_bits_0_0_ver_exp),
     .io_enq_bits_0_1_hor_sign(inputQueue_io_enq_bits_0_1_hor_sign),
     .io_enq_bits_0_1_hor_man(inputQueue_io_enq_bits_0_1_hor_man),
     .io_enq_bits_0_1_hor_exp(inputQueue_io_enq_bits_0_1_hor_exp),
+    .io_enq_bits_0_1_ver_sign(inputQueue_io_enq_bits_0_1_ver_sign),
+    .io_enq_bits_0_1_ver_man(inputQueue_io_enq_bits_0_1_ver_man),
+    .io_enq_bits_0_1_ver_exp(inputQueue_io_enq_bits_0_1_ver_exp),
+    .io_enq_bits_1_0_hor_sign(inputQueue_io_enq_bits_1_0_hor_sign),
+    .io_enq_bits_1_0_hor_man(inputQueue_io_enq_bits_1_0_hor_man),
+    .io_enq_bits_1_0_hor_exp(inputQueue_io_enq_bits_1_0_hor_exp),
     .io_enq_bits_1_0_ver_sign(inputQueue_io_enq_bits_1_0_ver_sign),
     .io_enq_bits_1_0_ver_man(inputQueue_io_enq_bits_1_0_ver_man),
     .io_enq_bits_1_0_ver_exp(inputQueue_io_enq_bits_1_0_ver_exp),
@@ -845,10 +1212,23 @@ module SystolicArray(
     .io_enq_bits_1_1_ver_sign(inputQueue_io_enq_bits_1_1_ver_sign),
     .io_enq_bits_1_1_ver_man(inputQueue_io_enq_bits_1_1_ver_man),
     .io_enq_bits_1_1_ver_exp(inputQueue_io_enq_bits_1_1_ver_exp),
+    .io_deq_ready(inputQueue_io_deq_ready),
     .io_deq_valid(inputQueue_io_deq_valid),
+    .io_deq_bits_0_0_hor_sign(inputQueue_io_deq_bits_0_0_hor_sign),
+    .io_deq_bits_0_0_hor_man(inputQueue_io_deq_bits_0_0_hor_man),
+    .io_deq_bits_0_0_hor_exp(inputQueue_io_deq_bits_0_0_hor_exp),
+    .io_deq_bits_0_0_ver_sign(inputQueue_io_deq_bits_0_0_ver_sign),
+    .io_deq_bits_0_0_ver_man(inputQueue_io_deq_bits_0_0_ver_man),
+    .io_deq_bits_0_0_ver_exp(inputQueue_io_deq_bits_0_0_ver_exp),
     .io_deq_bits_0_1_hor_sign(inputQueue_io_deq_bits_0_1_hor_sign),
     .io_deq_bits_0_1_hor_man(inputQueue_io_deq_bits_0_1_hor_man),
     .io_deq_bits_0_1_hor_exp(inputQueue_io_deq_bits_0_1_hor_exp),
+    .io_deq_bits_0_1_ver_sign(inputQueue_io_deq_bits_0_1_ver_sign),
+    .io_deq_bits_0_1_ver_man(inputQueue_io_deq_bits_0_1_ver_man),
+    .io_deq_bits_0_1_ver_exp(inputQueue_io_deq_bits_0_1_ver_exp),
+    .io_deq_bits_1_0_hor_sign(inputQueue_io_deq_bits_1_0_hor_sign),
+    .io_deq_bits_1_0_hor_man(inputQueue_io_deq_bits_1_0_hor_man),
+    .io_deq_bits_1_0_hor_exp(inputQueue_io_deq_bits_1_0_hor_exp),
     .io_deq_bits_1_0_ver_sign(inputQueue_io_deq_bits_1_0_ver_sign),
     .io_deq_bits_1_0_ver_man(inputQueue_io_deq_bits_1_0_ver_man),
     .io_deq_bits_1_0_ver_exp(inputQueue_io_deq_bits_1_0_ver_exp),
@@ -859,87 +1239,135 @@ module SystolicArray(
     .io_deq_bits_1_1_ver_man(inputQueue_io_deq_bits_1_1_ver_man),
     .io_deq_bits_1_1_ver_exp(inputQueue_io_deq_bits_1_1_ver_exp)
   );
-  assign io_in_ready = inputQueue_io_enq_ready; // @[FP_GEMM.scala 108:21]
-  assign io_out_0_0_hor_sign = pes_0_0_io_out_hor_sign; // @[FP_GEMM.scala 135:24]
-  assign io_out_0_0_hor_man = pes_0_0_io_out_hor_man; // @[FP_GEMM.scala 135:24]
-  assign io_out_0_0_hor_exp = pes_0_0_io_out_hor_exp; // @[FP_GEMM.scala 135:24]
-  assign io_out_0_0_ver_sign = pes_0_0_io_out_ver_sign; // @[FP_GEMM.scala 136:24]
-  assign io_out_0_0_ver_man = pes_0_0_io_out_ver_man; // @[FP_GEMM.scala 136:24]
-  assign io_out_0_0_ver_exp = pes_0_0_io_out_ver_exp; // @[FP_GEMM.scala 136:24]
-  assign io_out_0_0_result_sign = pes_0_0_io_out_result_sign; // @[FP_GEMM.scala 137:27]
-  assign io_out_0_0_result_man = pes_0_0_io_out_result_man; // @[FP_GEMM.scala 137:27]
-  assign io_out_0_0_result_exp = pes_0_0_io_out_result_exp; // @[FP_GEMM.scala 137:27]
-  assign io_out_0_1_hor_sign = pes_0_1_io_out_hor_sign; // @[FP_GEMM.scala 135:24]
-  assign io_out_0_1_hor_man = pes_0_1_io_out_hor_man; // @[FP_GEMM.scala 135:24]
-  assign io_out_0_1_hor_exp = pes_0_1_io_out_hor_exp; // @[FP_GEMM.scala 135:24]
-  assign io_out_0_1_ver_sign = pes_0_1_io_out_ver_sign; // @[FP_GEMM.scala 136:24]
-  assign io_out_0_1_ver_man = pes_0_1_io_out_ver_man; // @[FP_GEMM.scala 136:24]
-  assign io_out_0_1_ver_exp = pes_0_1_io_out_ver_exp; // @[FP_GEMM.scala 136:24]
-  assign io_out_0_1_result_sign = pes_0_1_io_out_result_sign; // @[FP_GEMM.scala 137:27]
-  assign io_out_0_1_result_man = pes_0_1_io_out_result_man; // @[FP_GEMM.scala 137:27]
-  assign io_out_0_1_result_exp = pes_0_1_io_out_result_exp; // @[FP_GEMM.scala 137:27]
-  assign io_out_1_0_hor_sign = pes_1_0_io_out_hor_sign; // @[FP_GEMM.scala 135:24]
-  assign io_out_1_0_hor_man = pes_1_0_io_out_hor_man; // @[FP_GEMM.scala 135:24]
-  assign io_out_1_0_hor_exp = pes_1_0_io_out_hor_exp; // @[FP_GEMM.scala 135:24]
-  assign io_out_1_0_ver_sign = pes_1_0_io_out_ver_sign; // @[FP_GEMM.scala 136:24]
-  assign io_out_1_0_ver_man = pes_1_0_io_out_ver_man; // @[FP_GEMM.scala 136:24]
-  assign io_out_1_0_ver_exp = pes_1_0_io_out_ver_exp; // @[FP_GEMM.scala 136:24]
-  assign io_out_1_0_result_sign = pes_1_0_io_out_result_sign; // @[FP_GEMM.scala 137:27]
-  assign io_out_1_0_result_man = pes_1_0_io_out_result_man; // @[FP_GEMM.scala 137:27]
-  assign io_out_1_0_result_exp = pes_1_0_io_out_result_exp; // @[FP_GEMM.scala 137:27]
-  assign io_out_1_1_hor_sign = pes_1_1_io_out_hor_sign; // @[FP_GEMM.scala 135:24]
-  assign io_out_1_1_hor_man = pes_1_1_io_out_hor_man; // @[FP_GEMM.scala 135:24]
-  assign io_out_1_1_hor_exp = pes_1_1_io_out_hor_exp; // @[FP_GEMM.scala 135:24]
-  assign io_out_1_1_ver_sign = pes_1_1_io_out_ver_sign; // @[FP_GEMM.scala 136:24]
-  assign io_out_1_1_ver_man = pes_1_1_io_out_ver_man; // @[FP_GEMM.scala 136:24]
-  assign io_out_1_1_ver_exp = pes_1_1_io_out_ver_exp; // @[FP_GEMM.scala 136:24]
-  assign io_out_1_1_result_sign = pes_1_1_io_out_result_sign; // @[FP_GEMM.scala 137:27]
-  assign io_out_1_1_result_man = pes_1_1_io_out_result_man; // @[FP_GEMM.scala 137:27]
-  assign io_out_1_1_result_exp = pes_1_1_io_out_result_exp; // @[FP_GEMM.scala 137:27]
+  assign io_in_ready = inputQueue_io_enq_ready; // @[FP_GEMM.scala 110:21]
+  assign io_out_0_0_hor_sign = pes_0_0_io_out_hor_sign; // @[FP_GEMM.scala 148:24]
+  assign io_out_0_0_hor_man = pes_0_0_io_out_hor_man; // @[FP_GEMM.scala 148:24]
+  assign io_out_0_0_hor_exp = pes_0_0_io_out_hor_exp; // @[FP_GEMM.scala 148:24]
+  assign io_out_0_0_ver_sign = pes_0_0_io_out_ver_sign; // @[FP_GEMM.scala 149:24]
+  assign io_out_0_0_ver_man = pes_0_0_io_out_ver_man; // @[FP_GEMM.scala 149:24]
+  assign io_out_0_0_ver_exp = pes_0_0_io_out_ver_exp; // @[FP_GEMM.scala 149:24]
+  assign io_out_0_0_result_sign = pes_0_0_io_out_result_sign; // @[FP_GEMM.scala 150:27]
+  assign io_out_0_0_result_man = pes_0_0_io_out_result_man; // @[FP_GEMM.scala 150:27]
+  assign io_out_0_0_result_exp = pes_0_0_io_out_result_exp; // @[FP_GEMM.scala 150:27]
+  assign io_out_0_1_hor_sign = pes_0_1_io_out_hor_sign; // @[FP_GEMM.scala 148:24]
+  assign io_out_0_1_hor_man = pes_0_1_io_out_hor_man; // @[FP_GEMM.scala 148:24]
+  assign io_out_0_1_hor_exp = pes_0_1_io_out_hor_exp; // @[FP_GEMM.scala 148:24]
+  assign io_out_0_1_ver_sign = pes_0_1_io_out_ver_sign; // @[FP_GEMM.scala 149:24]
+  assign io_out_0_1_ver_man = pes_0_1_io_out_ver_man; // @[FP_GEMM.scala 149:24]
+  assign io_out_0_1_ver_exp = pes_0_1_io_out_ver_exp; // @[FP_GEMM.scala 149:24]
+  assign io_out_0_1_result_sign = pes_0_1_io_out_result_sign; // @[FP_GEMM.scala 150:27]
+  assign io_out_0_1_result_man = pes_0_1_io_out_result_man; // @[FP_GEMM.scala 150:27]
+  assign io_out_0_1_result_exp = pes_0_1_io_out_result_exp; // @[FP_GEMM.scala 150:27]
+  assign io_out_1_0_hor_sign = pes_1_0_io_out_hor_sign; // @[FP_GEMM.scala 148:24]
+  assign io_out_1_0_hor_man = pes_1_0_io_out_hor_man; // @[FP_GEMM.scala 148:24]
+  assign io_out_1_0_hor_exp = pes_1_0_io_out_hor_exp; // @[FP_GEMM.scala 148:24]
+  assign io_out_1_0_ver_sign = pes_1_0_io_out_ver_sign; // @[FP_GEMM.scala 149:24]
+  assign io_out_1_0_ver_man = pes_1_0_io_out_ver_man; // @[FP_GEMM.scala 149:24]
+  assign io_out_1_0_ver_exp = pes_1_0_io_out_ver_exp; // @[FP_GEMM.scala 149:24]
+  assign io_out_1_0_result_sign = pes_1_0_io_out_result_sign; // @[FP_GEMM.scala 150:27]
+  assign io_out_1_0_result_man = pes_1_0_io_out_result_man; // @[FP_GEMM.scala 150:27]
+  assign io_out_1_0_result_exp = pes_1_0_io_out_result_exp; // @[FP_GEMM.scala 150:27]
+  assign io_out_1_1_hor_sign = pes_1_1_io_out_hor_sign; // @[FP_GEMM.scala 148:24]
+  assign io_out_1_1_hor_man = pes_1_1_io_out_hor_man; // @[FP_GEMM.scala 148:24]
+  assign io_out_1_1_hor_exp = pes_1_1_io_out_hor_exp; // @[FP_GEMM.scala 148:24]
+  assign io_out_1_1_ver_sign = pes_1_1_io_out_ver_sign; // @[FP_GEMM.scala 149:24]
+  assign io_out_1_1_ver_man = pes_1_1_io_out_ver_man; // @[FP_GEMM.scala 149:24]
+  assign io_out_1_1_ver_exp = pes_1_1_io_out_ver_exp; // @[FP_GEMM.scala 149:24]
+  assign io_out_1_1_result_sign = pes_1_1_io_out_result_sign; // @[FP_GEMM.scala 150:27]
+  assign io_out_1_1_result_man = pes_1_1_io_out_result_man; // @[FP_GEMM.scala 150:27]
+  assign io_out_1_1_result_exp = pes_1_1_io_out_result_exp; // @[FP_GEMM.scala 150:27]
   assign pes_0_0_clock = clock;
-  assign pes_0_0_io_in_hor_sign = inputQueue_io_deq_bits_0_1_hor_sign; // @[FP_GEMM.scala 113:27]
-  assign pes_0_0_io_in_hor_man = inputQueue_io_deq_bits_0_1_hor_man; // @[FP_GEMM.scala 113:27]
-  assign pes_0_0_io_in_hor_exp = inputQueue_io_deq_bits_0_1_hor_exp; // @[FP_GEMM.scala 113:27]
-  assign pes_0_0_io_in_ver_sign = inputQueue_io_deq_bits_1_0_ver_sign; // @[FP_GEMM.scala 114:27]
-  assign pes_0_0_io_in_ver_man = inputQueue_io_deq_bits_1_0_ver_man; // @[FP_GEMM.scala 114:27]
-  assign pes_0_0_io_in_ver_exp = inputQueue_io_deq_bits_1_0_ver_exp; // @[FP_GEMM.scala 114:27]
+  assign pes_0_0_io_in_hor_sign = inputQueue_io_deq_valid & inputQueue_io_deq_ready & _GEN_5; // @[FP_GEMM.scala 117:62 118:27 122:29]
+  assign pes_0_0_io_in_hor_man = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? _GEN_3 : 4'h0; // @[FP_GEMM.scala 117:62 118:27 122:29]
+  assign pes_0_0_io_in_hor_exp = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? _GEN_1 : 8'h0; // @[FP_GEMM.scala 117:62 118:27 122:29]
+  assign pes_0_0_io_in_ver_sign = inputQueue_io_deq_valid & inputQueue_io_deq_ready & _GEN_11; // @[FP_GEMM.scala 117:62 119:27 123:29]
+  assign pes_0_0_io_in_ver_man = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? _GEN_9 : 4'h0; // @[FP_GEMM.scala 117:62 119:27 123:29]
+  assign pes_0_0_io_in_ver_exp = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? _GEN_7 : 8'h0; // @[FP_GEMM.scala 117:62 119:27 123:29]
   assign pes_0_1_clock = clock;
-  assign pes_0_1_io_in_hor_sign = pes_0_1_io_in_hor_r_sign; // @[FP_GEMM.scala 121:27]
-  assign pes_0_1_io_in_hor_man = pes_0_1_io_in_hor_r_man; // @[FP_GEMM.scala 121:27]
-  assign pes_0_1_io_in_hor_exp = pes_0_1_io_in_hor_r_exp; // @[FP_GEMM.scala 121:27]
-  assign pes_0_1_io_in_ver_sign = inputQueue_io_deq_bits_1_1_ver_sign; // @[FP_GEMM.scala 114:27]
-  assign pes_0_1_io_in_ver_man = inputQueue_io_deq_bits_1_1_ver_man; // @[FP_GEMM.scala 114:27]
-  assign pes_0_1_io_in_ver_exp = inputQueue_io_deq_bits_1_1_ver_exp; // @[FP_GEMM.scala 114:27]
+  assign pes_0_1_io_in_hor_sign = pes_0_1_io_in_hor_r_sign; // @[FP_GEMM.scala 134:27]
+  assign pes_0_1_io_in_hor_man = pes_0_1_io_in_hor_r_man; // @[FP_GEMM.scala 134:27]
+  assign pes_0_1_io_in_hor_exp = pes_0_1_io_in_hor_r_exp; // @[FP_GEMM.scala 134:27]
+  assign pes_0_1_io_in_ver_sign = inputQueue_io_deq_valid & inputQueue_io_deq_ready & pes_0_1_io_in_ver_r_sign; // @[FP_GEMM.scala 117:62 119:27 123:29]
+  assign pes_0_1_io_in_ver_man = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? pes_0_1_io_in_ver_r_man : 4'h0; // @[FP_GEMM.scala 117:62 119:27 123:29]
+  assign pes_0_1_io_in_ver_exp = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? pes_0_1_io_in_ver_r_exp : 8'h0; // @[FP_GEMM.scala 117:62 119:27 123:29]
   assign pes_1_0_clock = clock;
-  assign pes_1_0_io_in_hor_sign = inputQueue_io_deq_bits_1_1_hor_sign; // @[FP_GEMM.scala 113:27]
-  assign pes_1_0_io_in_hor_man = inputQueue_io_deq_bits_1_1_hor_man; // @[FP_GEMM.scala 113:27]
-  assign pes_1_0_io_in_hor_exp = inputQueue_io_deq_bits_1_1_hor_exp; // @[FP_GEMM.scala 113:27]
-  assign pes_1_0_io_in_ver_sign = pes_1_0_io_in_ver_r_sign; // @[FP_GEMM.scala 128:27]
-  assign pes_1_0_io_in_ver_man = pes_1_0_io_in_ver_r_man; // @[FP_GEMM.scala 128:27]
-  assign pes_1_0_io_in_ver_exp = pes_1_0_io_in_ver_r_exp; // @[FP_GEMM.scala 128:27]
+  assign pes_1_0_io_in_hor_sign = inputQueue_io_deq_valid & inputQueue_io_deq_ready & pes_1_0_io_in_hor_r_sign; // @[FP_GEMM.scala 117:62 118:27 122:29]
+  assign pes_1_0_io_in_hor_man = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? pes_1_0_io_in_hor_r_man : 4'h0; // @[FP_GEMM.scala 117:62 118:27 122:29]
+  assign pes_1_0_io_in_hor_exp = inputQueue_io_deq_valid & inputQueue_io_deq_ready ? pes_1_0_io_in_hor_r_exp : 8'h0; // @[FP_GEMM.scala 117:62 118:27 122:29]
+  assign pes_1_0_io_in_ver_sign = pes_1_0_io_in_ver_r_sign; // @[FP_GEMM.scala 141:27]
+  assign pes_1_0_io_in_ver_man = pes_1_0_io_in_ver_r_man; // @[FP_GEMM.scala 141:27]
+  assign pes_1_0_io_in_ver_exp = pes_1_0_io_in_ver_r_exp; // @[FP_GEMM.scala 141:27]
   assign pes_1_1_clock = clock;
-  assign pes_1_1_io_in_hor_sign = pes_1_1_io_in_hor_r_sign; // @[FP_GEMM.scala 121:27]
-  assign pes_1_1_io_in_hor_man = pes_1_1_io_in_hor_r_man; // @[FP_GEMM.scala 121:27]
-  assign pes_1_1_io_in_hor_exp = pes_1_1_io_in_hor_r_exp; // @[FP_GEMM.scala 121:27]
-  assign pes_1_1_io_in_ver_sign = pes_1_1_io_in_ver_r_sign; // @[FP_GEMM.scala 128:27]
-  assign pes_1_1_io_in_ver_man = pes_1_1_io_in_ver_r_man; // @[FP_GEMM.scala 128:27]
-  assign pes_1_1_io_in_ver_exp = pes_1_1_io_in_ver_r_exp; // @[FP_GEMM.scala 128:27]
+  assign pes_1_1_io_in_hor_sign = pes_1_1_io_in_hor_r_sign; // @[FP_GEMM.scala 134:27]
+  assign pes_1_1_io_in_hor_man = pes_1_1_io_in_hor_r_man; // @[FP_GEMM.scala 134:27]
+  assign pes_1_1_io_in_hor_exp = pes_1_1_io_in_hor_r_exp; // @[FP_GEMM.scala 134:27]
+  assign pes_1_1_io_in_ver_sign = pes_1_1_io_in_ver_r_sign; // @[FP_GEMM.scala 141:27]
+  assign pes_1_1_io_in_ver_man = pes_1_1_io_in_ver_r_man; // @[FP_GEMM.scala 141:27]
+  assign pes_1_1_io_in_ver_exp = pes_1_1_io_in_ver_r_exp; // @[FP_GEMM.scala 141:27]
   assign inputQueue_clock = clock;
   assign inputQueue_reset = reset;
-  assign inputQueue_io_enq_valid = io_in_valid; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_0_1_hor_sign = io_in_bits_0_1_hor_sign; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_0_1_hor_man = io_in_bits_0_1_hor_man; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_0_1_hor_exp = io_in_bits_0_1_hor_exp; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_1_0_ver_sign = io_in_bits_1_0_ver_sign; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_1_0_ver_man = io_in_bits_1_0_ver_man; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_1_0_ver_exp = io_in_bits_1_0_ver_exp; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_1_1_hor_sign = io_in_bits_1_1_hor_sign; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_1_1_hor_man = io_in_bits_1_1_hor_man; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_1_1_hor_exp = io_in_bits_1_1_hor_exp; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_1_1_ver_sign = io_in_bits_1_1_ver_sign; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_1_1_ver_man = io_in_bits_1_1_ver_man; // @[FP_GEMM.scala 108:21]
-  assign inputQueue_io_enq_bits_1_1_ver_exp = io_in_bits_1_1_ver_exp; // @[FP_GEMM.scala 108:21]
+  assign inputQueue_io_enq_valid = io_in_valid; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_0_hor_sign = io_in_bits_0_0_hor_sign; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_0_hor_man = io_in_bits_0_0_hor_man; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_0_hor_exp = io_in_bits_0_0_hor_exp; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_0_ver_sign = io_in_bits_0_0_ver_sign; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_0_ver_man = io_in_bits_0_0_ver_man; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_0_ver_exp = io_in_bits_0_0_ver_exp; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_1_hor_sign = io_in_bits_0_1_hor_sign; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_1_hor_man = io_in_bits_0_1_hor_man; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_1_hor_exp = io_in_bits_0_1_hor_exp; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_1_ver_sign = io_in_bits_0_1_ver_sign; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_1_ver_man = io_in_bits_0_1_ver_man; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_0_1_ver_exp = io_in_bits_0_1_ver_exp; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_0_hor_sign = io_in_bits_1_0_hor_sign; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_0_hor_man = io_in_bits_1_0_hor_man; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_0_hor_exp = io_in_bits_1_0_hor_exp; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_0_ver_sign = io_in_bits_1_0_ver_sign; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_0_ver_man = io_in_bits_1_0_ver_man; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_0_ver_exp = io_in_bits_1_0_ver_exp; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_1_hor_sign = io_in_bits_1_1_hor_sign; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_1_hor_man = io_in_bits_1_1_hor_man; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_1_hor_exp = io_in_bits_1_1_hor_exp; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_1_ver_sign = io_in_bits_1_1_ver_sign; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_1_ver_man = io_in_bits_1_1_ver_man; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_enq_bits_1_1_ver_exp = io_in_bits_1_1_ver_exp; // @[FP_GEMM.scala 110:21]
+  assign inputQueue_io_deq_ready = 1'h1; // @[FP_GEMM.scala 108:27]
   always @(posedge clock) begin
+    if (reset) begin // @[FP_GEMM.scala 112:24]
+      counter <= 1'h0; // @[FP_GEMM.scala 112:24]
+    end else if (_T) begin // @[FP_GEMM.scala 127:60]
+      counter <= counter + 1'h1; // @[FP_GEMM.scala 128:13]
+    end
+    if (counter) begin // @[Reg.scala 20:22]
+      pes_1_0_io_in_hor_r_sign <= inputQueue_io_deq_bits_1_1_hor_sign; // @[Reg.scala 20:22]
+    end else begin
+      pes_1_0_io_in_hor_r_sign <= inputQueue_io_deq_bits_1_0_hor_sign;
+    end
+    if (counter) begin // @[Reg.scala 20:22]
+      pes_1_0_io_in_hor_r_man <= inputQueue_io_deq_bits_1_1_hor_man; // @[Reg.scala 20:22]
+    end else begin
+      pes_1_0_io_in_hor_r_man <= _GEN_20;
+    end
+    if (counter) begin // @[Reg.scala 20:22]
+      pes_1_0_io_in_hor_r_exp <= inputQueue_io_deq_bits_1_1_hor_exp; // @[Reg.scala 20:22]
+    end else begin
+      pes_1_0_io_in_hor_r_exp <= _GEN_22;
+    end
+    if (counter) begin // @[Reg.scala 20:22]
+      pes_0_1_io_in_ver_r_sign <= inputQueue_io_deq_bits_1_1_ver_sign; // @[Reg.scala 20:22]
+    end else begin
+      pes_0_1_io_in_ver_r_sign <= inputQueue_io_deq_bits_0_1_ver_sign;
+    end
+    if (counter) begin // @[Reg.scala 20:22]
+      pes_0_1_io_in_ver_r_man <= inputQueue_io_deq_bits_1_1_ver_man; // @[Reg.scala 20:22]
+    end else begin
+      pes_0_1_io_in_ver_r_man <= _GEN_29;
+    end
+    if (counter) begin // @[Reg.scala 20:22]
+      pes_0_1_io_in_ver_r_exp <= inputQueue_io_deq_bits_1_1_ver_exp; // @[Reg.scala 20:22]
+    end else begin
+      pes_0_1_io_in_ver_r_exp <= _GEN_31;
+    end
     pes_0_1_io_in_hor_r_sign <= pes_0_0_io_out_hor_sign; // @[Reg.scala 19:16 20:{18,22}]
     pes_0_1_io_in_hor_r_man <= pes_0_0_io_out_hor_man; // @[Reg.scala 19:16 20:{18,22}]
     pes_0_1_io_in_hor_r_exp <= pes_0_0_io_out_hor_exp; // @[Reg.scala 19:16 20:{18,22}]
@@ -990,29 +1418,43 @@ initial begin
     `endif
 `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
-  pes_0_1_io_in_hor_r_sign = _RAND_0[0:0];
+  counter = _RAND_0[0:0];
   _RAND_1 = {1{`RANDOM}};
-  pes_0_1_io_in_hor_r_man = _RAND_1[3:0];
+  pes_1_0_io_in_hor_r_sign = _RAND_1[0:0];
   _RAND_2 = {1{`RANDOM}};
-  pes_0_1_io_in_hor_r_exp = _RAND_2[7:0];
+  pes_1_0_io_in_hor_r_man = _RAND_2[3:0];
   _RAND_3 = {1{`RANDOM}};
-  pes_1_1_io_in_hor_r_sign = _RAND_3[0:0];
+  pes_1_0_io_in_hor_r_exp = _RAND_3[7:0];
   _RAND_4 = {1{`RANDOM}};
-  pes_1_1_io_in_hor_r_man = _RAND_4[3:0];
+  pes_0_1_io_in_ver_r_sign = _RAND_4[0:0];
   _RAND_5 = {1{`RANDOM}};
-  pes_1_1_io_in_hor_r_exp = _RAND_5[7:0];
+  pes_0_1_io_in_ver_r_man = _RAND_5[3:0];
   _RAND_6 = {1{`RANDOM}};
-  pes_1_0_io_in_ver_r_sign = _RAND_6[0:0];
+  pes_0_1_io_in_ver_r_exp = _RAND_6[7:0];
   _RAND_7 = {1{`RANDOM}};
-  pes_1_0_io_in_ver_r_man = _RAND_7[3:0];
+  pes_0_1_io_in_hor_r_sign = _RAND_7[0:0];
   _RAND_8 = {1{`RANDOM}};
-  pes_1_0_io_in_ver_r_exp = _RAND_8[7:0];
+  pes_0_1_io_in_hor_r_man = _RAND_8[3:0];
   _RAND_9 = {1{`RANDOM}};
-  pes_1_1_io_in_ver_r_sign = _RAND_9[0:0];
+  pes_0_1_io_in_hor_r_exp = _RAND_9[7:0];
   _RAND_10 = {1{`RANDOM}};
-  pes_1_1_io_in_ver_r_man = _RAND_10[3:0];
+  pes_1_1_io_in_hor_r_sign = _RAND_10[0:0];
   _RAND_11 = {1{`RANDOM}};
-  pes_1_1_io_in_ver_r_exp = _RAND_11[7:0];
+  pes_1_1_io_in_hor_r_man = _RAND_11[3:0];
+  _RAND_12 = {1{`RANDOM}};
+  pes_1_1_io_in_hor_r_exp = _RAND_12[7:0];
+  _RAND_13 = {1{`RANDOM}};
+  pes_1_0_io_in_ver_r_sign = _RAND_13[0:0];
+  _RAND_14 = {1{`RANDOM}};
+  pes_1_0_io_in_ver_r_man = _RAND_14[3:0];
+  _RAND_15 = {1{`RANDOM}};
+  pes_1_0_io_in_ver_r_exp = _RAND_15[7:0];
+  _RAND_16 = {1{`RANDOM}};
+  pes_1_1_io_in_ver_r_sign = _RAND_16[0:0];
+  _RAND_17 = {1{`RANDOM}};
+  pes_1_1_io_in_ver_r_man = _RAND_17[3:0];
+  _RAND_18 = {1{`RANDOM}};
+  pes_1_1_io_in_ver_r_exp = _RAND_18[7:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

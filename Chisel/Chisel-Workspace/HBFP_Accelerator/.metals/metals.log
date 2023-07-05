@@ -14135,3 +14135,204 @@ WARNING: Unmatched cancel notification for request id 3178
 2023.07.05 09:30:06 INFO  time: compiled hbfp_accelerator in 1.58s
 2023.07.05 09:30:07 INFO  compiling hbfp_accelerator (1 scala source)
 2023.07.05 09:30:09 INFO  time: compiled hbfp_accelerator in 1.71s
+2023.07.05 09:48:19 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 09:48:20 INFO  time: compiled hbfp_accelerator in 1.65s
+2023.07.05 09:48:57 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 09:48:59 INFO  time: compiled hbfp_accelerator in 1.76s
+2023.07.05 09:49:12 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 09:49:14 INFO  time: compiled hbfp_accelerator in 1.69s
+2023.07.05 09:49:14 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 09:49:16 INFO  time: compiled hbfp_accelerator in 1.61s
+2023.07.05 09:51:06 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 09:51:07 INFO  time: compiled hbfp_accelerator-test in 1.15s
+2023.07.05 10:30:32 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 10:30:33 INFO  time: compiled hbfp_accelerator-test in 1.18s
+2023.07.05 10:36:53 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:36:53 INFO  time: compiled hbfp_accelerator in 0.26s
+2023.07.05 10:36:56 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:36:56 INFO  time: compiled hbfp_accelerator in 0.26s
+2023.07.05 10:37:10 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:37:12 INFO  time: compiled hbfp_accelerator in 1.68s
+2023.07.05 10:37:22 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:37:23 INFO  time: compiled hbfp_accelerator in 1.54s
+2023.07.05 10:37:48 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:37:49 INFO  time: compiled hbfp_accelerator in 1.65s
+2023.07.05 10:37:53 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:37:53 INFO  time: compiled hbfp_accelerator in 0.3s
+2023.07.05 10:37:53 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+Jul 05, 2023 10:37:55 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+Jul 05, 2023 10:37:56 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+2023.07.05 10:37:56 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+Jul 05, 2023 10:37:56 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+Jul 05, 2023 10:37:56 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+2023.07.05 10:37:57 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:37:57 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:37:57 INFO  time: compiled hbfp_accelerator in 0.29s
+2023.07.05 10:37:58 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:07 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:08 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:38:08 INFO  time: compiled hbfp_accelerator in 0.41s
+Jul 05, 2023 10:38:09 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+2023.07.05 10:38:09 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:10 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:38:10 INFO  time: compiled hbfp_accelerator in 0.29s
+2023.07.05 10:38:10 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:13 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:13 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+Jul 05, 2023 10:38:14 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+2023.07.05 10:38:13 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+Jul 05, 2023 10:38:14 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+2023.07.05 10:38:14 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:15 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:15 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:15 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:16 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:16 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:16 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:18 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:21 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:23 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:24 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:25 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+Jul 05, 2023 10:38:26 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3866
+2023.07.05 10:38:27 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:27 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:30 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:32 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:33 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:35 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:36 WARN  Could not load snapshot text for /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Accelerator/src/main/scala/FP_GEMM.scala
+2023.07.05 10:38:37 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:38:39 INFO  time: compiled hbfp_accelerator in 1.67s
+2023.07.05 10:38:44 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:38:46 INFO  time: compiled hbfp_accelerator in 1.84s
+Jul 05, 2023 10:38:54 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3955
+2023.07.05 10:39:02 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:39:04 INFO  time: compiled hbfp_accelerator in 1.85s
+2023.07.05 10:39:09 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:39:09 INFO  time: compiled hbfp_accelerator in 0.16s
+2023.07.05 10:39:12 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:39:14 INFO  time: compiled hbfp_accelerator in 1.73s
+2023.07.05 10:41:08 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 10:41:10 INFO  time: compiled hbfp_accelerator in 2s
+2023.07.05 10:48:29 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 10:48:30 INFO  time: compiled hbfp_accelerator-test in 1.22s
+2023.07.05 10:49:07 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 10:49:08 INFO  time: compiled hbfp_accelerator-test in 1.15s
+2023.07.05 11:07:04 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:07:05 INFO  time: compiled hbfp_accelerator-test in 1.13s
+2023.07.05 11:07:41 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:07:42 INFO  time: compiled hbfp_accelerator-test in 1.11s
+Jul 05, 2023 11:14:01 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+Jul 05, 2023 11:14:03 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+
+2023.07.05 11:14:06 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:14:07 INFO  time: compiled hbfp_accelerator in 1.73s
+2023.07.05 11:14:12 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:14:14 INFO  time: compiled hbfp_accelerator in 1.81s
+2023.07.05 11:14:35 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:14:37 INFO  time: compiled hbfp_accelerator in 1.77s
+2023.07.05 11:14:38 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:14:40 INFO  time: compiled hbfp_accelerator in 1.66s
+2023.07.05 11:18:51 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:18:52 INFO  time: compiled hbfp_accelerator-test in 1.11s
+2023.07.05 11:19:09 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:19:10 INFO  time: compiled hbfp_accelerator-test in 1.19s
+2023.07.05 11:29:01 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:29:02 INFO  time: compiled hbfp_accelerator-test in 1.14s
+2023.07.05 11:29:23 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:29:25 INFO  time: compiled hbfp_accelerator-test in 1.38s
+2023.07.05 11:30:06 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:30:07 INFO  time: compiled hbfp_accelerator-test in 1.13s
+2023.07.05 11:30:44 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:30:46 INFO  time: compiled hbfp_accelerator-test in 1.07s
+2023.07.05 11:31:51 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:31:52 INFO  time: compiled hbfp_accelerator-test in 1.01s
+2023.07.05 11:34:43 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:34:44 INFO  time: compiled hbfp_accelerator-test in 1.24s
+2023.07.05 11:35:18 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:35:21 INFO  time: compiled hbfp_accelerator-test in 2.72s
+Jul 05, 2023 11:38:21 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4793
+Jul 05, 2023 11:38:22 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4794
+2023.07.05 11:41:54 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:41:55 INFO  time: compiled hbfp_accelerator-test in 1.06s
+2023.07.05 11:47:31 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:47:33 INFO  time: compiled hbfp_accelerator in 2.07s
+2023.07.05 11:48:30 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:48:32 INFO  time: compiled hbfp_accelerator in 1.78s
+2023.07.05 11:49:54 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:49:56 INFO  time: compiled hbfp_accelerator in 1.92s
+2023.07.05 11:50:21 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:50:23 INFO  time: compiled hbfp_accelerator in 1.73s
+Jul 05, 2023 11:54:37 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5115
+Jul 05, 2023 11:54:52 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5202
+2023.07.05 11:54:54 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:54:56 INFO  time: compiled hbfp_accelerator in 1.79s
+2023.07.05 11:55:03 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:55:05 INFO  time: compiled hbfp_accelerator in 1.78s
+2023.07.05 11:55:13 INFO  compiling hbfp_accelerator-test (1 scala source)
+2023.07.05 11:55:14 INFO  time: compiled hbfp_accelerator-test in 1.15s
+2023.07.05 11:56:28 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:56:29 INFO  time: compiled hbfp_accelerator in 1.63s
+2023.07.05 11:57:53 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:57:53 INFO  time: compiled hbfp_accelerator in 0.29s
+2023.07.05 11:58:00 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:58:00 INFO  time: compiled hbfp_accelerator in 0.29s
+2023.07.05 11:58:12 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:58:12 INFO  time: compiled hbfp_accelerator in 0.26s
+2023.07.05 11:58:28 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:58:28 INFO  time: compiled hbfp_accelerator in 0.31s
+2023.07.05 11:58:32 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:58:32 INFO  time: compiled hbfp_accelerator in 0.28s
+2023.07.05 11:58:42 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:58:42 INFO  time: compiled hbfp_accelerator in 0.27s
+2023.07.05 11:58:55 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:58:57 INFO  time: compiled hbfp_accelerator in 1.79s
+2023.07.05 11:59:37 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:59:38 INFO  time: compiled hbfp_accelerator in 1.76s
+2023.07.05 11:59:43 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 11:59:45 INFO  time: compiled hbfp_accelerator in 1.76s
+Jul 05, 2023 12:00:44 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5833
+Jul 05, 2023 12:00:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5836
+Jul 05, 2023 12:00:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5839
+2023.07.05 12:00:51 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:00:52 INFO  time: compiled hbfp_accelerator in 1.7s
+2023.07.05 12:01:04 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:01:06 INFO  time: compiled hbfp_accelerator in 1.68s
+2023.07.05 12:01:38 INFO  compiling hbfp_accelerator (1 scala source)
+2023.07.05 12:01:39 INFO  time: compiled hbfp_accelerator in 1.7s

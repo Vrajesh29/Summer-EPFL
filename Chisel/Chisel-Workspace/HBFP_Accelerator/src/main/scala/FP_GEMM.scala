@@ -109,12 +109,22 @@ class SystolicArray(n: Int, m: Int, e: Int) extends Module {
 
   inputQueue.io.enq <> io.in
 
+  val counter = RegInit(0.U(log2Ceil(n).W))
+
 
   for (i <- 0 until n) {
-    for (j <- 0 until n) {
-      pes(i)(0).io.in.hor := inputQueue.io.deq.bits(i)(j).hor
-      pes(0)(i).io.in.ver := inputQueue.io.deq.bits(j)(i).ver
+    when (inputQueue.io.deq.valid && inputQueue.io.deq.ready){
+      pes(i)(0).io.in.hor := ShiftRegister(inputQueue.io.deq.bits(i)(counter).hor, i)
+      pes(0)(i).io.in.ver := ShiftRegister(inputQueue.io.deq.bits(counter)(i).ver, i)
     }
+    .otherwise{
+        pes(i)(0).io.in.hor := 0.U.asTypeOf(new FP(m, e))
+        pes(0)(i).io.in.ver := 0.U.asTypeOf(new FP(m, e))
+    }
+ }
+
+  when(inputQueue.io.deq.valid && inputQueue.io.deq.ready) {
+    counter := counter + 1.U
   }
 
   // Connect PEs horizontally

@@ -94,6 +94,25 @@ VL_MODULE(VSystolicArray) {
     // Internals; generally not touched by application code
     // Anonymous structures to workaround compiler member-count bugs
     struct {
+        CData/*0:0*/ SystolicArray__DOT__pes_0_0_io_in_hor_sign;
+        CData/*3:0*/ SystolicArray__DOT__pes_0_0_io_in_hor_man;
+        CData/*7:0*/ SystolicArray__DOT__pes_0_0_io_in_hor_exp;
+        CData/*0:0*/ SystolicArray__DOT__pes_0_0_io_in_ver_sign;
+        CData/*3:0*/ SystolicArray__DOT__pes_0_0_io_in_ver_man;
+        CData/*7:0*/ SystolicArray__DOT__pes_0_0_io_in_ver_exp;
+        CData/*0:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_sign;
+        CData/*3:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_man;
+        CData/*7:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_exp;
+        CData/*0:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_sign;
+        CData/*3:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_man;
+        CData/*7:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_exp;
+        CData/*0:0*/ SystolicArray__DOT__counter;
+        CData/*0:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_r_sign;
+        CData/*3:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_r_man;
+        CData/*7:0*/ SystolicArray__DOT__pes_1_0_io_in_hor_r_exp;
+        CData/*0:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_r_sign;
+        CData/*3:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_r_man;
+        CData/*7:0*/ SystolicArray__DOT__pes_0_1_io_in_ver_r_exp;
         CData/*0:0*/ SystolicArray__DOT__pes_0_1_io_in_hor_r_sign;
         CData/*3:0*/ SystolicArray__DOT__pes_0_1_io_in_hor_r_man;
         CData/*7:0*/ SystolicArray__DOT__pes_0_1_io_in_hor_r_exp;
@@ -139,6 +158,8 @@ VL_MODULE(VSystolicArray) {
         CData/*7:0*/ SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT__exp_diff;
         CData/*3:0*/ SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT___io_out_result_man_T_3;
         CData/*3:0*/ SystolicArray__DOT__pes_1_0__DOT__fpadder__DOT___io_out_result_man_T_6;
+    };
+    struct {
         CData/*7:0*/ SystolicArray__DOT__pes_1_1__DOT__fpmult_io_out_result_exp;
         CData/*0:0*/ SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_sign;
         CData/*7:0*/ SystolicArray__DOT__pes_1_1__DOT__fpadder_io_out_result_exp;
@@ -150,20 +171,6 @@ VL_MODULE(VSystolicArray) {
         CData/*7:0*/ SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT__exp_diff;
         CData/*3:0*/ SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___io_out_result_man_T_3;
         CData/*3:0*/ SystolicArray__DOT__pes_1_1__DOT__fpadder__DOT___io_out_result_man_T_6;
-        CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_sign_io_deq_bits_MPORT_data;
-        CData/*3:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_man_io_deq_bits_MPORT_data;
-        CData/*7:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_exp_io_deq_bits_MPORT_data;
-        CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_sign_io_deq_bits_MPORT_data;
-        CData/*3:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_man_io_deq_bits_MPORT_data;
-        CData/*7:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_exp_io_deq_bits_MPORT_data;
-        CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_sign_io_deq_bits_MPORT_data;
-        CData/*3:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_man_io_deq_bits_MPORT_data;
-    };
-    struct {
-        CData/*7:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_1_hor_exp_io_deq_bits_MPORT_data;
-        CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_sign_io_deq_bits_MPORT_data;
-        CData/*3:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_man_io_deq_bits_MPORT_data;
-        CData/*7:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_1_ver_exp_io_deq_bits_MPORT_data;
         CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__enq_ptr_value;
         CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__deq_ptr_value;
         CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__maybe_full;
@@ -171,9 +178,21 @@ VL_MODULE(VSystolicArray) {
         CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__empty;
         CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__full;
         CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__do_enq;
+        CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_0_hor_sign[2];
+        CData/*3:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_0_hor_man[2];
+        CData/*7:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_0_hor_exp[2];
+        CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_0_ver_sign[2];
+        CData/*3:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_0_ver_man[2];
+        CData/*7:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_0_ver_exp[2];
         CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_sign[2];
         CData/*3:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_man[2];
         CData/*7:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_1_hor_exp[2];
+        CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_1_ver_sign[2];
+        CData/*3:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_1_ver_man[2];
+        CData/*7:0*/ SystolicArray__DOT__inputQueue__DOT__ram_0_1_ver_exp[2];
+        CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_0_hor_sign[2];
+        CData/*3:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_0_hor_man[2];
+        CData/*7:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_0_hor_exp[2];
         CData/*0:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_sign[2];
         CData/*3:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_man[2];
         CData/*7:0*/ SystolicArray__DOT__inputQueue__DOT__ram_1_0_ver_exp[2];
