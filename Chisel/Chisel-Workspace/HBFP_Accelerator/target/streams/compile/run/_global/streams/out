@@ -1,11 +1,44 @@
-[0m[[0m[31merror[0m] [0m[0mchisel3.internal.ChiselException: Error: attempted to instantiate a Module without wrapping it in Module().[0m
-[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
-[0m[[0m[31merror[0m] [0m[0m	at SystolicArray.<init>(MatMul.scala:87)[0m
-[0m[[0m[31merror[0m] [0m[0m	at SystolicArray.$anonfun$generateBlockDiagram$1(MatMul.scala:134)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.internal.plugin.package$.autoNameRecursively(package.scala:33)[0m
-[0m[[0m[31merror[0m] [0m[0m	at SystolicArray.generateBlockDiagram(MatMul.scala:134)[0m
-[0m[[0m[31merror[0m] [0m[0m	at SystolicArray.<init>(MatMul.scala:142)[0m
-[0m[[0m[31merror[0m] [0m[0m	at SystolicArrayMain$.$anonfun$new$30(MatMul.scala:147)[0m
-[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
-[0m[[0m[31merror[0m] [0m[0m	at ... (Stack trace trimmed to user code only. Rerun with --full-stacktrace to see the full stack trace)[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) chisel3.internal.ChiselException: Error: attempted to instantiate a Module without wrapping it in Module().[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassExceptions: [0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_1 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_1.io.enq.bits.sign <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_1 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_1.io.deq.ready <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_0 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_0.io.enq.bits.exp <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_0 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_0.io.enq.valid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_1 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_1.io.enq.valid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_0 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_0.io.enq.bits.man <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_0 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_0.io.enq.bits.sign <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_1 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_1.io.enq.bits.exp <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_0 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_0.io.deq.ready <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_1 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_1.io.enq.bits.man <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 10 errors detected![0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) firrtl.passes.PassExceptions: [0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_1 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_1.io.enq.bits.sign <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_1 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_1.io.deq.ready <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_0 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_0.io.enq.bits.exp <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_0 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_0.io.enq.valid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_1 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_1.io.enq.valid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_0 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_0.io.enq.bits.man <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_0 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_0.io.enq.bits.sign <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_1 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_1.io.enq.bits.exp <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_0 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_0.io.deq.ready <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[HBFP_GEMM.scala 126:37] : [module SystolicArray_HBFP_forTesting]  Reference myoutputQ_1 is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : myoutputQ_1.io.enq.bits.man <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 10 errors detected![0m
