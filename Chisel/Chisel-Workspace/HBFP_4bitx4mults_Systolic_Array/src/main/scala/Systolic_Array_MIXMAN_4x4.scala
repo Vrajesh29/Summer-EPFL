@@ -7,10 +7,6 @@ hence the TODO is to find a way to flush the outputs from the PEs. Ayan told me 
 
 import chisel3._
 import chisel3.util._
-import chisel3.util.log2Ceil
-import chisel3.util.DecoupledIO
-import chisel3.util.EnqIO
-import chisel3.util.QueueIO
 import chisel3.stage.ChiselStage
 import scala.sys.process._ 
 
@@ -18,11 +14,11 @@ import scala.sys.process._
 // be flushed in Queues but Ayan told that he will do that.
 class SystolicArray_HBFP_forTesting(blockSize: Int, n: Int, m: Int, e: Int) extends Module {
     val io = IO(new Bundle {
-        val in = Input(new Bundle {
-            val hor = Vec(n, Flipped(EnqIO(new HBFP(blockSize, m, e))))
-            val ver = Vec(n, Flipped(EnqIO(new HBFP(blockSize, m, e))))
+        val in = new Bundle {
+            val hor = Flipped(Vec(n, EnqIO(new HBFP(blockSize, m, e))))
+            val ver = Flipped(Vec(n, EnqIO(new HBFP(blockSize, m, e))))
             val flag = Input(Bool())
-        })
+        }
         val out = Output(Vec(n, Vec(n, new Bundle {
           val result = new HBFP_result(m, e)
         })))
@@ -35,28 +31,28 @@ class SystolicArray_HBFP_forTesting(blockSize: Int, n: Int, m: Int, e: Int) exte
       pes(i)(j).io.in.flag <> io.in.flag
     }
   }
-
-  val myinputQ_hor = Seq.fill(n)(Module(new Queue(new HBFP(blockSize, m, e), n)))
-  val myinputQ_ver = Seq.fill(n)(Module(new Queue(new HBFP(blockSize, m, e), n)))
+  val myinputQ_hor = Seq.fill(n)(Module(new Queue(new HBFP(blockSize, m, e), n, false, false)))
+  val myinputQ_ver = Seq.fill(n)(Module(new Queue(new HBFP(blockSize, m, e), n, false, false)))
 
   for (i <- 0 until n){
-    myinputQ_hor(i).io.enq.valid := true.B
-    myinputQ_hor(i).io.enq.bits := io.in.hor(i).bits
-
-    myinputQ_ver(i).io.enq.valid := true.B
-    myinputQ_ver(i).io.enq.bits := io.in.ver(i).bits
+    myinputQ_hor(i).io.enq <> io.in.hor(i)
+    myinputQ_ver(i).io.enq <> io.in.ver(i)
   }
 
 
   for (i <- 0 until n) {
 
-    // The ready of the input queue of row(i) is the RegNext of that of row(i-1) and so on.
-    myinputQ_hor(i).io.deq.ready := ShiftRegister(io.in.hor(i).valid, i+1)
-    // The ready of the input queue of column(i) is the RegNext of that of column(i-1) and so on.
-    myinputQ_ver(i).io.deq.ready := ShiftRegister(io.in.ver(i).valid, i+1)
+    if (i != 0) {
+      // The ready of the input queue of row(i) is the RegNext of that of row(i-1) and so on.
+      myinputQ_hor(i).io.deq.ready := ShiftRegister(myinputQ_hor(0).io.deq.fire, i)
+      // The ready of the input queue of column(i) is the RegNext of that of column(i-1) and so on.
+      myinputQ_ver(i).io.deq.ready := ShiftRegister(myinputQ_ver(0).io.deq.fire, i)  
+    }
     pes(i)(0).io.in.hor := Mux(myinputQ_hor(i).io.deq.fire, myinputQ_hor(i).io.deq.bits, 0.U.asTypeOf(new HBFP(blockSize, m, e)))
     pes(0)(i).io.in.ver := Mux(myinputQ_ver(i).io.deq.fire, myinputQ_ver(i).io.deq.bits, 0.U.asTypeOf(new HBFP(blockSize, m, e)))
- }
+  }
+  myinputQ_ver(0).io.deq.ready := myinputQ_hor.map(_.io.deq.valid).reduce(_ && _)
+  myinputQ_hor(0).io.deq.ready := myinputQ_ver.map(_.io.deq.valid).reduce(_ && _)
 
 
   // Connect PEs horizontally
