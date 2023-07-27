@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/FP_Systolic_Array/src/main/scala/Systolic_Array.scala:48:115: not found: value counter[0m
+[0m[[0m[31merror[0m] [0m[0m    pes(i)(0).io.in.hor := Mux(ShiftRegister(inputQueue.io.deq.valid, i), ShiftRegister(inputQueue.io.deq.bits(i)(counter).hor, i), ShiftRegister(0.U.asTypeOf(new FP(m, e)), i))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/FP_Systolic_Array/src/main/scala/Systolic_Array.scala:49:112: not found: value counter[0m
+[0m[[0m[31merror[0m] [0m[0m    pes(0)(i).io.in.ver := Mux(ShiftRegister(inputQueue.io.deq.valid, i), ShiftRegister(inputQueue.io.deq.bits(counter)(i).ver, i), ShiftRegister(0.U.asTypeOf(new FP(m, e)), i))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

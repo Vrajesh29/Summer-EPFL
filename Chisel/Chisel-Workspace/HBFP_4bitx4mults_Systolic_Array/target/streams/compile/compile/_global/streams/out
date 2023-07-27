@@ -1,0 +1,16 @@
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_4bitx4mults_Systolic_Array/src/main/scala/HBFP_MAC_MIXMAN_4x4.scala:50:71: value result is not a member of chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m      final_result := Mux(m.asUInt === 6.asUInt, (multiplier_1.io.out.result +& ((multiplier_2.io.out.result +& multiplier_3.io.out.result) << 4.U) +& (multiplier_4.io.out.result << 8.U)), (multiplier_1.io.out.result))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_4bitx4mults_Systolic_Array/src/main/scala/HBFP_MAC_MIXMAN_4x4.scala:50:103: value result is not a member of chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m      final_result := Mux(m.asUInt === 6.asUInt, (multiplier_1.io.out.result +& ((multiplier_2.io.out.result +& multiplier_3.io.out.result) << 4.U) +& (multiplier_4.io.out.result << 8.U)), (multiplier_1.io.out.result))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_4bitx4mults_Systolic_Array/src/main/scala/HBFP_MAC_MIXMAN_4x4.scala:50:133: value result is not a member of chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m      final_result := Mux(m.asUInt === 6.asUInt, (multiplier_1.io.out.result +& ((multiplier_2.io.out.result +& multiplier_3.io.out.result) << 4.U) +& (multiplier_4.io.out.result << 8.U)), (multiplier_1.io.out.result))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_4bitx4mults_Systolic_Array/src/main/scala/HBFP_MAC_MIXMAN_4x4.scala:50:173: value result is not a member of chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m      final_result := Mux(m.asUInt === 6.asUInt, (multiplier_1.io.out.result +& ((multiplier_2.io.out.result +& multiplier_3.io.out.result) << 4.U) +& (multiplier_4.io.out.result << 8.U)), (multiplier_1.io.out.result))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_4bitx4mults_Systolic_Array/src/main/scala/HBFP_MAC_MIXMAN_4x4.scala:50:211: value result is not a member of chisel3.UInt[0m
+[0m[[0m[31merror[0m] [0m[0m      final_result := Mux(m.asUInt === 6.asUInt, (multiplier_1.io.out.result +& ((multiplier_2.io.out.result +& multiplier_3.io.out.result) << 4.U) +& (multiplier_4.io.out.result << 8.U)), (multiplier_1.io.out.result))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                                                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m

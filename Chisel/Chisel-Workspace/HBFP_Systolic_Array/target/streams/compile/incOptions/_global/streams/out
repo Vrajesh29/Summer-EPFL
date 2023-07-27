@@ -1,0 +1,38 @@
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Systolic_Array/target/scala-2.13/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting$$anon$1$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTestingMain$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTestingMain$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP$$anon$4$$anon$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting$$anon$1$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP$$anon$4$$anon$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTestingMain.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting$$anon$1$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTestingMain$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTestingMain$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP$$anon$4$$anon$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting$$anon$1$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP$$anon$4$$anon$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTestingMain.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting$$anon$1$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTestingMain$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTestingMain$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP$$anon$4$$anon$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTesting$$anon$1$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP$$anon$4$$anon$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SystolicArray_HBFP_forTestingMain.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/vpatel/Documents/Chisel/Chisel-Workspace/HBFP_Systolic_Array/target/scala-2.13/classes.bak[0m

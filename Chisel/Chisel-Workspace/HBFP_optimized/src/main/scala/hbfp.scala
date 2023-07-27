@@ -13,7 +13,7 @@ class Hbfp(blockSize: Int, m: Int, e: Int) extends Module{
   val man = io.man
   val exp = io.exp
   val exp_output = Wire(UInt(e.W))
-//   exp_output := io.in.exp_a + io.in.exp_b
+  exp_output := io.in.exp_a + io.in.exp_b
   val dot_product_man = VecInit(io.man_a.zip(io.man_b).map { case (a, b) => a * b })
   val accumulator = RegInit(0.S(2*m+blockSize-1))
   io.result := accumulator(2*m+blockSize-1) ## exp_output ## accumulator(m-2, 0)
