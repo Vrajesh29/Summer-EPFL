@@ -60,13 +60,13 @@ void VSystolicArray_HBFP_forTesting_Queue::__vlCoverInsert(uint32_t* countp, boo
         "hier",std::string(name())+hierp,  "page",pagep,  "comment",commentp,  (linescovp[0] ? "linescov" : ""), linescovp);
 }
 
-void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_0__33(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_0__33\n"); );
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_0__19(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_0__19\n"); );
     VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    this->__PVT___value_T_3 = (0xffU & ((IData)(1U) 
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
                                         + (IData)(this->__PVT__deq_ptr_value)));
-    this->__PVT___value_T_1 = (0xffU & ((IData)(1U) 
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
                                         + (IData)(this->__PVT__enq_ptr_value)));
     this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
                               == (IData)(this->__PVT__deq_ptr_value));
@@ -74,21 +74,389 @@ void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forT
                          & (IData)(this->__PVT__maybe_full));
     this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
                           & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_hor_0_valid));
 }
 
-void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_0__65(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_0__65\n"); );
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_1__20(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_1__20\n"); );
     VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_0_io_deq_ready) 
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_hor_1_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_1__46(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_1__46\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_1_io_deq_ready) 
                            & (~ (IData)(this->__PVT__empty)));
 }
 
-void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_0__66(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_0__66\n"); );
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_2__21(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_2__21\n"); );
     VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_0_io_deq_ready) 
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_hor_2_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_2__44(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_2__44\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_2_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_3__22(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_3__22\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_hor_3_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_3__42(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_3__42\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_3_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_4__23(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_4__23\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_hor_4_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_4__40(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_4__40\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_4_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_5__24(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_5__24\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_hor_5_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_5__35(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_5__35\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_5_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_6__25(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_6__25\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_hor_6_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_6__36(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_6__36\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_6_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_7__26(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_7__26\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_hor_7_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_7__37(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_7__37\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_hor_7_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_0__27(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_0__27\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_ver_0_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_1__28(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_1__28\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_ver_1_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_1__48(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_1__48\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_1_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_2__29(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_2__29\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_ver_2_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_2__47(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_2__47\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_2_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_3__30(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_3__30\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_ver_3_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_3__45(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_3__45\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_3_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_4__31(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_4__31\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_ver_4_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_4__43(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_4__43\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_4_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_5__32(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_5__32\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_ver_5_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_5__41(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_5__41\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_5_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_6__33(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_6__33\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_ver_6_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_6__38(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_6__38\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_6_io_deq_ready) 
+                           & (~ (IData)(this->__PVT__empty)));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_7__34(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_7__34\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT___value_T_3 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__deq_ptr_value)));
+    this->__PVT___value_T_1 = (0x3fU & ((IData)(1U) 
+                                        + (IData)(this->__PVT__enq_ptr_value)));
+    this->__PVT__ptr_match = ((IData)(this->__PVT__enq_ptr_value) 
+                              == (IData)(this->__PVT__deq_ptr_value));
+    this->__PVT__full = ((IData)(this->__PVT__ptr_match) 
+                         & (IData)(this->__PVT__maybe_full));
+    this->__PVT__empty = ((IData)(this->__PVT__ptr_match) 
+                          & (~ (IData)(this->__PVT__maybe_full)));
+    this->__PVT__do_enq = ((~ (IData)(this->__PVT__full)) 
+                           & (IData)(vlTOPp->io_in_ver_7_valid));
+}
+
+void VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_7__39(VSystolicArray_HBFP_forTesting__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        VSystolicArray_HBFP_forTesting_Queue::_settle__TOP__SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_7__39\n"); );
+    VSystolicArray_HBFP_forTesting* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    this->__PVT__do_deq = ((IData)(vlTOPp->SystolicArray_HBFP_forTesting__DOT__myinputQ_ver_7_io_deq_ready) 
                            & (~ (IData)(this->__PVT__empty)));
 }
 
@@ -98,6 +466,7 @@ void VSystolicArray_HBFP_forTesting_Queue::_ctor_var_reset() {
     clock = VL_RAND_RESET_I(1);
     reset = VL_RAND_RESET_I(1);
     io_enq_ready = VL_RAND_RESET_I(1);
+    io_enq_valid = VL_RAND_RESET_I(1);
     io_enq_bits_sign_0 = VL_RAND_RESET_I(1);
     io_enq_bits_sign_1 = VL_RAND_RESET_I(1);
     io_enq_bits_sign_2 = VL_RAND_RESET_I(1);
@@ -106,14 +475,6 @@ void VSystolicArray_HBFP_forTesting_Queue::_ctor_var_reset() {
     io_enq_bits_sign_5 = VL_RAND_RESET_I(1);
     io_enq_bits_sign_6 = VL_RAND_RESET_I(1);
     io_enq_bits_sign_7 = VL_RAND_RESET_I(1);
-    io_enq_bits_sign_8 = VL_RAND_RESET_I(1);
-    io_enq_bits_sign_9 = VL_RAND_RESET_I(1);
-    io_enq_bits_sign_10 = VL_RAND_RESET_I(1);
-    io_enq_bits_sign_11 = VL_RAND_RESET_I(1);
-    io_enq_bits_sign_12 = VL_RAND_RESET_I(1);
-    io_enq_bits_sign_13 = VL_RAND_RESET_I(1);
-    io_enq_bits_sign_14 = VL_RAND_RESET_I(1);
-    io_enq_bits_sign_15 = VL_RAND_RESET_I(1);
     io_enq_bits_man_0 = VL_RAND_RESET_I(6);
     io_enq_bits_man_1 = VL_RAND_RESET_I(6);
     io_enq_bits_man_2 = VL_RAND_RESET_I(6);
@@ -122,14 +483,6 @@ void VSystolicArray_HBFP_forTesting_Queue::_ctor_var_reset() {
     io_enq_bits_man_5 = VL_RAND_RESET_I(6);
     io_enq_bits_man_6 = VL_RAND_RESET_I(6);
     io_enq_bits_man_7 = VL_RAND_RESET_I(6);
-    io_enq_bits_man_8 = VL_RAND_RESET_I(6);
-    io_enq_bits_man_9 = VL_RAND_RESET_I(6);
-    io_enq_bits_man_10 = VL_RAND_RESET_I(6);
-    io_enq_bits_man_11 = VL_RAND_RESET_I(6);
-    io_enq_bits_man_12 = VL_RAND_RESET_I(6);
-    io_enq_bits_man_13 = VL_RAND_RESET_I(6);
-    io_enq_bits_man_14 = VL_RAND_RESET_I(6);
-    io_enq_bits_man_15 = VL_RAND_RESET_I(6);
     io_enq_bits_exp = VL_RAND_RESET_I(8);
     io_deq_ready = VL_RAND_RESET_I(1);
     io_deq_valid = VL_RAND_RESET_I(1);
@@ -141,14 +494,6 @@ void VSystolicArray_HBFP_forTesting_Queue::_ctor_var_reset() {
     io_deq_bits_sign_5 = VL_RAND_RESET_I(1);
     io_deq_bits_sign_6 = VL_RAND_RESET_I(1);
     io_deq_bits_sign_7 = VL_RAND_RESET_I(1);
-    io_deq_bits_sign_8 = VL_RAND_RESET_I(1);
-    io_deq_bits_sign_9 = VL_RAND_RESET_I(1);
-    io_deq_bits_sign_10 = VL_RAND_RESET_I(1);
-    io_deq_bits_sign_11 = VL_RAND_RESET_I(1);
-    io_deq_bits_sign_12 = VL_RAND_RESET_I(1);
-    io_deq_bits_sign_13 = VL_RAND_RESET_I(1);
-    io_deq_bits_sign_14 = VL_RAND_RESET_I(1);
-    io_deq_bits_sign_15 = VL_RAND_RESET_I(1);
     io_deq_bits_man_0 = VL_RAND_RESET_I(6);
     io_deq_bits_man_1 = VL_RAND_RESET_I(6);
     io_deq_bits_man_2 = VL_RAND_RESET_I(6);
@@ -157,219 +502,116 @@ void VSystolicArray_HBFP_forTesting_Queue::_ctor_var_reset() {
     io_deq_bits_man_5 = VL_RAND_RESET_I(6);
     io_deq_bits_man_6 = VL_RAND_RESET_I(6);
     io_deq_bits_man_7 = VL_RAND_RESET_I(6);
-    io_deq_bits_man_8 = VL_RAND_RESET_I(6);
-    io_deq_bits_man_9 = VL_RAND_RESET_I(6);
-    io_deq_bits_man_10 = VL_RAND_RESET_I(6);
-    io_deq_bits_man_11 = VL_RAND_RESET_I(6);
-    io_deq_bits_man_12 = VL_RAND_RESET_I(6);
-    io_deq_bits_man_13 = VL_RAND_RESET_I(6);
-    io_deq_bits_man_14 = VL_RAND_RESET_I(6);
-    io_deq_bits_man_15 = VL_RAND_RESET_I(6);
     io_deq_bits_exp = VL_RAND_RESET_I(8);
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_sign_0[__Vi0] = VL_RAND_RESET_I(1);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_sign_1[__Vi0] = VL_RAND_RESET_I(1);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_sign_2[__Vi0] = VL_RAND_RESET_I(1);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_sign_3[__Vi0] = VL_RAND_RESET_I(1);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_sign_4[__Vi0] = VL_RAND_RESET_I(1);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_sign_5[__Vi0] = VL_RAND_RESET_I(1);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_sign_6[__Vi0] = VL_RAND_RESET_I(1);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_sign_7[__Vi0] = VL_RAND_RESET_I(1);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_sign_8[__Vi0] = VL_RAND_RESET_I(1);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_sign_9[__Vi0] = VL_RAND_RESET_I(1);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_sign_10[__Vi0] = VL_RAND_RESET_I(1);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_sign_11[__Vi0] = VL_RAND_RESET_I(1);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_sign_12[__Vi0] = VL_RAND_RESET_I(1);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_sign_13[__Vi0] = VL_RAND_RESET_I(1);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_sign_14[__Vi0] = VL_RAND_RESET_I(1);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_sign_15[__Vi0] = VL_RAND_RESET_I(1);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_man_0[__Vi0] = VL_RAND_RESET_I(6);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_man_1[__Vi0] = VL_RAND_RESET_I(6);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_man_2[__Vi0] = VL_RAND_RESET_I(6);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_man_3[__Vi0] = VL_RAND_RESET_I(6);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_man_4[__Vi0] = VL_RAND_RESET_I(6);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_man_5[__Vi0] = VL_RAND_RESET_I(6);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_man_6[__Vi0] = VL_RAND_RESET_I(6);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_man_7[__Vi0] = VL_RAND_RESET_I(6);
     }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_man_8[__Vi0] = VL_RAND_RESET_I(6);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_man_9[__Vi0] = VL_RAND_RESET_I(6);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_man_10[__Vi0] = VL_RAND_RESET_I(6);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_man_11[__Vi0] = VL_RAND_RESET_I(6);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_man_12[__Vi0] = VL_RAND_RESET_I(6);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_man_13[__Vi0] = VL_RAND_RESET_I(6);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_man_14[__Vi0] = VL_RAND_RESET_I(6);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
-            __PVT__ram_man_15[__Vi0] = VL_RAND_RESET_I(6);
-    }}
-    { int __Vi0=0; for (; __Vi0<256; ++__Vi0) {
+    { int __Vi0=0; for (; __Vi0<64; ++__Vi0) {
             __PVT__ram_exp[__Vi0] = VL_RAND_RESET_I(8);
     }}
-    __PVT__enq_ptr_value = VL_RAND_RESET_I(8);
-    __PVT__deq_ptr_value = VL_RAND_RESET_I(8);
+    __PVT__enq_ptr_value = VL_RAND_RESET_I(6);
+    __PVT__deq_ptr_value = VL_RAND_RESET_I(6);
     __PVT__maybe_full = VL_RAND_RESET_I(1);
     __PVT__ptr_match = VL_RAND_RESET_I(1);
     __PVT__empty = VL_RAND_RESET_I(1);
     __PVT__full = VL_RAND_RESET_I(1);
+    __PVT__do_enq = VL_RAND_RESET_I(1);
     __PVT__do_deq = VL_RAND_RESET_I(1);
-    __PVT___value_T_1 = VL_RAND_RESET_I(8);
-    __PVT___value_T_3 = VL_RAND_RESET_I(8);
-    __Vdlyvdim0__ram_man_8__v0 = 0;
-    __Vdlyvval__ram_man_8__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_8__v0 = 0;
-    __Vdlyvdim0__ram_man_7__v0 = 0;
-    __Vdlyvval__ram_man_7__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_7__v0 = 0;
-    __Vdlyvdim0__ram_man_6__v0 = 0;
-    __Vdlyvval__ram_man_6__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_6__v0 = 0;
-    __Vdlyvdim0__ram_man_5__v0 = 0;
-    __Vdlyvval__ram_man_5__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_5__v0 = 0;
-    __Vdlyvdim0__ram_man_4__v0 = 0;
-    __Vdlyvval__ram_man_4__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_4__v0 = 0;
-    __Vdlyvdim0__ram_man_3__v0 = 0;
-    __Vdlyvval__ram_man_3__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_3__v0 = 0;
-    __Vdlyvdim0__ram_man_2__v0 = 0;
-    __Vdlyvval__ram_man_2__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_2__v0 = 0;
-    __Vdlyvdim0__ram_man_1__v0 = 0;
-    __Vdlyvval__ram_man_1__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_1__v0 = 0;
-    __Vdlyvdim0__ram_man_0__v0 = 0;
-    __Vdlyvval__ram_man_0__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_0__v0 = 0;
-    __Vdlyvdim0__ram_sign_15__v0 = 0;
-    __Vdlyvval__ram_sign_15__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_15__v0 = 0;
-    __Vdlyvdim0__ram_sign_14__v0 = 0;
-    __Vdlyvval__ram_sign_14__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_14__v0 = 0;
-    __Vdlyvdim0__ram_sign_5__v0 = 0;
-    __Vdlyvval__ram_sign_5__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_5__v0 = 0;
-    __Vdlyvdim0__ram_sign_4__v0 = 0;
-    __Vdlyvval__ram_sign_4__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_4__v0 = 0;
-    __Vdlyvdim0__ram_sign_3__v0 = 0;
-    __Vdlyvval__ram_sign_3__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_3__v0 = 0;
-    __Vdlyvdim0__ram_man_12__v0 = 0;
-    __Vdlyvval__ram_man_12__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_12__v0 = 0;
-    __Vdlyvdim0__ram_sign_11__v0 = 0;
-    __Vdlyvval__ram_sign_11__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_11__v0 = 0;
-    __Vdlyvdim0__ram_sign_2__v0 = 0;
-    __Vdlyvval__ram_sign_2__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_2__v0 = 0;
-    __Vdlyvdim0__ram_man_11__v0 = 0;
-    __Vdlyvval__ram_man_11__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_11__v0 = 0;
-    __Vdlyvdim0__ram_sign_10__v0 = 0;
-    __Vdlyvval__ram_sign_10__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_10__v0 = 0;
-    __Vdlyvdim0__ram_sign_13__v0 = 0;
-    __Vdlyvval__ram_sign_13__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_13__v0 = 0;
-    __Vdlyvdim0__ram_sign_1__v0 = 0;
-    __Vdlyvval__ram_sign_1__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_1__v0 = 0;
-    __Vdlyvdim0__ram_man_10__v0 = 0;
-    __Vdlyvval__ram_man_10__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_10__v0 = 0;
-    __Vdlyvdim0__ram_sign_9__v0 = 0;
-    __Vdlyvval__ram_sign_9__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_9__v0 = 0;
-    __Vdlyvdim0__ram_sign_12__v0 = 0;
-    __Vdlyvval__ram_sign_12__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_12__v0 = 0;
-    __Vdlyvdim0__ram_sign_0__v0 = 0;
-    __Vdlyvval__ram_sign_0__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_0__v0 = 0;
-    __Vdlyvdim0__ram_man_9__v0 = 0;
-    __Vdlyvval__ram_man_9__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_9__v0 = 0;
-    __Vdlyvdim0__ram_sign_8__v0 = 0;
-    __Vdlyvval__ram_sign_8__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_8__v0 = 0;
-    __Vdlyvdim0__ram_sign_6__v0 = 0;
-    __Vdlyvval__ram_sign_6__v0 = VL_RAND_RESET_I(1);
-    __Vdlyvset__ram_sign_6__v0 = 0;
+    __PVT___value_T_1 = VL_RAND_RESET_I(6);
+    __PVT___value_T_3 = VL_RAND_RESET_I(6);
     __Vdlyvdim0__ram_sign_7__v0 = 0;
     __Vdlyvval__ram_sign_7__v0 = VL_RAND_RESET_I(1);
     __Vdlyvset__ram_sign_7__v0 = 0;
-    __Vdlyvdim0__ram_man_13__v0 = 0;
-    __Vdlyvval__ram_man_13__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_13__v0 = 0;
-    __Vdlyvdim0__ram_man_14__v0 = 0;
-    __Vdlyvval__ram_man_14__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_14__v0 = 0;
-    __Vdlyvdim0__ram_man_15__v0 = 0;
-    __Vdlyvval__ram_man_15__v0 = VL_RAND_RESET_I(6);
-    __Vdlyvset__ram_man_15__v0 = 0;
+    __Vdlyvdim0__ram_sign_6__v0 = 0;
+    __Vdlyvval__ram_sign_6__v0 = VL_RAND_RESET_I(1);
+    __Vdlyvset__ram_sign_6__v0 = 0;
+    __Vdlyvdim0__ram_man_0__v0 = 0;
+    __Vdlyvval__ram_man_0__v0 = VL_RAND_RESET_I(6);
+    __Vdlyvset__ram_man_0__v0 = 0;
+    __Vdlyvdim0__ram_sign_0__v0 = 0;
+    __Vdlyvval__ram_sign_0__v0 = VL_RAND_RESET_I(1);
+    __Vdlyvset__ram_sign_0__v0 = 0;
+    __Vdlyvdim0__ram_man_4__v0 = 0;
+    __Vdlyvval__ram_man_4__v0 = VL_RAND_RESET_I(6);
+    __Vdlyvset__ram_man_4__v0 = 0;
+    __Vdlyvdim0__ram_man_1__v0 = 0;
+    __Vdlyvval__ram_man_1__v0 = VL_RAND_RESET_I(6);
+    __Vdlyvset__ram_man_1__v0 = 0;
+    __Vdlyvdim0__ram_sign_1__v0 = 0;
+    __Vdlyvval__ram_sign_1__v0 = VL_RAND_RESET_I(1);
+    __Vdlyvset__ram_sign_1__v0 = 0;
+    __Vdlyvdim0__ram_man_5__v0 = 0;
+    __Vdlyvval__ram_man_5__v0 = VL_RAND_RESET_I(6);
+    __Vdlyvset__ram_man_5__v0 = 0;
+    __Vdlyvdim0__ram_man_2__v0 = 0;
+    __Vdlyvval__ram_man_2__v0 = VL_RAND_RESET_I(6);
+    __Vdlyvset__ram_man_2__v0 = 0;
+    __Vdlyvdim0__ram_sign_2__v0 = 0;
+    __Vdlyvval__ram_sign_2__v0 = VL_RAND_RESET_I(1);
+    __Vdlyvset__ram_sign_2__v0 = 0;
+    __Vdlyvdim0__ram_man_3__v0 = 0;
+    __Vdlyvval__ram_man_3__v0 = VL_RAND_RESET_I(6);
+    __Vdlyvset__ram_man_3__v0 = 0;
+    __Vdlyvdim0__ram_sign_3__v0 = 0;
+    __Vdlyvval__ram_sign_3__v0 = VL_RAND_RESET_I(1);
+    __Vdlyvset__ram_sign_3__v0 = 0;
+    __Vdlyvdim0__ram_sign_4__v0 = 0;
+    __Vdlyvval__ram_sign_4__v0 = VL_RAND_RESET_I(1);
+    __Vdlyvset__ram_sign_4__v0 = 0;
+    __Vdlyvdim0__ram_sign_5__v0 = 0;
+    __Vdlyvval__ram_sign_5__v0 = VL_RAND_RESET_I(1);
+    __Vdlyvset__ram_sign_5__v0 = 0;
+    __Vdlyvdim0__ram_man_6__v0 = 0;
+    __Vdlyvval__ram_man_6__v0 = VL_RAND_RESET_I(6);
+    __Vdlyvset__ram_man_6__v0 = 0;
+    __Vdlyvdim0__ram_man_7__v0 = 0;
+    __Vdlyvval__ram_man_7__v0 = VL_RAND_RESET_I(6);
+    __Vdlyvset__ram_man_7__v0 = 0;
     __Vdlyvdim0__ram_exp__v0 = 0;
     __Vdlyvval__ram_exp__v0 = VL_RAND_RESET_I(8);
     __Vdlyvset__ram_exp__v0 = 0;
