@@ -4,7 +4,7 @@ import pandas as pd
 blocksize = 8
 n = 8 
 e = 8
-m = 4
+m = 6
 sign1 = np.random.choice([0, 1], size=(n, n * blocksize))
 sign2 = np.random.choice([0, 1], size=(n, n * blocksize))
 

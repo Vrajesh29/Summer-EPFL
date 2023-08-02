@@ -18,7 +18,7 @@ class HBFP_GEMMSpec extends AnyFlatSpec with ChiselScalatestTester {
   "mult" should "pass" in {
     val blockSize = 8
     val m = 6
-    val actual_m = 4
+    val actual_m = 6
     val e = 8
     val n = 8
 

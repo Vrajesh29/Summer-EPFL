@@ -16,15 +16,20 @@ import scala.io.Source
 
 class HBFP_GEMMSpec extends AnyFlatSpec with ChiselScalatestTester {
   "mult" should "pass" in {
-    val blockSize = 16
-    val m = 6   // This m=6 is fixed
+    val blockSize = 8
+    val m = 6
+    val actual_m = 4
     val e = 8
-    val n = 16
+    val n = 8
 
     test(new SystolicArray_HBFP_forTesting(blockSize, n, m, e)).withAnnotations(Seq(TargetDirAnnotation("test/HbfpPass/HBFP"), WriteVcdAnnotation , VerilatorBackendAnnotation )) {
       dut =>
 
-      dut.io.in.flag.poke(1.B)
+      if (actual_m === 6 ){
+        dut.io.in.flag.poke(1.B)
+      } else {
+        dut.io.in.flag.poke(0.B)
+      }
         
       println("Parsing CSV file")
       // Load the CSV file
@@ -55,9 +60,10 @@ class HBFP_GEMMSpec extends AnyFlatSpec with ChiselScalatestTester {
       val result_exp = data2.map(_(3)).grouped(n).toList
       val result_man = data2.map(_(4)).grouped(n).toList
 
+      dut.clock.step(2)
+
       println("Pushing tensor")
-      dut.io.in.hor.foreach(_.ready.poke(true.B))
-      dut.io.in.ver.foreach(_.ready.poke(true.B))
+
       for (j <- 0 until n) {
         for (i <- 0 until n) {
             for (k <- 0 until blockSize){
@@ -72,7 +78,12 @@ class HBFP_GEMMSpec extends AnyFlatSpec with ChiselScalatestTester {
                 dut.io.in.ver(i).bits.man(k).poke(man2_actual(j)(i)(k).U)
             } 
         }
-        dut.clock.step(4)   // 4 for m=6 and 1 for m=4 as discussed with Ayan.
+
+        if (actual_m === 6){
+          dut.clock.step(4)   // 4 for m=6 and 1 for m=4 as discussed with Ayan.
+        } else {
+          dut.clock.step(1)
+        }
       }
     
     
@@ -83,11 +94,8 @@ class HBFP_GEMMSpec extends AnyFlatSpec with ChiselScalatestTester {
     
     dut.clock.step(1)
     
-    
-    dut.io.in.hor.foreach(_.ready.poke(false.B))
-    dut.io.in.ver.foreach(_.ready.poke(false.B))
 
-    dut.clock.step(9*n-3) // 9n-3.  In every four cycles, we will have a cycle where all the outputs will be correct. 9n-3 may not be the first of these instances.
+    dut.clock.step(9*n+1) // 9n-3.  In every four cycles, we will have a cycle where all the outputs will be correct. 9n-3 may not be the first of these instances.
 
     println("Expected results:")
 

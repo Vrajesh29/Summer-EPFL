@@ -29,7 +29,7 @@ class HBFP_MAC(blockSize: Int, m: Int, e: Int) extends Module{
     val two_complement_buffer = Seq.fill(blockSize)(RegInit(0.S((m + 1).W)))
     val signs = Seq.fill(blockSize)(RegInit(0.U(1.W)))
 
-    val counter = RegInit(3.U(2.W))
+    val counter = RegInit(1.U(2.W))
 
     for (i <- 0 until blockSize) {
       val padding = RegInit(0.U(2.W))

@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
 
-blocksize = 16
-n = 16
+blocksize = 8
+n = 8
 e = 8
-m = 6
+m = 4
 sign1 = np.random.choice([0, 1], size=(n, n * blocksize))
 sign2 = np.random.choice([0, 1], size=(n, n * blocksize))
 
